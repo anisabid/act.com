@@ -1,0 +1,22 @@
+{
+  "name": "ACampagneTest",
+  "version": "1.0.0",
+  "description": "Application pour les campagnes de test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anisabid/act.com.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Anis abid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anisabid/act.com/issues"
+  },
+  "homepage": "https://github.com/anisabid/act.com"
+}
