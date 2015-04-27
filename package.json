@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/anisabid/act.com",
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-less": "^3.0.3"
   }
 }
