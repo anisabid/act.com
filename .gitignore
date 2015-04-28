@@ -30,5 +30,5 @@ node_modules
 .idea
 .idea/
 
-assets/css/*
-assets/js/*
+app/assets/css/*
+app/assets/js/*
