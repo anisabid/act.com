@@ -1,13 +1,54 @@
-/**
- * Variables
- */
+// Variables
+// --------------------------------------------------
 @h-header-height: 60px;
-@h-header-height: 60px;
-
-/**
- * Implementation
- */
-#header{
-  height: @h-header-height;
-  background: @colo;
+@h-header-background: #272b35;
+@h-header-color-blue: @base-color-blue;
+/** Header
+ ************************************************** */
+#page-header {
+  height: @h-header-height - 24;
+  background: @h-header-background;
+  padding: 12px 20px;
+  line-height: @h-header-height - 24;
+  * {
+    color: #FFFFFF;
+  }
+  .hl {
+    float: left;
+    .nav {
+      float: left;
+    }
+    .title {
+      float: left;
+      line-height: @h-header-height - 24;
+      padding: 0 0 0 10px;
+      font-weight: @base-font-weight-normal;
+      span {
+        color: @h-header-color-blue;
+      }
+    }
+  }
+  .hr {
+    float: right;
+    .nav{
+      padding: 10px 0;
+      ul{
+        li{
+          float: left;
+          border-left: 1px solid #383d49;
+          a{
+            padding: 0 10px;
+            line-height: 16px;
+            display: block;
+            font-size: 14px;
+            .fa{
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
+/* ** End Header ** */

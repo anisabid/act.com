@@ -108,9 +108,138 @@ table td {
 a img {
   border: 0;
 }
+ul,
+ol {
+  list-style: none;
+}
 :focus {
   outline: 0;
 }
-.body {
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+.clearfix {
+  zoom: 1;
+}
+/** Header
+ ************************************************** */
+#page-header {
+  height: 36px;
+  background: #272b35;
+  padding: 12px 20px;
+  line-height: 36px;
+}
+#page-header * {
+  color: #FFFFFF;
+}
+#page-header .hl {
+  float: left;
+}
+#page-header .hl .nav {
+  float: left;
+}
+#page-header .hl .title {
+  float: left;
+  line-height: 36px;
+  padding: 0 0 0 10px;
+  font-weight: 400;
+}
+#page-header .hl .title span {
+  color: #009fe3;
+}
+#page-header .hr {
+  float: right;
+}
+#page-header .hr .nav {
+  padding: 10px 0;
+}
+#page-header .hr .nav ul li {
+  float: left;
+  border-left: 1px solid #383d49;
+}
+#page-header .hr .nav ul li a {
+  padding: 0 10px;
+  line-height: 16px;
+  display: block;
+  font-size: 14px;
+}
+#page-header .hr .nav ul li a .fa {
+  margin-left: 5px;
+}
+/* ** End Header ** */
+/** Campaign
+ ************************************************** */
+.campaign-item {
+  float: left;
+}
+.campaign {
+  margin: 5px;
+  border-left-width: 5px;
+  border-style: solid;
+  border-color: #333333;
+}
+.status-standby.campaign,
+.status-standby .campaign {
+  border-color: #333333;
+}
+.status-progress.campaign,
+.status-progress .campaign {
+  border-color: #f7ca18;
+}
+.status-ok.campaign,
+.status-ok .campaign {
+  border-color: #2bb38a;
+}
+.status-ko.campaign,
+.status-ko .campaign {
+  border-color: #e34b51;
+}
+.campaign .container {
+  border: 1px solid #dcdfe3;
+  border-left: 0;
+  width: 264px;
+  height: 144px;
+  overflow: hidden;
+}
+body {
   color: #303133;
+  background: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+body a {
+  text-decoration: none;
+  display: block;
+}
+body a:hover,
+body a:active {
+  text-decoration: none;
+}
+body .page-container {
+  padding: 15px;
 }

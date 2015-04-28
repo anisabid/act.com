@@ -1,13 +1,23 @@
-@import "import/reset.less";
-@import "import/variables.less";
-
+@import "import/reset";
+@import "import/variables";
+@import "import/util";
 
 @import "import/include/header";
+@import "import/include/campagne";
 
-.body{
+body {
   color: @base-color-master;
   background: #FFFFFF;
   font-family: @base-font-family;
   font-weight: @base-font-weight-light;
-  //
+  a {
+    text-decoration: none;
+    display: block;
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+  .page-container{
+    padding: 15px;
+  }
 }
