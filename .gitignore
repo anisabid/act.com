@@ -32,3 +32,4 @@ node_modules
 
 app/assets/css/*
 app/assets/js/*
+app/assets/bower_components/

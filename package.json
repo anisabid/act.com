@@ -4,6 +4,8 @@
   "description": "Application pour les campagnes de test",
   "main": "app.js",
   "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server -a localhost -p 8888 -c-1"
   },
@@ -21,6 +23,7 @@
   },
   "homepage": "https://github.com/anisabid/act.com",
   "devDependencies": {
+    "bower": "^1.4.1",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
     "gulp-less": "^3.0.3",
