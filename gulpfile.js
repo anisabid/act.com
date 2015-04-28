@@ -27,7 +27,9 @@ var options = {
 gulp.task('styles', function() {
     // place code for your default task here
     gulp.src('./src/less/style.less') //path to your main less file
-        .pipe(less())
+        .pipe(less(
+            paths: [ path.join(__dirname, 'less', 'includes') ]
+        ))
         .pipe(gulp.dest(options.path.dist.css)); // your output folder
 });
 
