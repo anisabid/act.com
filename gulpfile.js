@@ -1,20 +1,32 @@
-"use strict";
+'use strict';
 
 var gulp = require('gulp');
-var less = require('gulp-less');
-var path = require('path');
+var gutil = require('gulp-util');
+var wrench = require('wrench');
 
+var options = {
+  src: 'src',
+  dist: 'dist',
+  tmp: '.tmp',
+  e2e: 'e2e',
+  errorHandler: function(title) {
+    return function(err) {
+      gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
+      this.emit('end');
+    };
+  },
+  wiredep: {
+    directory: 'bower_components',
+    exclude: [/bootstrap\.js/, /bootstrap\.css/]
+  }
+};
 
-gulp.task('less', function() {
-    // place code for your default task here
-    gulp.src('./src/**/*.less') //path to your main less file
-        .pipe(less({
-            paths: [ path.join(__dirname, 'less', 'includes') ]
-        }))
-        .pipe(gulp.dest('assets/css/')); // your output folder
+wrench.readdirSyncRecursive('./gulp').filter(function(file) {
+  return (/\.(js|coffee)$/i).test(file);
+}).map(function(file) {
+  require('./gulp/' + file)(options);
 });
 
-gulp.task('build', ['less'], function() {
-    // place code for your default task here
-    console.log("Build Ok");
+gulp.task('default', ['clean'], function () {
+    gulp.start('build');
 });
