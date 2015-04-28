@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "homepage": "https://github.com/anisabid/act.com.git",
   "private": true,
-  "authors":  "Anis ABID",
+  "authors": "Anis ABID",
   "dependencies": {
     "jquery": "~2.1.1",
     "bootstrap": "~3.1.1",
@@ -15,5 +15,8 @@
     "angular-resource": "1.3.x",
     "angular-animate": "1.3.x",
     "font-awesome": "^4.3.0"
+  },
+  "devDependencies": {
+    "jquery-circle-progress": "~1.1.2"
   }
 }

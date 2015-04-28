@@ -6,7 +6,8 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
-    <link href="assets/dist/css/style.css" rel="stylesheet type=" text/css">
+    <link href="assets/dist/css/style.css" rel="stylesheet type=" text
+    /css">
 </head>
 <body>
 
@@ -23,7 +24,7 @@
                 <ul class="clearfix">
                     <li class="alert"><a href="" class="fa fa-plus"></a></li>
                     <li class="alert"><a href="" class="fa fa-bell-o"></a></li>
-                    <li class="user"><a href="">Alexandre Bury<i class="fa fa-angle-down"></i></a> </li>
+                    <li class="user"><a href="">Alexandre Bury<i class="fa fa-angle-down"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -34,7 +35,9 @@
             <li class="campaign-item">
                 <div class="campaign">
                     <div class="container">
-
+                        <div id="circle" class="circle">
+                            <strong class="val"></strong>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -76,6 +79,21 @@
         </ul>
     </section>
 </div>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="assets/bower_components/jquery-circle-progress/dist/circle-progress.js"></script>
+<script>
+    $('#circle').circleProgress({
+        val: [
+            {p: 10,c:"#0681c4"},
+            {p: 50,c:"#4ac5f8"},
+            {p: 40,c:"#ff0000"}
+        ],
+        value: 0.99,
+        lineCap: 'round',
+        fill: {gradient: [['#0681c4', .5], ['#4ac5f8', .5], ['#4ac5f8', .8], ['#ff0000', .8]], gradientAngle: Math.PI / 4}
+    }).on('circle-animation-progress', function (event, progress, stepValue) {
+        $(this).find('strong').text(String(stepValue.toFixed(2)).substr(1));
+    });
+</script>
 </body>
 </html>
