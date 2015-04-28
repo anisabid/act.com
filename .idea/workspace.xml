@@ -2,7 +2,431 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7907075d-8804-4a25-9595-fa26bae54b0f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/media/Modernizr 2 Logo.ai" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/media/Modernizr 2 Logo.eps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/media/Modernizr 2 Logo.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/media/Modernizr 2 Logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/Windsong-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/Windsong-webfont.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/Windsong-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/Windsong-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/alpha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/angular.min.js.gzip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/apng_test.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/before-after.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/green5x5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/mathml_ref.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/png_alpha_result.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/red30x30.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/ruby.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/stroked-text.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/svg-html-blur.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/svg_blur.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/table.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/text-shadow1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/text-shadow2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/windsong_font.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-animate/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-mocks/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-resource/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-route/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.bowerrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/data/Data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/MIT-LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/media/Modernizr 2 Logo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-animate/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-mocks/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-resource/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-route/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/test-infra/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/effects/Tween.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/Windsong-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_animated.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/manipulation/_evalUrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_fixed-width.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_icons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_larger.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_path.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_stacked.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/a-download.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/data/accepts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/core/access.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/addGetHookIf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/affix.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/event/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/alerts.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/event/alias.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/exports/amd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-animate/angular-animate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-animate/angular-animate.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-animate/angular-animate.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/angular-csp.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-mocks/angular-mocks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-resource/angular-resource.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-resource/angular-resource.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-resource/angular-resource.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-route/angular-route.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-route/angular-route.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-route/angular-route.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/angular.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/angular.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/animated.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/effects/animatedSelector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/arr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/attributes/attr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/attributes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/audio-audiodata-api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/audio-webaudio-api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/badges.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/basic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/basic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/battery-api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/battery-level.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/blob-constructor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/css/bootstrap-theme.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/bootstrap.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/bordered-pulled.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-animate/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-mocks/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-resource/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-route/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/breadcrumbs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/grunt/bs-glyphicons-data-generator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/grunt/bs-lessdoc-parser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/grunt/bs-raw-files-generator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/button-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/callbacks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/canvas-todataurl-type.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/carousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/carousel.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/class2type.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/attributes/classes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/close.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/code.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/collapse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/component-animations.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/concat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/contenteditable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/contentsecuritypolicy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/contextmenu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/cookies.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/core.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/cors.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-backgroundposition-shorthand.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-backgroundposition-xy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-backgroundrepeat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-backgroundsizecover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-boxsizing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-calc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-cubicbezierrange.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-displayrunin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-displaytable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-filters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-hyphens.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-lastchild.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-mask.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-mediaqueries.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-objectfit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-overflow-scrolling.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-pointerevents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-positionsticky.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-regions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-remunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-resize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-scrollbars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-shapes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-subpixelfont.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-supports.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-userselect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-vhunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-vmaxunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-vminunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/css-vwunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/var/cssExpand.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/curCSS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/custom-protocol-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/dart.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/data/var/data_priv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/data/var/data_user.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/dataview-api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/defaultDisplay.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/deferred.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/queue/delay.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/deprecated.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/lib/detect-global.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/dimensions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/dom-classlist.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/dom-createElement-attrs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/dom-dataset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/dom-microdata.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/dropdowns.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/dumpdata.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/effects.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/elem-datalist.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/elem-details.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/elem-output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/elem-progress-meter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/elem-ruby.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/elem-time.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/elem-track.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/emoji.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/es5-strictmode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/event-deviceorientation-motion.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/exif-orientation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/file-api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/file-filesystem.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/traversing/findFilter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/fixed-width.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/css/font-awesome.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/font-awesome.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/scss/font-awesome.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/form_validation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/forms-fileinput.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/forms-formattribute.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/forms-inputnumber-l10n.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/forms-placeholder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/forms-speechinput.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/forms-validation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/forms.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/fullscreen-api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/ga.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/gamepad.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/var/getStyles.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/getusermedia.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/exports/global.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/glyphicons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/grid.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/grunt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/hasOwn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/hashchange.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/less/import/include/header.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/hiddenVisibleSelectors.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/icons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/ie8compat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/iframe-sandbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/iframe-seamless.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/iframe-srcdoc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/img-apng.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/img-webp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/dist/css/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/dist/js/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-animate/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-resource/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-route/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/indexOf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/core/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/input-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/intro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/var/isHidden.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/lib/jquery-1.7b2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/dist/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/dist/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/dist/jquery.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/json.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax/jsonp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/lib/jsonselect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/jumbotron.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/labels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/larger.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/list-group.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/list.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/lists-reversed.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax/load.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/manipulation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/mathml.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/mathml.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/media.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/modals.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/modernizr-1.7.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/modernizr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/navs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/network-connection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/network-eventsource.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/network-xhr2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-mocks/ngAnimateMock.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-mocks/ngMock.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-mocks/ngMockE2E.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax/var/nonce.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/normalize.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/notification.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/test-infra/npm-shrinkwrap.canonical.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/offset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/outro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-animate/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-mocks/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-resource/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/angular-route/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/pager.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/pagination.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/panels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/core/parseHTML.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax/parseJSON.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax/parseXML.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/path.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/performance.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/pnum.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/pointerlock-api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/lib/polyfills.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/popover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/popovers.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/print.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/progress-bars.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/attributes/prop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/push.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/pushstate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/queue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/qunit/qunit.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/qunit/qunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/quota-management-api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/manipulation/var/rcheckableType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/core/ready.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/requestanimationframe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/test-infra/requirements.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/responsive-utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/var/rmargin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/traversing/var/rneedsContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/rnotwhite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/var/rnumnonpx.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/rotated-flipped.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax/var/rquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/core/var/rsingleTag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/qunit/run-qunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/test-infra/s3_cache.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/test-infra/sauce_browsers.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/scaffolding.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/script-async.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/script-defer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/selector-native.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/selector-sizzle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/serialize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/setup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/grunt/shrinkwrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/sizzle/dist/sizzle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/sizzle/dist/sizzle.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/sizzle/dist/sizzle.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/slice.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/stacked.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/strundefined.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/style-scoped.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/dist/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/attributes/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/event/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/manipulation/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/svg-filters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/svg-img.svg.1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/svg-img.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/css/swap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/tables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/theme.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/thumbnails.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/var/toString.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/tooltip.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/js/transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/traversing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/type.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/lib/uaparser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/test-infra/uncached-npm-install.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/unicode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/unit-caniuse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/js/unit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/url-data-uri.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/userdata.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/attributes/val.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/font-awesome/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/vibration.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/web-intents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/webgl-extensions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/websockets-binary.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/bootstrap/less/wells.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/window-framed.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/workers-blobworkers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/workers-dataworkers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/feature-detects/workers-sharedworkers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/wrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/jquery/src/ajax/xhr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/bower_components/modernizr/test/caniuse_files/xhtml.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
@@ -35,8 +459,8 @@
       <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0540543" vertical-offset="170" max-vertical-offset="952">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+            <state vertical-scroll-proportion="-3.6756756" vertical-offset="170" max-vertical-offset="952">
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -45,18 +469,38 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384" vertical-offset="153" max-vertical-offset="612">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="595">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41928253" vertical-offset="119" max-vertical-offset="646">
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="119" max-vertical-offset="646">
               <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".bowerrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.bowerrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="187">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9038031" vertical-offset="174" max-vertical-offset="680">
+              <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -102,7 +546,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/less/reset.less" />
         <option value="$PROJECT_DIR$/src/less/import/reset.less" />
         <option value="$PROJECT_DIR$/src/less/import/include/header.less" />
@@ -113,6 +556,7 @@
         <option value="$PROJECT_DIR$/.bowerrc" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -232,6 +676,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Personal_Unsaved\tools\wamp\www\act.com\app\assets\dist" />
       <recent name="C:\Personal_Unsaved\tools\wamp\www\act.com\src\less\import" />
     </key>
   </component>
@@ -401,18 +846,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/css/style.css">
+    <entry file="file://$PROJECT_DIR$/app/assets/dist/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7838983" vertical-offset="1602" max-vertical-offset="2074">
           <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7718121" vertical-offset="216" max-vertical-offset="663">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -441,14 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0540543" vertical-offset="170" max-vertical-offset="952">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30493274" vertical-offset="0" max-vertical-offset="446">
@@ -457,26 +886,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="119" max-vertical-offset="646">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.bowerrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19058296" vertical-offset="0" max-vertical-offset="446">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="187">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6756756" vertical-offset="170" max-vertical-offset="952">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="153" max-vertical-offset="612">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="595">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41928253" vertical-offset="119" max-vertical-offset="646">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.9038031" vertical-offset="174" max-vertical-offset="680">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
           <folding />
         </state>
       </provider>
