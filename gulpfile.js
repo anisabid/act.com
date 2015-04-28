@@ -9,13 +9,13 @@ function isOnlyChange(event) {
 }
 
 var options = {
-    path : {
-        src:{
+    path: {
+        src: {
             dir: "src/",
             less: "src/**/*.less",
             js: "src/**/*.js"
         },
-        dist:{
+        dist: {
             dir: "app/assets/",
             css: "app/assets/css/",
             js: "app/assets/js/"
@@ -24,20 +24,23 @@ var options = {
     }
 };
 
-gulp.task('styles', function() {
+gulp.task('styles', function () {
     // place code for your default task here
     gulp.src('./src/less/style.less') //path to your main less file
         .pipe(less(
-            paths: [ path.join(__dirname, 'less', 'includes') ]
-        ))
-        .pipe(gulp.dest(options.path.dist.css)); // your output folder
+            paths
+    :
+    [path.join(__dirname, 'less', 'includes')]
+    ))
+    .
+    pipe(gulp.dest(options.path.dist.css)); // your output folder
 });
 
 gulp.task('watch', function () {
     gulp.watch([
         options.path.src.less
-    ], function(event) {
-        if(isOnlyChange(event)) {
+    ], function (event) {
+        if (isOnlyChange(event)) {
             gulp.start('styles');
         } else {
             gulp.start('inject');
@@ -45,7 +48,7 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('build', ['styles'], function() {
+gulp.task('build', ['styles'], function () {
     // place code for your default task here
     console.log("Build Ok");
 });
