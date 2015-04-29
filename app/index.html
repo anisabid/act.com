@@ -35,8 +35,7 @@
             <li class="campaign-item">
                 <div class="campaign">
                     <div class="container">
-                        <div id="circle" class="circle">
-                            <strong class="val"></strong>
+                        <div id="circle-1" class="circle" data-arcs="0.1,0.1,0.7,0.1">
                         </div>
                     </div>
                 </div>
@@ -44,56 +43,114 @@
             <li class="campaign-item status-ko">
                 <div class="campaign">
                     <div class="container">
-
+                        <div id="circle-1" class="circle" data-arcs="0.1,0.1,0.7,0.1">
+                        </div>
                     </div>
                 </div>
             </li>
             <li class="campaign-item status-ok">
                 <div class="campaign">
                     <div class="container">
-
+                        <div id="circle-2" class="circle" data-arcs="0.2,0.5,0.2,0.1">
+                        </div>
                     </div>
                 </div>
             </li>
             <li class="campaign-item status-progress">
                 <div class="campaign">
                     <div class="container">
-
+                        <div id="circle-3" class="circle" data-arcs="0.1,0.1,0.7,0.1">
+                        </div>
                     </div>
                 </div>
             </li>
             <li class="campaign-item status-ok">
                 <div class="campaign">
                     <div class="container">
-
+                        <div id="circle-4" class="circle" data-arcs="0.2,0.5,0.2,0.1">
+                        </div>
                     </div>
                 </div>
             </li>
             <li class="campaign-item status-progress">
                 <div class="campaign">
                     <div class="container">
-
+                        <div id="circle-5" class="circle" data-arcs="0.1,0.1,0.7,0.1">
+                        </div>
                     </div>
                 </div>
             </li>
+            <!--<li class="campaign-item status-progress">
+                <div class="campaign">
+                    <div class="container">
+                        <div id="circle-6" class="circle" data-arcs='[{"status": "standby","val": 0.1},{"status": "progress","val": 0.1{"status": "ok","val": 0.6},{"status": "ko","val": 0.2}]'>
+                        </div>
+                    </div>
+                </div>
+            </li>-->
         </ul>
     </section>
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="assets/bower_components/jquery-circle-progress/dist/circle-progress.js"></script>
+
+<script src="assets/bower_components/d3/d3.min.js"></script>
+
 <script>
-    $('#circle').circleProgress({
-        val: [
-            {p: 10,c:"#0681c4"},
-            {p: 50,c:"#4ac5f8"},
-            {p: 40,c:"#ff0000"}
-        ],
-        value: 0.99,
-        lineCap: 'round',
-        fill: {gradient: [['#0681c4', .5], ['#4ac5f8', .5], ['#4ac5f8', .8], ['#ff0000', .8]], gradientAngle: Math.PI / 4}
-    }).on('circle-animation-progress', function (event, progress, stepValue) {
-        $(this).find('strong').text(String(stepValue.toFixed(2)).substr(1));
+    var width = 100,
+            height = 100,
+            outerRadius = Math.min(width, height) * .5 - 10,
+            innerRadius = outerRadius * .85;
+
+    var n = 4,
+            data = [0.2, 0.5, 0.2, 0.1];
+
+    var color = ['#333333', '#f7ca18', '#2bb38a', '#e34b51'];
+
+    var arc = d3.svg.arc();
+
+    var pie = d3.layout.pie()
+            .sort(null);
+
+    d3.selectAll(".circle").each(function(d, i) {
+        d3.select(this).style('color', '#c33');
+        //console.log(d3.select(this).attr('data-arcs').split(',')[0])
+
+        var data = d3.select(this).attr('data-arcs').split(',');
+
+        var svg = d3.select(this).append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+
+        svg.selectAll(".arc")
+            //.data(arcs(data))
+                .data(arcs(data))
+                .enter().append("g")
+                .attr("class", "arc")
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+                .append("path")
+                .attr("fill", function (d, i) {
+                    return color[i];
+                })
+                .attr("d", arc);
+
     });
+
+    //transition();
+
+    function arcs(data) {
+        var arcs = pie(data),
+                i = -1,
+                arc;
+        while (++i < n) {
+            arc = arcs[i];
+            arc.innerRadius = innerRadius;
+            arc.outerRadius = outerRadius;
+        }
+        return arcs;
+    }
+
+
+    //});
 </script>
 </body>
 </html>
