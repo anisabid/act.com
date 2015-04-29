@@ -117,6 +117,11 @@ ol {
 }
 /* `Clear Floated Elements
 ----------------------------------------------------------------------------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 /* http://sonspring.com/journal/clearing-floats */
 .clear {
   clear: both;
@@ -149,7 +154,7 @@ ol {
 /** Header
  ************************************************** */
 #page-header {
-  height: 36px;
+  height: 60px;
   background: #272b35;
   padding: 12px 20px;
   line-height: 36px;
@@ -225,23 +230,102 @@ ol {
   width: 264px;
   height: 144px;
   overflow: hidden;
-}
-.campaign .container .circle {
-  width: 100px;
-  margin: 6px 6px 20px;
-  display: inline-block;
   position: relative;
-  text-align: center;
-  line-height: 1.2;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303133;
 }
-.campaign .container .circle .val {
+.campaign .container .nav.category {
   position: absolute;
-  top: 30px;
-  left: 0;
-  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-top: 1px solid #dcdfe3;
+}
+.campaign .container .nav.category ul li {
+  float: left;
+  width: 50%;
+  line-height: 13px;
   text-align: center;
-  line-height: 40px;
-  font-size: 30px;
+  font-size: 10px;
+  color: #939599;
+  border-right: 1px solid #dcdfe3;
+}
+.campaign .container .nav.category ul li a {
+  color: #939599;
+}
+.campaign .container .nav.category ul li:last-child {
+  border-right: 0;
+}
+.campaign .container .view-a {
+  padding-left: 10px;
+}
+.campaign .container .view-a .title {
+  font-size: 14px;
+  padding-top: 10px;
+}
+.campaign .container .view-a .aside {
+  font-size: 10px;
+  color: #cccccc;
+}
+.campaign .container .view-a .aside .v {
+  color: #939599;
+}
+.campaign .container .view-a .indicators {
+  margin-top: 5px;
+}
+.campaign .container .view-a .indicators .left,
+.campaign .container .view-a .indicators .right {
+  float: left;
+}
+.campaign .container .view-a .indicators .left {
+  width: 135px;
+}
+.campaign .container .view-a .indicators .right {
+  width: 118px;
+}
+.campaign .container .view-a .indicators .right .graph.circle {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+}
+.campaign .container .view-a .indicators .title {
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  line-height: 12px;
+}
+.campaign .container .indicator.line .items .item {
+  float: left;
+  text-align: center;
+  border-top-width: 5px;
+  border-top-style: solid;
+  font-size: 12px;
+  line-height: 15px;
+}
+.campaign .container .indicator.line .items .item.standby {
+  border-top-color: #333333;
+}
+.campaign .container .indicator.line .items .item.progress {
+  border-top-color: #f7ca18;
+}
+.campaign .container .indicator.line .items .item.ok {
+  border-top-color: #2bb38a;
+}
+.campaign .container .indicator.line .items .item.ko {
+  border-top-color: #e34b51;
+}
+.campaign .container .indicator.line .items.one .item {
+  width: 33%;
+}
+.campaign .container .indicator.line .items.two .item {
+  width: 50%;
+}
+.campaign .container .indicator.line .items.three .item {
+  width: 33%;
+}
+.campaign .container .indicator.line .items.four .item {
+  width: 25%;
 }
 body {
   color: #303133;

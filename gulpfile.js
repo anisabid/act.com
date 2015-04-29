@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
+var concat = require('gulp-concat');
 
 function isOnlyChange(event) {
     return event.type === 'changed';
@@ -33,11 +34,19 @@ gulp.task('styles', function() {
         .pipe(gulp.dest(options.path.dist.css));
 });
 
+gulp.task('javascript', function() {
+    return gulp.src(options.path.src.js)
+        .pipe(concat('script.js'))
+        .pipe(gulp.dest(options.path.dist.js));
+});
+
 gulp.task('watch', function () {
     gulp.watch([
-        options.path.src.less
+        options.path.src.less,
+        options.path.src.js,
     ], function(event) {
         if(isOnlyChange(event)) {
+            gulp.start('javascript');
             gulp.start('styles');
         } else {
             gulp.start('inject');
@@ -45,7 +54,7 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('build', ['styles'], function() {
+gulp.task('build', ['styles', 'javascript'], function() {
     // place code for your default task here
     console.log("Build Ok");
 });

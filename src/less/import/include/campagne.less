@@ -6,6 +6,8 @@
 @c-color-gris: #dcdfe3;
 @c-width: 264px;
 @c-height: 144px;
+@c-indicators-left-width: 135px;
+@c-indicators-right-width: @c-width - @c-indicators-left-width - 11;
 
 
 /** Campaign
@@ -37,21 +39,111 @@
     width: @c-width;
     height: @c-height;
     overflow: hidden;
-    .circle{
-      width: 100px;
-      margin: 6px 6px 20px;
-      display: inline-block;
-      position: relative;
-      text-align: center;
-      line-height: 1.2;
-      .val {
-        position: absolute;
-        top: 30px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        line-height: 40px;
-        font-size: 30px;
+    position: relative;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: @base-font-weight-light;
+    color: @base-color-master;
+
+    .nav.category{
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      border-top:1px solid @c-color-gris;
+      ul{
+        li{
+          float: left;
+          width: 50%;
+          line-height: 13px;
+          text-align: center;
+          font-size: 10px;
+          color: @base-color-master-light;
+          border-right: 1px solid @c-color-gris;
+          a{
+            color: @base-color-master-light;
+          }
+          &:last-child{
+            border-right: 0;
+          }
+        }
+      }
+    }
+    .view-a {
+      padding-left: 10px;
+      .title {
+        font-size: 14px;
+        padding-top: 10px;
+      }
+      .aside {
+        font-size: 10px;
+        color: @base-color-master-lighter;
+        .v {
+          color: @base-color-master-light;
+
+        }
+      }
+      .indicators{
+        margin-top: 5px;
+        .left,
+        .right{
+          float: left;
+        }
+        .left{
+          width: @c-indicators-left-width;
+        }
+        .right{
+          width: @c-indicators-right-width;
+          .graph.circle{
+            width: 70px;
+            height: 70px;
+            margin: 0 auto;
+          }
+        }
+        .title{
+          font-size: 10px;
+          margin: 0;
+          padding: 0;
+          line-height: 12px;
+        }
+      }
+    }
+
+    .indicator.line{
+      .items{
+        .item{
+          float: left;
+          text-align: center;
+          border-top-width: 5px;
+          border-top-style: solid;
+          font-size: 12px;
+          line-height: 15px;
+          &.standby{
+            border-top-color: @base-color-status-standby;
+          }
+          &.progress{
+            border-top-color: @base-color-status-progress;
+          }
+          &.ok{
+            border-top-color: @base-color-status-ok;
+          }
+          &.ko{
+            border-top-color: @base-color-status-ko;
+          }
+
+        }
+        &.one .item{
+          width: 33%;
+        }
+        &.two .item{
+          width: 50%;
+        }
+        &.three .item{
+          width: 33%;
+        }
+        &.four .item{
+          width: 25%;
+        }
       }
     }
 
