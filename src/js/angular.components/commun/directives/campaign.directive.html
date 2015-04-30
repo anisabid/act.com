@@ -1,7 +1,7 @@
 <div class="campaign-item {{campaign.parameters.status}}">
     <div class="campaign">
         <div class="container">
-            <section class="view-a">
+            <section class="view-global">
                 <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
                 <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span>
                 </aside>
@@ -25,11 +25,60 @@
                         </div>
                     </div>
                     <div class="right">
-                        <am-chart-circle class="graph d3js circle" parameters="campaign.parameters.json"></am-chart-circle>
+                        <am-chart-circle class="graph d3js circle"
+                                         parameters="campaign.parameters.json"
+                                         width="70"
+                                         height="70"></am-chart-circle>
+                    </div>
+                </div>
+            </section>
+            <section class="view-requirements clearfix">
+
+                <div class="left">
+                    <div class="left">
+                        <div class="indicator line scenarios clearfix">
+                            <div class="title">Sénarios</div>
+                            <am-chart-circle class="graph d3js circle"
+                                             parameters="campaign.parameters.json"
+                                             width="30"
+                                             height="30"></am-chart-circle>
+                            <ul class="items three clearfix">
+                                <li class="item progress"><span>--</span>11</li>
+                                <li class="item ok"><span>KO</span>11</li>
+                                <li class="item ko"><span>OK</span>11</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right">
+
+                    </div>
+                </div>
+
+
+                <div class="right">
+                    <div class="left">
+                        <div class="indicator line scenarios clearfix">
+                            <div class="title">Sénarios</div>
+                            <am-chart-circle class="graph d3js circle"
+                                             parameters="campaign.parameters.json"
+                                             width="30"
+                                             height="30"></am-chart-circle>
+                            <ul class="items three clearfix">
+                                <li class="item progress"><span>--</span>11</li>
+                                <li class="item ok"><span>KO</span>11</li>
+                                <li class="item ko"><span>OK</span>11</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right">
+
                     </div>
                 </div>
 
             </section>
+            <!--<section class="view-scenarios">
+
+            </section>-->
             <nav class="nav category">
                 <ul>
                     <li><a href="">exigences</a></li>

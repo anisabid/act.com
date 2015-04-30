@@ -240,7 +240,6 @@ ol {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  border-top: 1px solid #dcdfe3;
 }
 .campaign .container .nav.category ul li {
   float: left;
@@ -250,6 +249,7 @@ ol {
   font-size: 10px;
   color: #939599;
   border-right: 1px solid #dcdfe3;
+  border-top: 1px solid #dcdfe3;
 }
 .campaign .container .nav.category ul li a {
   color: #939599;
@@ -257,43 +257,110 @@ ol {
 .campaign .container .nav.category ul li:last-child {
   border-right: 0;
 }
-.campaign .container .view-a {
+.campaign .container .view-global {
   padding-left: 10px;
 }
-.campaign .container .view-a .title {
+.campaign .container .view-global .title {
   font-size: 14px;
   padding-top: 10px;
 }
-.campaign .container .view-a .aside {
+.campaign .container .view-global .aside {
   font-size: 10px;
   color: #cccccc;
 }
-.campaign .container .view-a .aside .v {
+.campaign .container .view-global .aside .v {
   color: #939599;
 }
-.campaign .container .view-a .indicators {
+.campaign .container .view-global .indicators {
   margin-top: 5px;
 }
-.campaign .container .view-a .indicators .left,
-.campaign .container .view-a .indicators .right {
+.campaign .container .view-global .indicators .left,
+.campaign .container .view-global .indicators .right {
   float: left;
 }
-.campaign .container .view-a .indicators .left {
+.campaign .container .view-global .indicators .left {
   width: 135px;
 }
-.campaign .container .view-a .indicators .right {
+.campaign .container .view-global .indicators .right {
   width: 118px;
 }
-.campaign .container .view-a .indicators .right .graph.circle {
+.campaign .container .view-global .indicators .right .graph.circle {
   width: 70px;
   height: 70px;
   margin: 0 auto;
 }
-.campaign .container .view-a .indicators .title {
+.campaign .container .view-global .indicators .title {
   font-size: 10px;
   margin: 0;
   padding: 0;
   line-height: 12px;
+}
+.campaign .container .view-requirements,
+.campaign .container .view-scenarios {
+  position: absolute;
+  background-color: #FFFFFF;
+  bottom: 15px;
+  top: 46px;
+  left: 0px;
+  right: 0px;
+}
+.campaign .container .view-requirements .left,
+.campaign .container .view-scenarios .left,
+.campaign .container .view-requirements .right,
+.campaign .container .view-scenarios .right {
+  width: 50%;
+  padding: 5px 10px;
+  float: left;
+}
+.campaign .container .view-requirements .left .left,
+.campaign .container .view-scenarios .left .left,
+.campaign .container .view-requirements .right .left,
+.campaign .container .view-scenarios .right .left,
+.campaign .container .view-requirements .left .right,
+.campaign .container .view-scenarios .left .right,
+.campaign .container .view-requirements .right .right,
+.campaign .container .view-scenarios .right .right {
+  padding: 0;
+}
+.campaign .container .view-requirements .left .left,
+.campaign .container .view-scenarios .left .left,
+.campaign .container .view-requirements .right .left,
+.campaign .container .view-scenarios .right .left {
+  width: 60px;
+}
+.campaign .container .view-requirements .left .indicator.line .items .item,
+.campaign .container .view-scenarios .left .indicator.line .items .item,
+.campaign .container .view-requirements .right .indicator.line .items .item,
+.campaign .container .view-scenarios .right .indicator.line .items .item {
+  border: 0;
+  font-size: 10px;
+}
+.campaign .container .view-requirements .left .indicator.line .items .item span,
+.campaign .container .view-scenarios .left .indicator.line .items .item span,
+.campaign .container .view-requirements .right .indicator.line .items .item span,
+.campaign .container .view-scenarios .right .indicator.line .items .item span {
+  display: block;
+  line-height: 12px;
+  padding-top: 2px;
+  font-weight: 300;
+}
+.campaign .container .view-requirements .title,
+.campaign .container .view-scenarios .title {
+  font-size: 11px;
+  font-weight: 300;
+  color: #2bb38a;
+  text-align: center;
+}
+.campaign .container .view-requirements .graph.circle,
+.campaign .container .view-scenarios .graph.circle {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+}
+.campaign .container .view-requirements .graph.circle text,
+.campaign .container .view-scenarios .graph.circle text {
+  font-size: 9px;
 }
 .campaign .container .indicator.line .items .item {
   float: left;

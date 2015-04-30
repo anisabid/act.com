@@ -46,18 +46,18 @@ var Obj = {
       restrict: 'E',
       replace: true,
       scope: {
-        parameters: '='
+        parameters: '=',
+        options: '='
       },
       template: '<div></div>',
       link: function (scope, elem, attrs) {
 
         $timeout(function () {
-          // This is the easiest way to have default options.
           var settings = {
               // These are the defaults.
               backgroundColor: "white",
-              width: 70,
-              height: 70,
+              width: (attrs.width == undefined) ? 70 : attrs.width,
+              height: (attrs.height == undefined) ? 70 : attrs.height,
               json: scope.parameters
             },
             outerRadius = Math.min(settings.width, settings.height) * 0.5,
@@ -114,6 +114,7 @@ var Obj = {
     };
   }]);
 })(angular, d3, Obj);
+
 
 
 (function () {
@@ -205,10 +206,92 @@ var Obj = {
                 val: 0.1
               }
             ]
+          },{
+            status: 'status-ok',
+            json: [
+              {
+                status: 'standby',
+                val: 200
+              },
+              {
+                status: 'progress',
+                val: 20
+              },
+              {
+                status: 'ok',
+                val: 30
+              },
+              {
+                status: 'ko',
+                val: 10
+              }
+            ]
+          },
+          {
+            status: 'status-ko',
+            json: [
+              {
+                status: 'standby',
+                val: 0.4
+              },
+              {
+                status: 'progress',
+                val: 0.2
+              },
+              {
+                status: 'ok',
+                val: 0.3
+              },
+              {
+                status: 'ko',
+                val: 0.1
+              }
+            ]
+          },
+          {
+            status: 'status-ok',
+            json: [
+              {
+                status: 'standby',
+                val: 0.1
+              },
+              {
+                status: 'progress',
+                val: 0.5
+              },
+              {
+                status: 'ok',
+                val: 0.15
+              },
+              {
+                status: 'ko',
+                val: 0.25
+              }
+            ]
+          },
+          {
+            status: 'status-ko',
+            json: [
+              {
+                status: 'standby',
+                val: 0.4
+              },
+              {
+                status: 'progress',
+                val: 0.2
+              },
+              {
+                status: 'ok',
+                val: 0.3
+              },
+              {
+                status: 'ko',
+                val: 0.1
+              }
+            ]
           }]
       };
     }]);
 })();
-
 
 

@@ -6,18 +6,18 @@
       restrict: 'E',
       replace: true,
       scope: {
-        parameters: '='
+        parameters: '=',
+        options: '='
       },
       template: '<div></div>',
       link: function (scope, elem, attrs) {
 
         $timeout(function () {
-          // This is the easiest way to have default options.
           var settings = {
               // These are the defaults.
               backgroundColor: "white",
-              width: 70,
-              height: 70,
+              width: (attrs.width == undefined) ? 70 : attrs.width,
+              height: (attrs.height == undefined) ? 70 : attrs.height,
               json: scope.parameters
             },
             outerRadius = Math.min(settings.width, settings.height) * 0.5,
