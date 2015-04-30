@@ -30,13 +30,12 @@
     </section>
 
     <section id="page-container" class="page-container">
-        <ul class="campaign-list clearfix">
-            <am-campaign ng-repeat="source in dashboard.sources" index="{{$index}}" parameters="source"></am-campaign>
-        </ul>
+        <div class="campaign-list clearfix">
+            <am-campaign ng-repeat="source in dashboard.sources" parameters="source"></am-campaign>
+        </div>
     </section>
 </div>
 
-<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="assets/bower_components/angular/angular.min.js"></script>
 <script src="assets/bower_components/d3/d3.min.js"></script>
 <script src="assets/dist/js/script.js"></script>

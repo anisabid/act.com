@@ -1,4 +1,4 @@
-<li class="campaign-item {{campaign.parameters.status}}">
+<div class="campaign-item {{campaign.parameters.status}}">
     <div class="campaign">
         <div class="container">
             <section class="view-a">
@@ -25,9 +25,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <div id="{{campaign.id}}" class="graph d3js circle"
-                             data-json='[{"status": "standby","val": 0.4},{"status": "progress","val": 0.2},{"status": "ok","val": 0.3},{"status": "ko","val": 0.1}]'>
-                        </div>
+                        <am-chart-circle class="graph d3js circle" parameters="campaign.parameters.json"></am-chart-circle>
                     </div>
                 </div>
 
@@ -40,4 +38,4 @@
             </nav>
         </div>
     </div>
-</li>
+</div>
