@@ -116,19 +116,35 @@
           text-align: center;
           border-top-width: 5px;
           border-top-style: solid;
-          font-size: 12px;
+          font-size: 11px;
           line-height: 15px;
+          span{
+            color: @base-color-status-standby;
+            font-weight: @base-font-weight-normal;
+          }
           &.standby{
             border-top-color: @base-color-status-standby;
+            span{
+              color: @base-color-status-standby;
+            }
           }
           &.progress{
             border-top-color: @base-color-status-progress;
+            span{
+              color: @base-color-status-progress;
+            }
           }
           &.ok{
             border-top-color: @base-color-status-ok;
+            span{
+              color: @base-color-status-ok;
+            }
           }
           &.ko{
             border-top-color: @base-color-status-ko;
+            span{
+              color: @base-color-status-ko;
+            }
           }
 
         }

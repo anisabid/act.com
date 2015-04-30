@@ -1,0 +1,43 @@
+<li class="campaign-item {{campaign.parameters.status}}">
+    <div class="campaign">
+        <div class="container">
+            <section class="view-a">
+                <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
+                <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span>
+                </aside>
+                <div class="indicators clearfix">
+                    <div class="left">
+                        <div class="indicator line scenarios clearfix">
+                            <div class="title">Sénarios</div>
+                            <ul class="items three clearfix">
+                                <li class="item progress"><span>--</span>11</li>
+                                <li class="item ok"><span>KO</span>11</li>
+                                <li class="item ko"><span>OK</span>11</li>
+                            </ul>
+                        </div>
+                        <div class="indicator line requirements clearfix">
+                            <div class="title">éxigences</div>
+                            <ul class="items three clearfix">
+                                <li class="item progress"><span>--</span>11</li>
+                                <li class="item ok"><span>KO</span>11</li>
+                                <li class="item ko"><span>OK</span>11</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div id="{{campaign.id}}" class="graph d3js circle"
+                             data-json='[{"status": "standby","val": 0.4},{"status": "progress","val": 0.2},{"status": "ok","val": 0.3},{"status": "ko","val": 0.1}]'>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <nav class="nav category">
+                <ul>
+                    <li><a href="">exigences</a></li>
+                    <li><a href="">scénarios</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</li>

@@ -300,20 +300,36 @@ ol {
   text-align: center;
   border-top-width: 5px;
   border-top-style: solid;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 15px;
+}
+.campaign .container .indicator.line .items .item span {
+  color: #333333;
+  font-weight: 400;
 }
 .campaign .container .indicator.line .items .item.standby {
   border-top-color: #333333;
 }
+.campaign .container .indicator.line .items .item.standby span {
+  color: #333333;
+}
 .campaign .container .indicator.line .items .item.progress {
   border-top-color: #f7ca18;
+}
+.campaign .container .indicator.line .items .item.progress span {
+  color: #f7ca18;
 }
 .campaign .container .indicator.line .items .item.ok {
   border-top-color: #2bb38a;
 }
+.campaign .container .indicator.line .items .item.ok span {
+  color: #2bb38a;
+}
 .campaign .container .indicator.line .items .item.ko {
   border-top-color: #e34b51;
+}
+.campaign .container .indicator.line .items .item.ko span {
+  color: #e34b51;
 }
 .campaign .container .indicator.line .items.one .item {
   width: 33%;

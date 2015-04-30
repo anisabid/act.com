@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="actApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title>ACampagneTest</title>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
-    <link href="assets/dist/css/style.css" rel="stylesheet type=" text
-    /css">
+    <link href="assets/dist/css/style.css" rel="stylesheet type=" text/css">
 </head>
 <body>
 
-<div id="act" class="app">
+<div id="act" class="app" ng-controller="DashboardController">
     <section id="page-header" class="header page-header">
         <div class="hl">
             <div class="nav">
                 <a href="" class="fa fa-navicon"></a>
             </div>
-            <h1 class="title">A<span>Campagne</span>Test</h1>
+            <!-- <h1 class="title">A<span>Campagne</span>Test</h1> -->
         </div>
         <div class="hr">
             <nav class="nav">
@@ -32,304 +31,13 @@
 
     <section id="page-container" class="page-container">
         <ul class="campaign-list clearfix">
-            <li class="campaign-item">
-                <div class="campaign">
-                    <div class="container">
-                        <section class="view-a">
-                            <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                            <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span></aside>
-                            <div class="indicators clearfix">
-                                <div class="left">
-                                    <div class="indicator line scenarios clearfix">
-                                        <div class="title">Sénarios</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                    <div class="indicator line requirements clearfix">
-                                        <div class="title">éxigences</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <div id="circle-1" class="graph d3js circle"
-                                         data-json='[{"status": "standby","val": 0.4},{"status": "progress","val": 0.2},{"status": "ok","val": 0.3},{"status": "ko","val": 0.1}]'>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <nav class="nav category">
-                            <ul>
-                                <li><a href="">exigences</a></li>
-                                <li><a href="">scénarios</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </li>
-            <li class="campaign-item status-ko">
-                <div class="campaign">
-                    <div class="container">
-                        <section class="view-a">
-                            <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                            <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span></aside>
-                            <div class="indicators clearfix">
-                                <div class="left">
-                                    <div class="indicator line scenarios clearfix">
-                                        <div class="title">Sénarios</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                    <div class="indicator line requirements clearfix">
-                                        <div class="title">éxigences</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <div id="circle-1" class="graph d3js circle"
-                                         data-json='[{"status": "standby","val": 0.4},{"status": "progress","val": 0.2},{"status": "ok","val": 0.3},{"status": "ko","val": 0.1}]'>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <nav class="nav category">
-                            <ul>
-                                <li><a href="">exigences</a></li>
-                                <li><a href="">scénarios</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </li>
-            <li class="campaign-item status-ok">
-                <div class="campaign">
-                    <div class="container">
-                        <section class="view-a">
-                            <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                            <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span></aside>
-                            <div class="indicators clearfix">
-                                <div class="left">
-                                    <div class="indicator line scenarios clearfix">
-                                        <div class="title">Sénarios</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                    <div class="indicator line requirements clearfix">
-                                        <div class="title">éxigences</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <div id="circle-1" class="graph d3js circle"
-                                         data-json='[{"status": "standby","val": 0.4},{"status": "progress","val": 0.2},{"status": "ok","val": 0.3},{"status": "ko","val": 0.1}]'>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <nav class="nav category">
-                            <ul>
-                                <li><a href="">exigences</a></li>
-                                <li><a href="">scénarios</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </li>
-            <li class="campaign-item status-progress">
-                <div class="campaign">
-                    <div class="container">
-                        <section class="view-a">
-                            <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                            <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span></aside>
-                            <div class="indicators clearfix">
-                                <div class="left">
-                                    <div class="indicator line scenarios clearfix">
-                                        <div class="title">Sénarios</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                    <div class="indicator line requirements clearfix">
-                                        <div class="title">éxigences</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <div id="circle-1" class="graph d3js circle"
-                                         data-json='[{"status": "ok","val": 0.4},{"status": "ko","val": 0.1},{"status": "progress","val": 0.2},{"status": "standby","val": 0.3}]'>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <nav class="nav category">
-                            <ul>
-                                <li><a href="">exigences</a></li>
-                                <li><a href="">scénarios</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </li>
-            <li class="campaign-item status-ok">
-                <div class="campaign">
-                    <div class="container">
-                        <section class="view-a">
-                            <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                            <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span></aside>
-                            <div class="indicators clearfix">
-                                <div class="left">
-                                    <div class="indicator line scenarios clearfix">
-                                        <div class="title">Sénarios</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                    <div class="indicator line requirements clearfix">
-                                        <div class="title">éxigences</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <div id="circle-1" class="graph d3js circle"
-                                         data-json='[{"status": "standby","val": 0.4},{"status": "progress","val": 0.2},{"status": "ok","val": 0.3},{"status": "ko","val": 0.1}]'>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <nav class="nav category">
-                            <ul>
-                                <li><a href="">exigences</a></li>
-                                <li><a href="">scénarios</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </li>
-            <li class="campaign-item status-progress">
-                <div class="campaign">
-                    <div class="container">
-                        <section class="view-a">
-                            <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                            <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span></aside>
-                            <div class="indicators clearfix">
-                                <div class="left">
-                                    <div class="indicator line scenarios clearfix">
-                                        <div class="title">Sénarios</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                    <div class="indicator line requirements clearfix">
-                                        <div class="title">éxigences</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <div id="circle-1" class="graph d3js circle"
-                                         data-json='[{"status": "standby","val": 0.4},{"status": "progress","val": 0.2},{"status": "ok","val": 0.3},{"status": "ko","val": 0.1}]'>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <nav class="nav category">
-                            <ul>
-                                <li><a href="">exigences</a></li>
-                                <li><a href="">scénarios</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </li>
-            <li class="campaign-item status-progress">
-                <div class="campaign">
-                    <div class="container">
-                        <section class="view-a">
-                            <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                            <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span></aside>
-                            <div class="indicators clearfix">
-                                <div class="left">
-                                    <div class="indicator line scenarios clearfix">
-                                        <div class="title">Sénarios</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                    <div class="indicator line requirements clearfix">
-                                        <div class="title">éxigences</div>
-                                        <ul class="items three clearfix">
-                                            <li class="item progress"><span>--</span>11</li>
-                                            <li class="item ok"><span>KO</span>11</li>
-                                            <li class="item ko"><span>OK</span>11</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <div id="circle-1" class="graph d3js circle"
-                                         data-json='[{"status": "standby","val": 0.4},{"status": "progress","val": 0.2},{"status": "ok","val": 0.3},{"status": "ko","val": 0.1}]'>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <nav class="nav category">
-                            <ul>
-                                <li><a href="">exigences</a></li>
-                                <li><a href="">scénarios</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </li>
+            <am-campaign ng-repeat="source in dashboard.sources" index="{{$index}}" parameters="source"></am-campaign>
         </ul>
     </section>
 </div>
 
+<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/bower_components/angular/angular.min.js"></script>
 <script src="assets/bower_components/d3/d3.min.js"></script>
 <script src="assets/dist/js/script.js"></script>
 </body>
