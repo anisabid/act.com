@@ -7,22 +7,10 @@
                 </aside>
                 <div class="indicators clearfix">
                     <div class="left">
-                        <div class="indicator line scenarios clearfix">
-                            <div class="title">Sénarios</div>
-                            <ul class="items three clearfix">
-                                <li class="item progress"><span>--</span>11</li>
-                                <li class="item ok"><span>KO</span>11</li>
-                                <li class="item ko"><span>OK</span>11</li>
-                            </ul>
-                        </div>
-                        <div class="indicator line requirements clearfix">
-                            <div class="title">éxigences</div>
-                            <ul class="items three clearfix">
-                                <li class="item progress"><span>--</span>11</li>
-                                <li class="item ok"><span>KO</span>11</li>
-                                <li class="item ko"><span>OK</span>11</li>
-                            </ul>
-                        </div>
+                        <am-indicator title="Sénarios" class="scenarios" parameters="campaign.parameters.json"></am-indicator>
+
+                        <am-indicator title="éxigences" class="requirements" parameters="campaign.parameters.json"></am-indicator>
+
                     </div>
                     <div class="right">
                         <am-chart-circle class="graph d3js circle"
@@ -36,18 +24,7 @@
 
                 <div class="left">
                     <div class="left">
-                        <div class="indicator line scenarios clearfix">
-                            <div class="title">Sénarios</div>
-                            <am-chart-circle class="graph d3js circle"
-                                             parameters="campaign.parameters.json"
-                                             width="30"
-                                             height="30"></am-chart-circle>
-                            <ul class="items three clearfix">
-                                <li class="item progress"><span>--</span>11</li>
-                                <li class="item ok"><span>KO</span>11</li>
-                                <li class="item ko"><span>OK</span>11</li>
-                            </ul>
-                        </div>
+                        <am-indicator title="Sénarios" show="true" class="scenarios" parameters="campaign.parameters.json"></am-indicator>
                     </div>
                     <div class="right">
 
@@ -57,18 +34,7 @@
 
                 <div class="right">
                     <div class="left">
-                        <div class="indicator line scenarios clearfix">
-                            <div class="title">Sénarios</div>
-                            <am-chart-circle class="graph d3js circle"
-                                             parameters="campaign.parameters.json"
-                                             width="30"
-                                             height="30"></am-chart-circle>
-                            <ul class="items three clearfix">
-                                <li class="item progress"><span>--</span>11</li>
-                                <li class="item ok"><span>KO</span>11</li>
-                                <li class="item ko"><span>OK</span>11</li>
-                            </ul>
-                        </div>
+                        <am-indicator title="Sénarios" class="scenarios" show="true" parameters="campaign.parameters.json"></am-indicator>
                     </div>
                     <div class="right">
 

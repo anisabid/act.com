@@ -39,16 +39,22 @@
           var color = [],
             data = [],
             obj = {},
-            k,
+            length = 0,
+            key,
             json = settings.json,
             svg = d3js.select(elem[0]).append("svg")
               .attr("width", settings.width)
               .attr("height", settings.height);
 
-          for (k in json) {
-            color.push(Obj.color[json[k].status]);
-            data.push(json[k].val);
-            obj[json[k].status] = json[k].val;
+          var json = json[0];
+
+          for (key in json) {
+            if (json.hasOwnProperty(key)) {
+              color.push(Obj.color[key]);
+              data.push(json[key]);
+              obj[key] = json[key];
+              length++;
+            }
           }
 
           svg.append("text")
@@ -58,7 +64,7 @@
             .text((obj.ok * 100) + "%");
 
           svg.selectAll(".arc")
-            .data(drawArcs(data, json.length))
+            .data(drawArcs(data, length))
             .enter().append("g")
             .attr("class", "arc")
             .attr("transform", "translate(" + settings.width / 2 + "," + settings.height / 2 + ")")

@@ -79,16 +79,22 @@ var Obj = {
           var color = [],
             data = [],
             obj = {},
-            k,
+            length = 0,
+            key,
             json = settings.json,
             svg = d3js.select(elem[0]).append("svg")
               .attr("width", settings.width)
               .attr("height", settings.height);
 
-          for (k in json) {
-            color.push(Obj.color[json[k].status]);
-            data.push(json[k].val);
-            obj[json[k].status] = json[k].val;
+          var json = json[0];
+
+          for (key in json) {
+            if (json.hasOwnProperty(key)) {
+              color.push(Obj.color[key]);
+              data.push(json[key]);
+              obj[key] = json[key];
+              length++;
+            }
           }
 
           svg.append("text")
@@ -98,7 +104,7 @@ var Obj = {
             .text((obj.ok * 100) + "%");
 
           svg.selectAll(".arc")
-            .data(drawArcs(data, json.length))
+            .data(drawArcs(data, length))
             .enter().append("g")
             .attr("class", "arc")
             .attr("transform", "translate(" + settings.width / 2 + "," + settings.height / 2 + ")")
@@ -115,6 +121,31 @@ var Obj = {
   }]);
 })(angular, d3, Obj);
 
+(function () {
+  'use strict';
+
+  actApp.directive('amIndicator', ['$timeout', function ($timeout) {
+    return {
+      restrict: 'E',
+      replace: true,
+      scope: {
+        parameters: '='
+      },
+      templateUrl: '../src/js/angular.components/commun/directives/indicator.directive.html',
+      link: function (scope, elem, attrs) {
+
+        scope.indicator = {
+          parameters: scope.parameters,
+          title: attrs.title,
+          class: attrs.class,
+          show: eval(attrs.show)
+        };
+
+
+      }
+    };
+  }]);
+})();
 
 
 (function () {
@@ -127,20 +158,10 @@ var Obj = {
           status: 'status-ok',
           json: [
             {
-              status: 'standby',
-              val: 200
-            },
-            {
-              status: 'progress',
-              val: 20
-            },
-            {
-              status: 'ok',
-              val: 30
-            },
-            {
-              status: 'ko',
-              val: 10
+              standby: 200,
+              progress: 20,
+              ok: 30,
+              ko: 10
             }
           ]
         },
@@ -148,20 +169,10 @@ var Obj = {
             status: 'status-ko',
             json: [
               {
-                status: 'standby',
-                val: 0.4
-              },
-              {
-                status: 'progress',
-                val: 0.2
-              },
-              {
-                status: 'ok',
-                val: 0.3
-              },
-              {
-                status: 'ko',
-                val: 0.1
+                standby: 0.4,
+                progress: 0.2,
+                ok: 0.3,
+                ko: 0.1
               }
             ]
           },
@@ -169,20 +180,10 @@ var Obj = {
             status: 'status-ok',
             json: [
               {
-                status: 'standby',
-                val: 0.1
-              },
-              {
-                status: 'progress',
-                val: 0.5
-              },
-              {
-                status: 'ok',
-                val: 0.15
-              },
-              {
-                status: 'ko',
-                val: 0.25
+                standby: 0.1,
+                progress: 0.5,
+                ok: 0.15,
+                ko: 0.25
               }
             ]
           },
@@ -190,40 +191,20 @@ var Obj = {
             status: 'status-ko',
             json: [
               {
-                status: 'standby',
-                val: 0.4
-              },
-              {
-                status: 'progress',
-                val: 0.2
-              },
-              {
-                status: 'ok',
-                val: 0.3
-              },
-              {
-                status: 'ko',
-                val: 0.1
+                standby: 0.4,
+                progress: 0.2,
+                ok: 0.3,
+                ko: 0.1
               }
             ]
           },{
             status: 'status-ok',
             json: [
               {
-                status: 'standby',
-                val: 200
-              },
-              {
-                status: 'progress',
-                val: 20
-              },
-              {
-                status: 'ok',
-                val: 30
-              },
-              {
-                status: 'ko',
-                val: 10
+                standby: 200,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
           },
@@ -231,20 +212,10 @@ var Obj = {
             status: 'status-ko',
             json: [
               {
-                status: 'standby',
-                val: 0.4
-              },
-              {
-                status: 'progress',
-                val: 0.2
-              },
-              {
-                status: 'ok',
-                val: 0.3
-              },
-              {
-                status: 'ko',
-                val: 0.1
+                standby: 0.4,
+                progress: 0.2,
+                ok: 0.3,
+                ko: 0.1
               }
             ]
           },
@@ -252,20 +223,10 @@ var Obj = {
             status: 'status-ok',
             json: [
               {
-                status: 'standby',
-                val: 0.1
-              },
-              {
-                status: 'progress',
-                val: 0.5
-              },
-              {
-                status: 'ok',
-                val: 0.15
-              },
-              {
-                status: 'ko',
-                val: 0.25
+                standby: 0.1,
+                progress: 0.5,
+                ok: 0.15,
+                ko: 0.25
               }
             ]
           },
@@ -273,20 +234,10 @@ var Obj = {
             status: 'status-ko',
             json: [
               {
-                status: 'standby',
-                val: 0.4
-              },
-              {
-                status: 'progress',
-                val: 0.2
-              },
-              {
-                status: 'ok',
-                val: 0.3
-              },
-              {
-                status: 'ko',
-                val: 0.1
+                standby: 0.4,
+                progress: 0.2,
+                ok: 0.3,
+                ko: 0.1
               }
             ]
           }]
