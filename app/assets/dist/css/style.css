@@ -309,7 +309,7 @@ ol {
 .campaign .container .view-requirements .right,
 .campaign .container .view-scenarios .right {
   width: 50%;
-  padding: 5px 10px;
+  padding: 5px;
   float: left;
 }
 .campaign .container .view-requirements .left .left,
@@ -326,7 +326,7 @@ ol {
 .campaign .container .view-scenarios .left .left,
 .campaign .container .view-requirements .right .left,
 .campaign .container .view-scenarios .right .left {
-  width: 60px;
+  width: 70px;
 }
 .campaign .container .view-requirements .left .indicator.line .items .item,
 .campaign .container .view-scenarios .left .indicator.line .items .item,
