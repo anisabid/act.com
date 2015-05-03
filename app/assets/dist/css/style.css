@@ -326,7 +326,19 @@ ol {
 .campaign .container .view-scenarios .left .left,
 .campaign .container .view-requirements .right .left,
 .campaign .container .view-scenarios .right .left {
-  width: 70px;
+  width: 60%;
+}
+.campaign .container .view-requirements .left .right,
+.campaign .container .view-scenarios .left .right,
+.campaign .container .view-requirements .right .right,
+.campaign .container .view-scenarios .right .right {
+  width: 40%;
+}
+.campaign .container .view-requirements .left .right .graph.bar,
+.campaign .container .view-scenarios .left .right .graph.bar,
+.campaign .container .view-requirements .right .right .graph.bar,
+.campaign .container .view-scenarios .right .right .graph.bar {
+  float: right;
 }
 .campaign .container .view-requirements .left .indicator.line .items .item,
 .campaign .container .view-scenarios .left .indicator.line .items .item,
