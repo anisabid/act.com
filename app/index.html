@@ -31,21 +31,49 @@
 
     <section id="page-container" class="page-container">
         <div class="campaign-filter">
+            <div class="btn-group">
+                <input type="radio" id="radio1" name="radios" value="all" checked>
+                <label class="btn" for="radio1">All</label>
+
+                <input type="radio" id="radio2" name="radios"value="false">
+                <label class="btn" for="radio2">Open</label>
+
+                <input type="radio" id="radio3" name="radios" value="true">
+                <label class="btn" for="radio3">Archived</label>
+                <!--<input type="radio" name="options" id="option-filter-all" autocomplete="off">
+                <label class="btn active" for="option-filter-all" >
+                    Tous
+                </label>
+                <label class="btn">
+                    <input type="radio" name="options" id="option-filter-progress" autocomplete="off">En cour d'exécution
+                </label>
+                <label class="btn">
+                    <input type="radio" name="options" id="option-filter-end" autocomplete="off">Terminer
+                </label>
+                <label class="btn">
+                    <input type="radio" name="options" id="option-filter-ok" autocomplete="off">OK
+                </label>
+                <label class="btn">
+                    <input type="radio" name="options" id="option-filter-ko" autocomplete="off">KO
+                </label>
+                <label class="btn">
+                    <input type="radio" name="options" id="option-filter-recent" autocomplete="off">Les plus récentes
+                </label>
+                <label class="btn">
+                    <input type="radio" name="options" id="option-filter-my-service" autocomplete="off">Mon service
+                </label>
+                <label class="btn">
+                    <input type="radio" name="options" id="option-filter-affect" autocomplete="off">Affecter
+                </label>-->
+            </div>
             <ul class="clearfix">
-                <li><a href="">tous</a> </li>
-                <li><a href="">En cour d'exécution</a> </li>
-                <li><a href="">Terminer</a> </li>
-                <li><a href="">OK</a> </li>
-                <li><a href="">KO</a> </li>
-                <li><a href="">Les plus récentes</a> </li>
-                <li><a href="">Mon service</a> </li>
-                <li><a href="">Affecter</a> </li>
+                <li class="filter-search">
+                    <a href=""><i class="fa fa-search"></i></a>
+                </li>
                 <li class="filter-application">
                     <a href="">[Select Application]</a>
                 </li>
-                <li class="search">
 
-                </li>
             </ul>
         </div>
         <div class="campaign-list clearfix">

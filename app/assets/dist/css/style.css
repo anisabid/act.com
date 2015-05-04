@@ -504,14 +504,43 @@ body .page-container .campaign-filter {
   width: 100%;
   margin: 20px 0 10px 0;
 }
-body .page-container .campaign-filter li {
+body .page-container .campaign-filter li,
+body .page-container .campaign-filter .btn-group {
   float: left;
 }
-body .page-container .campaign-filter li a {
+body .page-container .campaign-filter li input[type="radio"]:checked + label,
+body .page-container .campaign-filter .btn-group input[type="radio"]:checked + label {
+  color: #f00;
+}
+body .page-container .campaign-filter li a,
+body .page-container .campaign-filter .btn-group a,
+body .page-container .campaign-filter li .btn,
+body .page-container .campaign-filter .btn-group .btn {
   padding: 0 10px;
   line-height: 36px;
   border-left: 1px solid #c4c7cc;
   color: #cccccc;
+  display: block;
+  float: left;
+}
+body .page-container .campaign-filter li a input[type=radio],
+body .page-container .campaign-filter .btn-group a input[type=radio],
+body .page-container .campaign-filter li .btn input[type=radio],
+body .page-container .campaign-filter .btn-group .btn input[type=radio] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+body .page-container .campaign-filter li a input[type=radio]:checked + label,
+body .page-container .campaign-filter .btn-group a input[type=radio]:checked + label,
+body .page-container .campaign-filter li .btn input[type=radio]:checked + label,
+body .page-container .campaign-filter .btn-group .btn input[type=radio]:checked + label {
+  color: #ff0;
+}
+body .page-container .campaign-filter li.filter-search,
+body .page-container .campaign-filter .btn-group.filter-search,
+body .page-container .campaign-filter li.filter-application,
+body .page-container .campaign-filter .btn-group.filter-application {
+  float: right;
 }
 body .page-container .campaign-list {
   padding: 0 15px;
