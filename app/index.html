@@ -16,7 +16,7 @@
             <div class="nav">
                 <a href="" class="fa fa-navicon"></a>
             </div>
-            <!-- <h1 class="title">A<span>Campagne</span>Test</h1> -->
+            <h1 class="title">A<span>Campagne</span>Test</h1>
         </div>
         <div class="hr">
             <nav class="nav">
@@ -30,6 +30,24 @@
     </section>
 
     <section id="page-container" class="page-container">
+        <div class="campaign-filter">
+            <ul class="clearfix">
+                <li><a href="">tous</a> </li>
+                <li><a href="">En cour d'exécution</a> </li>
+                <li><a href="">Terminer</a> </li>
+                <li><a href="">OK</a> </li>
+                <li><a href="">KO</a> </li>
+                <li><a href="">Les plus récentes</a> </li>
+                <li><a href="">Mon service</a> </li>
+                <li><a href="">Affecter</a> </li>
+                <li class="filter-application">
+                    <a href="">[Select Application]</a>
+                </li>
+                <li class="search">
+
+                </li>
+            </ul>
+        </div>
         <div class="campaign-list clearfix">
             <am-campaign ng-repeat="source in dashboard.sources" parameters="source"></am-campaign>
         </div>

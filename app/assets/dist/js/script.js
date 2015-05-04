@@ -177,26 +177,30 @@ var Obj = {
             length = 0,
             key,
             json = settings.json,
+            quotient = 0,
+            summ = 0,
             svg = d3js.select(elem[0]).append("svg")
               .attr("width", settings.width)
-              .attr("height", settings.height);
-
-          var json = json[0];
+              .attr("height", settings.height),
+            json = json[0];
 
           for (key in json) {
             if (json.hasOwnProperty(key)) {
               color.push(Obj.color[key]);
               data.push(json[key]);
               obj[key] = json[key];
+              summ += json[key];
               length++;
             }
           }
+
+          quotient = summ / 100;
 
           svg.append("text")
             .attr("x", "52%")
             .attr("y", "60%")
             .attr("text-anchor", "middle")
-            .text((obj.ok * 100) + "%");
+            .text( Math.round((obj.ok) / quotient)  + "%");
 
           svg.selectAll(".arc")
             .data(drawArcs(data, length))
@@ -264,10 +268,10 @@ var Obj = {
             status: 'status-ko',
             json: [
               {
-                standby: 0.4,
-                progress: 0.2,
-                ok: 0.3,
-                ko: 0.1
+                standby: 40,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
           },
@@ -275,10 +279,10 @@ var Obj = {
             status: 'status-ok',
             json: [
               {
-                standby: 0.1,
-                progress: 0.5,
-                ok: 0.15,
-                ko: 0.25
+                standby: 10,
+                progress: 50,
+                ok: 15,
+                ko: 25
               }
             ]
           },
@@ -286,17 +290,18 @@ var Obj = {
             status: 'status-ko',
             json: [
               {
-                standby: 0.4,
-                progress: 0.2,
-                ok: 0.3,
-                ko: 0.1
+                standby: 40,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
-          },{
+          },
+          {
             status: 'status-ok',
             json: [
               {
-                standby: 200,
+                standby: 10,
                 progress: 20,
                 ok: 30,
                 ko: 10
@@ -307,10 +312,10 @@ var Obj = {
             status: 'status-ko',
             json: [
               {
-                standby: 0.4,
-                progress: 0.2,
-                ok: 0.3,
-                ko: 0.1
+                standby: 40,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
           },
@@ -318,10 +323,10 @@ var Obj = {
             status: 'status-ok',
             json: [
               {
-                standby: 0.1,
-                progress: 0.5,
-                ok: 0.15,
-                ko: 0.25
+                standby: 10,
+                progress: 50,
+                ok: 15,
+                ko: 25
               }
             ]
           },
@@ -329,10 +334,10 @@ var Obj = {
             status: 'status-ko',
             json: [
               {
-                standby: 0.4,
-                progress: 0.2,
-                ok: 0.3,
-                ko: 0.1
+                standby: 40,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
           }]

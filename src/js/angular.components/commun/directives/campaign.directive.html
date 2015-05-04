@@ -1,5 +1,5 @@
 <div class="campaign-item {{campaign.parameters.status}}">
-    <div class="campaign">
+    <div class="campaign" ng-class="showView">
         <div class="container">
             <section class="view-global">
                 <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
@@ -24,20 +24,21 @@
 
                 <div class="left">
                     <div class="left">
-                        <am-indicator title="Sénarios" show="true" class="scenarios" parameters="campaign.parameters.json"></am-indicator>
+                        <am-indicator title="Exigences" show="true" class="scenarios"
+                                      parameters="campaign.parameters.json"></am-indicator>
                     </div>
                     <div class="right">
                         <am-chart-bar class="graph d3js bar"
-                                         parameters="campaign.parameters.json"
-                                         width="70"
-                                         height="70"></am-chart-bar>
+                                      parameters="campaign.parameters.json"
+                                      width="70"
+                                      height="70"></am-chart-bar>
                     </div>
                 </div>
 
-
                 <div class="right">
                     <div class="left">
-                        <am-indicator title="Sénarios" class="scenarios" show="true" parameters="campaign.parameters.json"></am-indicator>
+                        <am-indicator title="Tests" class="scenarios" show="true"
+                                      parameters="campaign.parameters.json"></am-indicator>
                     </div>
                     <div class="right">
                         <am-chart-bar class="graph d3js bar"
@@ -48,13 +49,38 @@
                 </div>
 
             </section>
-            <!--<section class="view-scenarios">
+            <section class="view-scenarios">
+                <div class="left">
+                    <div class="left">
+                        <am-indicator title="Sénarios" show="true" class="scenarios"
+                                      parameters="campaign.parameters.json"></am-indicator>
+                    </div>
+                    <div class="right">
+                        <am-chart-bar class="graph d3js bar"
+                                      parameters="campaign.parameters.json"
+                                      width="70"
+                                      height="70"></am-chart-bar>
+                    </div>
+                </div>
 
-            </section>-->
+
+                <div class="right">
+                    <div class="left">
+                        <am-indicator title="Tests" class="scenarios" show="true"
+                                      parameters="campaign.parameters.json"></am-indicator>
+                    </div>
+                    <div class="right">
+                        <am-chart-bar class="graph d3js bar"
+                                      parameters="campaign.parameters.json"
+                                      width="70"
+                                      height="70"></am-chart-bar>
+                    </div>
+                </div>
+            </section>
             <nav class="nav category">
                 <ul>
-                    <li><a href="">exigences</a></li>
-                    <li><a href="">scénarios</a></li>
+                    <li class="btn-show-view-requirements"><a href="" ng-click=" showView = (showView == 'show-view-requirements') ?  '' : 'show-view-requirements' "><i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i>Exigences<i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></li>
+                    <li class="btn-show-view-scenarios"><a href="" ng-click=" showView = (showView == 'show-view-scenarios') ?  '' : 'show-view-scenarios' "><i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i>Scénarios<i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></li>
                 </ul>
             </nav>
         </div>

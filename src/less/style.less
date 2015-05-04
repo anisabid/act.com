@@ -18,6 +18,26 @@ body {
     }
   }
   .page-container{
-    padding: 15px;
+    padding: 15px 0;
+
+    .campaign-filter{
+      border-top: 1px solid @base-color-border;
+      border-bottom: 1px solid @base-color-border;
+      display: block;
+      width: 100%;
+      margin: 20px 0 10px 0;
+      li{
+        float: left;
+        a{
+          padding: 0 10px;
+          line-height: 36px;
+          border-left: 1px solid @base-color-border;
+          color: @base-color-master-lighter;
+        }
+      }
+    }
+    .campaign-list{
+      padding: 0 15px;
+    }
   }
 }

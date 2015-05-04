@@ -19,10 +19,10 @@
             status: 'status-ko',
             json: [
               {
-                standby: 0.4,
-                progress: 0.2,
-                ok: 0.3,
-                ko: 0.1
+                standby: 40,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
           },
@@ -30,10 +30,10 @@
             status: 'status-ok',
             json: [
               {
-                standby: 0.1,
-                progress: 0.5,
-                ok: 0.15,
-                ko: 0.25
+                standby: 10,
+                progress: 50,
+                ok: 15,
+                ko: 25
               }
             ]
           },
@@ -41,17 +41,18 @@
             status: 'status-ko',
             json: [
               {
-                standby: 0.4,
-                progress: 0.2,
-                ok: 0.3,
-                ko: 0.1
+                standby: 40,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
-          },{
+          },
+          {
             status: 'status-ok',
             json: [
               {
-                standby: 200,
+                standby: 10,
                 progress: 20,
                 ok: 30,
                 ko: 10
@@ -62,10 +63,10 @@
             status: 'status-ko',
             json: [
               {
-                standby: 0.4,
-                progress: 0.2,
-                ok: 0.3,
-                ko: 0.1
+                standby: 40,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
           },
@@ -73,10 +74,10 @@
             status: 'status-ok',
             json: [
               {
-                standby: 0.1,
-                progress: 0.5,
-                ok: 0.15,
-                ko: 0.25
+                standby: 10,
+                progress: 50,
+                ok: 15,
+                ko: 25
               }
             ]
           },
@@ -84,10 +85,10 @@
             status: 'status-ko',
             json: [
               {
-                standby: 0.4,
-                progress: 0.2,
-                ok: 0.3,
-                ko: 0.1
+                standby: 40,
+                progress: 20,
+                ok: 30,
+                ko: 10
               }
             ]
           }]

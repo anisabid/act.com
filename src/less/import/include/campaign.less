@@ -9,12 +9,15 @@
 @c-indicators-left-width: 135px;
 @c-indicators-right-width: @c-width - @c-indicators-left-width - 11;
 
+@show-view-requirements: show-view-requirements;
+@show-view-scenarios: show-view-scenarios;
 
 /** Campaign
  ************************************************** */
-.campaign-item{
+.campaign-item {
   float: left;
 }
+
 .campaign {
   margin: 5px;
   border-left-width: 5px;
@@ -33,7 +36,7 @@
     border-color: @base-color-status-ko;
   }
 
-  .container{
+  .container {
     border: 1px solid @c-color-gris;
     border-left: 0;
     width: @c-width;
@@ -45,13 +48,14 @@
     font-weight: @base-font-weight-light;
     color: @base-color-master;
 
-    .nav.category{
+    .nav.category {
       position: absolute;
       bottom: 0px;
       left: 0px;
       right: 0px;
-      ul{
-        li{
+      background: #FFFFFF;
+      ul {
+        li {
           float: left;
           width: 50%;
           line-height: 13px;
@@ -59,13 +63,48 @@
           font-size: 10px;
           color: @base-color-master-light;
           border-right: 1px solid @c-color-gris;
-          border-top:1px solid @c-color-gris;
-          a{
+          border-top: 1px solid @c-color-gris;
+          a {
             color: @base-color-master-light;
+            text-transform: lowercase;
+            .fa.fa-chevron-up {
+              display: none;
+            }
           }
-          &:last-child{
+          &:last-child {
             border-right: 0;
           }
+
+          &.btn-show-view-requirements {
+            .@{show-view-requirements}& {
+              border-top-color: #FFFFFF;
+              a {
+                color: @base-color-selected;
+              }
+              .fa.fa-chevron-up {
+                display: inline-block;
+              }
+              .fa.fa-chevron-down {
+                display: none;
+              }
+            }
+          }
+          &.btn-show-view-scenarios {
+            .@{show-view-scenarios}& {
+              border-top-color: #FFFFFF;
+              a {
+                color: @base-color-selected;
+              }
+
+              .fa.fa-chevron-up {
+                display: inline-block;
+              }
+              .fa.fa-chevron-down {
+                display: none;
+              }
+            }
+          }
+
         }
       }
     }
@@ -83,24 +122,24 @@
 
         }
       }
-      .indicators{
+      .indicators {
         margin-top: 5px;
         .left,
-        .right{
+        .right {
           float: left;
         }
-        .left{
+        .left {
           width: @c-indicators-left-width;
         }
-        .right{
+        .right {
           width: @c-indicators-right-width;
-          .graph.circle{
+          .graph.circle {
             width: 70px;
             height: 70px;
             margin: 0 auto;
           }
         }
-        .title{
+        .title {
           font-size: 10px;
           margin: 0;
           padding: 0;
@@ -110,15 +149,18 @@
     }
 
     .view-requirements,
-    .view-scenarios{
+    .view-scenarios {
       position: absolute;
       background-color: #FFFFFF;
       bottom: 15px;
       top: 46px;
       left: 0px;
       right: 0px;
+      //display: none;
+      .translate(0, 100%);
+      .transition(0.2s, linear);
       .left,
-      .right{
+      .right {
         width: 50%;
         padding: 5px;
         float: left;
@@ -126,20 +168,20 @@
         .right {
           padding: 0;
         }
-        .left{
+        .left {
           width: 60%;
         }
-        .right{
+        .right {
           width: 40%;
-          .graph.bar{
+          .graph.bar {
             float: right;
           }
         }
 
-        .indicator.line .items .item{
+        .indicator.line .items .item {
           border: 0;
           font-size: 10px;
-          span{
+          span {
             display: block;
             line-height: 12px;
             padding-top: 2px;
@@ -147,84 +189,89 @@
           }
         }
       }
-      .title{
+      .title {
         font-size: 11px;
         font-weight: @base-font-weight-light;
         color: @base-color-status-ok;
         text-align: center;
       }
-      .graph.circle{
+      .graph.circle {
         overflow: hidden;
         margin: 0 auto;
         width: 30px;
         height: 30px;
-        text{
+        text {
           font-size: 9px;
         }
       }
     }
 
-    .view-requirements{
-
+    .view-requirements {
+      .@{show-view-requirements}& {
+        //display: block;
+        .translate(0, 0);
+      }
     }
-    .view-scenarios{
-
+    .view-scenarios {
+      .@{show-view-scenarios}& {
+        //display: block;
+        .translate(0, 0);
+      }
     }
 
-    .indicator.line{
-      .items{
-        .item{
+    .indicator.line {
+      .items {
+        .item {
           float: left;
           text-align: center;
           border-top-width: 5px;
           border-top-style: solid;
           font-size: 11px;
           line-height: 15px;
-          span{
+          span {
             color: @base-color-status-standby;
             font-weight: @base-font-weight-normal;
           }
-          &.standby{
+          &.standby {
             border-top-color: @base-color-status-standby;
-            span{
+            span {
               color: @base-color-status-standby;
             }
           }
-          &.progress{
+          &.progress {
             border-top-color: @base-color-status-progress;
-            span{
+            span {
               color: @base-color-status-progress;
             }
           }
-          &.ok{
+          &.ok {
             border-top-color: @base-color-status-ok;
-            span{
+            span {
               color: @base-color-status-ok;
             }
           }
-          &.ko{
+          &.ko {
             border-top-color: @base-color-status-ko;
-            span{
+            span {
               color: @base-color-status-ko;
             }
           }
 
         }
-        &.one .item{
+        &.one .item {
           width: 33%;
         }
-        &.two .item{
+        &.two .item {
           width: 50%;
         }
-        &.three .item{
+        &.three .item {
           width: 33%;
         }
-        &.four .item{
+        &.four .item {
           width: 25%;
         }
       }
     }
-
 
   }
 }

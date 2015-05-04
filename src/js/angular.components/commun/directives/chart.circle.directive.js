@@ -42,26 +42,30 @@
             length = 0,
             key,
             json = settings.json,
+            quotient = 0,
+            summ = 0,
             svg = d3js.select(elem[0]).append("svg")
               .attr("width", settings.width)
-              .attr("height", settings.height);
-
-          var json = json[0];
+              .attr("height", settings.height),
+            json = json[0];
 
           for (key in json) {
             if (json.hasOwnProperty(key)) {
               color.push(Obj.color[key]);
               data.push(json[key]);
               obj[key] = json[key];
+              summ += json[key];
               length++;
             }
           }
+
+          quotient = summ / 100;
 
           svg.append("text")
             .attr("x", "52%")
             .attr("y", "60%")
             .attr("text-anchor", "middle")
-            .text((obj.ok * 100) + "%");
+            .text( Math.round((obj.ok) / quotient)  + "%");
 
           svg.selectAll(".arc")
             .data(drawArcs(data, length))
