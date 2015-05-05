@@ -2,7 +2,11 @@
 // --------------------------------------------------
 @h-header-height: 60px;
 @h-header-background: #272b35;
+@h-header-background-light: #32363f;
+@h-header-border-color: #383d49;
 @h-header-color-blue: @base-color-blue;
+
+
 /** Header
  ************************************************** */
 #page-header {
@@ -13,7 +17,7 @@
   * {
     color: #FFFFFF;
   }
-  .hl {
+  .header-left {
     float: left;
     .nav {
       float: left;
@@ -28,7 +32,7 @@
       }
     }
   }
-  .hr {
+  .header-right {
     float: right;
     .nav{
       padding: 10px 0;
@@ -46,6 +50,36 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .header-search{
+    float: left;
+    width: 50%;
+    margin: 0 0 0 40px;
+    position: relative;
+
+    .search-global{
+      border-bottom: 1px solid @h-header-border-color;
+      .form-control{
+        background: transparent;
+        border: 0;
+        font-weight: @base-font-weight-light;
+        width: 100%;
+        &:focus + .btn.search{
+          color: @base-color-master-lighter;
+        }
+      }
+      .btn.submit {
+        display: none;
+      }
+      .btn.search{
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        margin-top: -8px;
+        color: @h-header-border-color;
       }
     }
   }

@@ -7,6 +7,9 @@
 @c-width: 264px;
 @c-height: 144px;
 @c-indicators-left-width: 135px;
+/**@c-width: 330px;
+@c-height: 144px;
+@c-indicators-left-width: 169px;*/
 @c-indicators-right-width: @c-width - @c-indicators-left-width - 11;
 
 @show-view-requirements: show-view-requirements;
@@ -23,16 +26,16 @@
   border-left-width: 5px;
   border-style: solid;
   border-color: @base-color-status-standby;
-  .status-standby&, .status-standby & {
+  .status-standby&, .status-standby &, .standby&, .standby & {
     border-color: @base-color-status-standby;
   }
-  .status-progress&, .status-progress & {
+  .status-progress&, .status-progress &, .progress&, .progress & {
     border-color: @base-color-status-progress;
   }
-  .status-ok&, .status-ok & {
+  .status-ok&, .status-ok &, .ok&, .ok & {
     border-color: @base-color-status-ok;
   }
-  .status-ko&, .status-ko & {
+  .status-ko&, .status-ko &, .ko&, .ko &  {
     border-color: @base-color-status-ko;
   }
 

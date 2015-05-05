@@ -72,7 +72,6 @@
             .data(data)
             .enter().append('rect')
             .attr("fill", function (d, i) {
-              console.log(color[i]);
               return color[i];
             })
             .attr('x', function (d, i) {

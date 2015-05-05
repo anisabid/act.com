@@ -36,6 +36,7 @@
               return arcs;
             };
 
+
           var color = [],
             data = [],
             obj = {},
@@ -46,8 +47,7 @@
             summ = 0,
             svg = d3js.select(elem[0]).append("svg")
               .attr("width", settings.width)
-              .attr("height", settings.height),
-            json = json[0];
+              .attr("height", settings.height);
 
           for (key in json) {
             if (json.hasOwnProperty(key)) {

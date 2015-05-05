@@ -168,41 +168,72 @@ ol {
 #page-header * {
   color: #FFFFFF;
 }
-#page-header .hl {
+#page-header .header-left {
   float: left;
 }
-#page-header .hl .nav {
+#page-header .header-left .nav {
   float: left;
 }
-#page-header .hl .title {
+#page-header .header-left .title {
   float: left;
   line-height: 36px;
   padding: 0 0 0 10px;
   font-weight: 400;
 }
-#page-header .hl .title span {
+#page-header .header-left .title span {
   color: #009fe3;
 }
-#page-header .hr {
+#page-header .header-right {
   float: right;
 }
-#page-header .hr .nav {
+#page-header .header-right .nav {
   padding: 10px 0;
 }
-#page-header .hr .nav ul li {
+#page-header .header-right .nav ul li {
   float: left;
   border-left: 1px solid #383d49;
 }
-#page-header .hr .nav ul li a {
+#page-header .header-right .nav ul li a {
   padding: 0 10px;
   line-height: 16px;
   display: block;
   font-size: 14px;
 }
-#page-header .hr .nav ul li a .fa {
+#page-header .header-right .nav ul li a .fa {
   margin-left: 5px;
 }
+#page-header .header-search {
+  float: left;
+  width: 50%;
+  margin: 0 0 0 40px;
+  position: relative;
+}
+#page-header .header-search .search-global {
+  border-bottom: 1px solid #383d49;
+}
+#page-header .header-search .search-global .form-control {
+  background: transparent;
+  border: 0;
+  font-weight: 300;
+  width: 100%;
+}
+#page-header .header-search .search-global .form-control:focus + .btn.search {
+  color: #cccccc;
+}
+#page-header .header-search .search-global .btn.submit {
+  display: none;
+}
+#page-header .header-search .search-global .btn.search {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -8px;
+  color: #383d49;
+}
 /* ** End Header ** */
+/**@c-width: 330px;
+@c-height: 144px;
+@c-indicators-left-width: 169px;*/
 /** Campaign
  ************************************************** */
 .campaign-item {
@@ -215,19 +246,27 @@ ol {
   border-color: #333333;
 }
 .status-standby.campaign,
-.status-standby .campaign {
+.status-standby .campaign,
+.standby.campaign,
+.standby .campaign {
   border-color: #333333;
 }
 .status-progress.campaign,
-.status-progress .campaign {
+.status-progress .campaign,
+.progress.campaign,
+.progress .campaign {
   border-color: #f7ca18;
 }
 .status-ok.campaign,
-.status-ok .campaign {
+.status-ok .campaign,
+.ok.campaign,
+.ok .campaign {
   border-color: #2bb38a;
 }
 .status-ko.campaign,
-.status-ko .campaign {
+.status-ko .campaign,
+.ko.campaign,
+.ko .campaign {
   border-color: #e34b51;
 }
 .campaign .container {
@@ -508,10 +547,6 @@ body .page-container .campaign-filter li,
 body .page-container .campaign-filter .btn-group {
   float: left;
 }
-body .page-container .campaign-filter li input[type="radio"]:checked + label,
-body .page-container .campaign-filter .btn-group input[type="radio"]:checked + label {
-  color: #f00;
-}
 body .page-container .campaign-filter li a,
 body .page-container .campaign-filter .btn-group a,
 body .page-container .campaign-filter li .btn,
@@ -522,25 +557,86 @@ body .page-container .campaign-filter .btn-group .btn {
   color: #cccccc;
   display: block;
   float: left;
+  position: relative;
 }
-body .page-container .campaign-filter li a input[type=radio],
-body .page-container .campaign-filter .btn-group a input[type=radio],
-body .page-container .campaign-filter li .btn input[type=radio],
-body .page-container .campaign-filter .btn-group .btn input[type=radio] {
+body .page-container .campaign-filter li .btn:last-child,
+body .page-container .campaign-filter .btn-group .btn:last-child {
+  border-right: 1px solid #c4c7cc;
+}
+body .page-container .campaign-filter li input[type="radio"],
+body .page-container .campaign-filter .btn-group input[type="radio"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
-body .page-container .campaign-filter li a input[type=radio]:checked + label,
-body .page-container .campaign-filter .btn-group a input[type=radio]:checked + label,
-body .page-container .campaign-filter li .btn input[type=radio]:checked + label,
-body .page-container .campaign-filter .btn-group .btn input[type=radio]:checked + label {
-  color: #ff0;
+body .page-container .campaign-filter li input[type="radio"]:checked + label,
+body .page-container .campaign-filter .btn-group input[type="radio"]:checked + label {
+  color: #009fe3;
+}
+body .page-container .campaign-filter li input[type="radio"]:checked + label:after,
+body .page-container .campaign-filter .btn-group input[type="radio"]:checked + label:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border: 1px solid #FFFFFF;
 }
 body .page-container .campaign-filter li.filter-search,
 body .page-container .campaign-filter .btn-group.filter-search,
 body .page-container .campaign-filter li.filter-application,
 body .page-container .campaign-filter .btn-group.filter-application {
   float: right;
+}
+body .page-container .campaign-filter .filter-application {
+  position: relative;
+  /*.drop-down-toggle:focus{
+          &:after{
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            border: 1px solid #FFFFFF;
+          }
+        }
+        .drop-down-toggle:focus + .drop-down-menu{
+          display: block;
+          .drop-shadow(0, 3px, 5px, 0.1);
+        }*/
+}
+body .page-container .campaign-filter .filter-application .drop-down-menu {
+  position: absolute;
+  top: 37px;
+  right: -1px;
+  background: #FFFFFF;
+  z-index: 100;
+  display: none;
+  min-width: 200px;
+  border: 1px solid #c4c7cc;
+  border-top: 0;
+}
+body .page-container .campaign-filter .filter-application .drop-down-menu li {
+  float: none;
+  display: block;
+}
+body .page-container .campaign-filter .filter-application .drop-down-menu li a {
+  display: block;
+  border: none;
+  float: none;
+}
+body .page-container .campaign-filter .filter-application:hover .drop-down-toggle:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border: 1px solid #FFFFFF;
+}
+body .page-container .campaign-filter .filter-application:hover .drop-down-menu {
+  display: block;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 body .page-container .campaign-list {
   padding: 0 15px;
