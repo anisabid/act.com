@@ -37,17 +37,18 @@
           var max = 0,
             quotient = 0;
           results.forEach(function (key, val) {
-            for (key in val) {
-              if (val.hasOwnProperty(key)) {
+            //for (key in val) {
+
                 var result = {};
                 result.status = key;
-                result.val = val[key];
+                result.val = val;
                 data.push(result);
-                max = Math.max(max, val[key]);
+                max = Math.max(max, val);
                 color.push(Obj.color[key]);
-              }
-            }
+
+            //}
           });
+
 
           quotient = max / h;
 

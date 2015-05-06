@@ -17,6 +17,8 @@ var Obj = {
   }
 };
 
+
+
 (function () {
   'use strict';
 
@@ -77,17 +79,18 @@ var Obj = {
           var max = 0,
             quotient = 0;
           results.forEach(function (key, val) {
-            for (key in val) {
-              if (val.hasOwnProperty(key)) {
+            //for (key in val) {
+
                 var result = {};
                 result.status = key;
-                result.val = val[key];
+                result.val = val;
                 data.push(result);
-                max = Math.max(max, val[key]);
+                max = Math.max(max, val);
                 color.push(Obj.color[key]);
-              }
-            }
+
+            //}
           });
+
 
           quotient = max / h;
 
@@ -184,13 +187,13 @@ var Obj = {
               .attr("height", settings.height);
 
           for (key in json) {
-            if (json.hasOwnProperty(key)) {
+
               color.push(Obj.color[key]);
               data.push(json[key]);
               obj[key] = json[key];
               summ += json[key];
               length++;
-            }
+
           }
 
           quotient = summ / 100;
@@ -244,8 +247,6 @@ var Obj = {
     };
   }]);
 })();
-
-
 (function () {
   'use strict';
 

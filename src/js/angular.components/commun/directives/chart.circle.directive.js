@@ -50,13 +50,13 @@
               .attr("height", settings.height);
 
           for (key in json) {
-            if (json.hasOwnProperty(key)) {
+
               color.push(Obj.color[key]);
               data.push(json[key]);
               obj[key] = json[key];
               summ += json[key];
               length++;
-            }
+
           }
 
           quotient = summ / 100;
