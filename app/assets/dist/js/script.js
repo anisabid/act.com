@@ -80,18 +80,97 @@ var Obj = {
 
     });
 
+  angular.module('actApp')
+    .constant('ActRest', {
+
+      campaign: {
+        list: 'http://localhost:8888/jsonmock/campaigns.mock.json'
+      },
+      application: {
+        list: 'http://localhost:8888/jsonmock/applications.mock.json'
+      }
+
+    });
+
 })();
 
 'use strict';
 
-(function () {
+(function() {
 
   angular.module('actApp')
-    .controller('CampaignController', ['$scope', function ($scope) {
+    .factory('CampaignFactory', ['$http', '$q', 'ActRest',
+      function($http, $q, ActRest) {
 
-      $scope.campaign = {};
+        var cf = {
+          getCampList: function(searchParm) {
+            var defer   = $q.defer();
 
-    }]);
+            var url     = searchParm ? 'search' : 'list';
+            var search  = searchParm ? {search: searchParm} : {};
+            var parms   = {
+              method: DgcRest.reqs.project[url].method,
+              url:    DgcRest.baseUrl + DgcRest.reqs.project[url].url,
+              params: search
+            };
+
+            $http(parms)
+              .success(function(data) {
+                return plf.getProjectData(data, searchParm).then(function(qData) {
+                  return defer.resolve(qData);
+                });
+              })
+              .error(function(data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          },
+
+          getProjectData: function(data, searchParm) {
+            var defer = $q.defer();
+            if(!searchParm) {
+              defer.resolve(data);
+              return defer.promise;
+            }
+
+            var requests = [];
+            angular.forEach(data, function(project) {
+              requests.push(plf.getProjectById(project.id));
+            });
+
+            $q.all(requests).then(function(result) {
+              defer.resolve(result);
+            });
+
+            return defer.promise;
+          },
+
+          getProjectById: function(projectId) {
+            var defer   = $q.defer();
+
+            var parms   = {
+              method: DgcRest.reqs.project.list.method,
+              url:    DgcRest.baseUrl + DgcRest.reqs.project.list.url + '/' + projectId
+            };
+
+            $http(parms)
+              .success(function(data) {
+                return defer.resolve(data);
+              })
+              .error(function(data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          getProjectList: plf.getProjectList
+        };
+
+      }]);
 
 })();
 
@@ -335,6 +414,18 @@ var Obj = {
 (function () {
 
   angular.module('actApp')
+    .controller('CampaignController', ['$scope', function ($scope) {
+
+      $scope.campaign = {};
+
+    }]);
+
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
     .provider('FormatUrl', ['ActPaths', function (ActPaths) {
 
       this.getBaseUrl = function () {
@@ -367,13 +458,8 @@ var Obj = {
       function ($scope, $state) {
 
         $scope.dashboard = {
-          actions: {
-            goToCampaign: function () {
-              alert('c');
-              //$state.go('main.campaign', {campaignId: id});
-            }
-          },
-          sources: [{
+          sources: [
+            {
             id: 20,
             application: 1,
             status: 'ok',
@@ -462,6 +548,7 @@ var Obj = {
               }
             }],
           applications: [
+
             {
               id: 1,
               name: "Application 1"
@@ -489,6 +576,7 @@ var Obj = {
 })();
 
 
+
 'use strict';
 
 (function () {
@@ -501,4 +589,3 @@ var Obj = {
 
       }]);
 })();
-

@@ -7,13 +7,8 @@
       function ($scope, $state) {
 
         $scope.dashboard = {
-          actions: {
-            goToCampaign: function () {
-              alert('c');
-              //$state.go('main.campaign', {campaignId: id});
-            }
-          },
-          sources: [{
+          sources: [
+            {
             id: 20,
             application: 1,
             status: 'ok',
@@ -102,6 +97,7 @@
               }
             }],
           applications: [
+
             {
               id: 1,
               name: "Application 1"

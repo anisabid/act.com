@@ -26,4 +26,16 @@ var Obj = {
 
     });
 
+  angular.module('actApp')
+    .constant('ActRest', {
+
+      campaign: {
+        list: 'http://localhost:8888/jsonmock/campaigns.mock.json'
+      },
+      application: {
+        list: 'http://localhost:8888/jsonmock/applications.mock.json'
+      }
+
+    });
+
 })();

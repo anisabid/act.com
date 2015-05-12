@@ -3,11 +3,11 @@
 (function() {
 
   angular.module('actApp')
-    .factory('CampaignFactory', ['$http', '$q', 'DgcRest',
-      function($http, $q, DgcRest) {
+    .factory('CampaignFactory', ['$http', '$q', 'ActRest',
+      function($http, $q, ActRest) {
 
         var cf = {
-          getProjectList: function(searchParm) {
+          getCampList: function(searchParm) {
             var defer   = $q.defer();
 
             var url     = searchParm ? 'search' : 'list';
