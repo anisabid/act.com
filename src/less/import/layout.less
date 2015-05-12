@@ -1,0 +1,14 @@
+.page-container{
+  > .page-container-left{
+    float: left;
+  }
+  > .page-container-right{
+    overflow: hidden;
+    > .page-container-left{
+      overflow: hidden;
+    }
+    > .page-container-right{
+      float: right;
+    }
+  }
+}

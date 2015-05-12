@@ -2,23 +2,26 @@
     <div class="campaign" ng-class="showView">
         <div class="container">
             <section class="view-global">
-                <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span>
-                </aside>
-                <div class="indicators clearfix">
-                    <div class="left">
-                        <am-indicator title="Sénarios" class="scenarios" parameters="campaign.parameters.json"></am-indicator>
+                <a ui-sref="main.campaign({campaignId:campaign.parameters.id})" ui->
+                    <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
+                    <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span>
+                    </aside>
+                    <div class="indicators clearfix">
+                        <div class="left">
+                            <am-indicator title="Sénarios" class="scenarios" parameters="campaign.parameters.json"></am-indicator>
 
-                        <am-indicator title="éxigences" class="requirements" parameters="campaign.parameters.json"></am-indicator>
+                            <am-indicator title="éxigences" class="requirements"
+                                          parameters="campaign.parameters.json"></am-indicator>
 
+                        </div>
+                        <div class="right">
+                            <am-chart-circle class="graph d3js circle"
+                                             parameters="campaign.parameters.json"
+                                             width="70"
+                                             height="70"></am-chart-circle>
+                        </div>
                     </div>
-                    <div class="right">
-                        <am-chart-circle class="graph d3js circle"
-                                         parameters="campaign.parameters.json"
-                                         width="70"
-                                         height="70"></am-chart-circle>
-                    </div>
-                </div>
+                </a>
             </section>
             <section class="view-requirements clearfix">
 
@@ -79,8 +82,14 @@
             </section>
             <nav class="nav category" ng-init="showView=''">
                 <ul>
-                    <li class="btn-show-view-requirements"><a href="" ng-click=" showView = (showView == 'show-view-requirements') ?  '' : 'show-view-requirements' "><i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i>Exigences<i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></li>
-                    <li class="btn-show-view-scenarios"><a href="" ng-click=" showView = (showView == 'show-view-scenarios') ?  '' : 'show-view-scenarios' "><i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i>Scénarios<i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></li>
+                    <li class="btn-show-view-requirements"><a href=""
+                                                              ng-click=" showView = (showView == 'show-view-requirements') ?  '' : 'show-view-requirements' "><i
+                            class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i>Exigences<i
+                            class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></li>
+                    <li class="btn-show-view-scenarios"><a href=""
+                                                           ng-click=" showView = (showView == 'show-view-scenarios') ?  '' : 'show-view-scenarios' "><i
+                            class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i>Scénarios<i
+                            class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></li>
                 </ul>
             </nav>
         </div>

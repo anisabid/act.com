@@ -1,0 +1,12 @@
+<div class="indicator line clearfix" ng-class="indicator.class">
+    <div class="title">{{ indicator.title }}</div>
+    <am-chart-circle ng-show="indicator.show" class="graph d3js circle"
+                     parameters="indicator.parameters"
+                     width="30"
+                     height="30"></am-chart-circle>
+    <ul class="items three clearfix">
+        <li class="item progress"><span>--</span>{{indicator.parameters.progress}} {{indicator.showGraphCircle}}</li>
+        <li class="item ok"><span>KO</span>{{indicator.parameters.ko}}</li>
+        <li class="item ko"><span>OK</span>{{indicator.parameters.ok}}</li>
+    </ul>
+</div>

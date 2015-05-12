@@ -1,6 +1,5 @@
-/**
- * Created by abid on 29/04/2015.
- */
+'use strict';
+
 var Obj = {
   color: {
     standby: "#333333",
@@ -9,3 +8,22 @@ var Obj = {
     ko: "#e34b51"
   }
 };
+
+(function () {
+
+  angular.module('actApp')
+    .constant('ActPaths', {
+
+      baseUrl: './assets/dist/',
+      templates: {
+        main: 'tpl/main/templates/',
+        dashboard: 'tpl/common/templates/',
+        campaign: 'tpl/campaign/templates/'
+      },
+      directives: {
+        common: 'tpl/common/directives/'
+      }
+
+    });
+
+})();
