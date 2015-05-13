@@ -19,6 +19,7 @@
     "d3": "~3.5.5"
   },
   "devDependencies": {
-    "jquery-circle-progress": "~1.1.2"
+    "jquery-circle-progress": "~1.1.2",
+    "angular-ui-tree": "~2.4.0"
   }
 }

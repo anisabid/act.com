@@ -3,7 +3,8 @@
 (function () {
 
   var actApp = angular.module('actApp', [
-    'ui.router'
+    'ui.router',
+    'ui.tree'
   ]);
 
 
@@ -22,7 +23,17 @@
             .state('main.dashboard', {
               url: '/dashboard',
               templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'list.html',
-              controller: 'DashboardController'
+              controller: 'DashboardController',
+              resolve: {
+                CampaignListData: ['CampaignFactory',
+                  function(CampaignFactory) {
+                    return CampaignFactory.getCampaignList();
+                  }],
+                ApplicationListData: ['ApplicationFactory',
+                  function(ApplicationFactory) {
+                    return ApplicationFactory.getApplicationList();
+                  }]
+              }
             })
             .state('main.campaign', {
               abstract: true,
@@ -41,7 +52,17 @@
               'viewPageContainerCenter': {
                 templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'detail.center.html'
               }
-            }
+            }/*,
+            resolve: {
+              CampaignListData: ['CampaignFactory',
+                function(CampaignFactory) {
+                  return CampaignFactory.getCampaignList();
+                }],
+              TestListData: ['TestFactory',
+                function(TestFactory) {
+                  return TestFactory.gettestList();
+                }]
+            }*/
           })
         ;
 

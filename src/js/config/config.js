@@ -28,12 +28,29 @@ var Obj = {
 
   angular.module('actApp')
     .constant('ActRest', {
-
+      baseUrl: 'http://localhost:8888/jsonmock/',
       campaign: {
-        list: 'http://localhost:8888/jsonmock/campaigns.mock.json'
+        list: {
+          method: 'GET',
+          url: 'campaigns.mock.json'
+        },
+        detail: {
+          method: 'GET',
+          url: 'campaign.tree.mock.json'
+        }
       },
       application: {
-        list: 'http://localhost:8888/jsonmock/applications.mock.json'
+        list: {
+          method: 'GET',
+          url: 'applications.mock.json'
+        }
+      },
+      test: {
+        list: {
+          method: 'GET',
+          url: 'tests.mock.json'
+
+        }
       }
 
     });

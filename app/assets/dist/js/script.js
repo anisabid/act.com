@@ -3,7 +3,8 @@
 (function () {
 
   var actApp = angular.module('actApp', [
-    'ui.router'
+    'ui.router',
+    'ui.tree'
   ]);
 
 
@@ -22,7 +23,17 @@
             .state('main.dashboard', {
               url: '/dashboard',
               templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'list.html',
-              controller: 'DashboardController'
+              controller: 'DashboardController',
+              resolve: {
+                CampaignListData: ['CampaignFactory',
+                  function(CampaignFactory) {
+                    return CampaignFactory.getCampaignList();
+                  }],
+                ApplicationListData: ['ApplicationFactory',
+                  function(ApplicationFactory) {
+                    return ApplicationFactory.getApplicationList();
+                  }]
+              }
             })
             .state('main.campaign', {
               abstract: true,
@@ -41,7 +52,17 @@
               'viewPageContainerCenter': {
                 templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'detail.center.html'
               }
-            }
+            }/*,
+            resolve: {
+              CampaignListData: ['CampaignFactory',
+                function(CampaignFactory) {
+                  return CampaignFactory.getCampaignList();
+                }],
+              TestListData: ['TestFactory',
+                function(TestFactory) {
+                  return TestFactory.gettestList();
+                }]
+            }*/
           })
         ;
 
@@ -82,12 +103,29 @@ var Obj = {
 
   angular.module('actApp')
     .constant('ActRest', {
-
+      baseUrl: 'http://localhost:8888/jsonmock/',
       campaign: {
-        list: 'http://localhost:8888/jsonmock/campaigns.mock.json'
+        list: {
+          method: 'GET',
+          url: 'campaigns.mock.json'
+        },
+        detail: {
+          method: 'GET',
+          url: 'campaign.tree.mock.json'
+        }
       },
       application: {
-        list: 'http://localhost:8888/jsonmock/applications.mock.json'
+        list: {
+          method: 'GET',
+          url: 'applications.mock.json'
+        }
+      },
+      test: {
+        list: {
+          method: 'GET',
+          url: 'tests.mock.json'
+
+        }
       }
 
     });
@@ -96,69 +134,78 @@ var Obj = {
 
 'use strict';
 
-(function() {
+(function () {
+
+  angular.module('actApp')
+    .controller('CampaignController', ['$scope', 'CampaignListData', 'TestListData', function ($scope, CampaignListData, TestListData) {
+
+      $scope.campaign = {
+        sources: CampaignListData
+      };
+      $scope.test = {
+        sources: TestListData
+      };
+    }]);
+
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .factory('ApplicationFactory', ['$http', '$q', 'ActRest',
+      function ($http, $q, ActRest) {
+
+        var $f = {
+          getApplicationList: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.application.list.method,
+              url: ActRest.baseUrl + ActRest.application.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              })
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          getApplicationList: $f.getApplicationList
+        };
+
+      }]);
+
+})();
+'use strict';
+
+(function () {
 
   angular.module('actApp')
     .factory('CampaignFactory', ['$http', '$q', 'ActRest',
-      function($http, $q, ActRest) {
+      function ($http, $q, ActRest) {
 
-        var cf = {
-          getCampList: function(searchParm) {
-            var defer   = $q.defer();
-
-            var url     = searchParm ? 'search' : 'list';
-            var search  = searchParm ? {search: searchParm} : {};
-            var parms   = {
-              method: DgcRest.reqs.project[url].method,
-              url:    DgcRest.baseUrl + DgcRest.reqs.project[url].url,
-              params: search
-            };
-
-            $http(parms)
-              .success(function(data) {
-                return plf.getProjectData(data, searchParm).then(function(qData) {
-                  return defer.resolve(qData);
-                });
-              })
-              .error(function(data, status) {
-                return defer.reject(status);
-              });
-
-            return defer.promise;
-          },
-
-          getProjectData: function(data, searchParm) {
+        var $f = {
+          getCampaignList: function () {
             var defer = $q.defer();
-            if(!searchParm) {
-              defer.resolve(data);
-              return defer.promise;
-            }
 
-            var requests = [];
-            angular.forEach(data, function(project) {
-              requests.push(plf.getProjectById(project.id));
-            });
-
-            $q.all(requests).then(function(result) {
-              defer.resolve(result);
-            });
-
-            return defer.promise;
-          },
-
-          getProjectById: function(projectId) {
-            var defer   = $q.defer();
-
-            var parms   = {
-              method: DgcRest.reqs.project.list.method,
-              url:    DgcRest.baseUrl + DgcRest.reqs.project.list.url + '/' + projectId
+            var params = {
+              method: ActRest.campaign.list.method,
+              url: ActRest.campaign.list.url
             };
 
-            $http(parms)
-              .success(function(data) {
+            $http(params)
+              .success(function (data) {
                 return defer.resolve(data);
               })
-              .error(function(data, status) {
+              .error(function (data, status) {
                 return defer.reject(status);
               });
 
@@ -167,13 +214,48 @@ var Obj = {
         };
 
         return {
-          getProjectList: plf.getProjectList
+          getCampaignList: $f.getCampaignList
         };
 
       }]);
 
 })();
+'use strict';
 
+(function () {
+
+  angular.module('actApp')
+    .factory('TestFactory', ['$http', '$q', 'ActRest',
+      function ($http, $q, ActRest) {
+
+        var $f = {
+          gettestList: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.test.list.method,
+              url: ActRest.baseUrl + ActRest.test.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          gettestList: $f.gettestList
+        };
+
+      }]);
+
+})();
 'use strict';
 
 (function () {
@@ -414,18 +496,6 @@ var Obj = {
 (function () {
 
   angular.module('actApp')
-    .controller('CampaignController', ['$scope', function ($scope) {
-
-      $scope.campaign = {};
-
-    }]);
-
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
     .provider('FormatUrl', ['ActPaths', function (ActPaths) {
 
       this.getBaseUrl = function () {
@@ -454,126 +524,17 @@ var Obj = {
 (function () {
 
   angular.module('actApp')
-    .controller('DashboardController', ['$scope', '$state',
-      function ($scope, $state) {
+    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
+      function ($scope, $state, CampaignListData, ApplicationListData) {
 
         $scope.dashboard = {
-          sources: [
-            {
-            id: 20,
-            application: 1,
-            status: 'ok',
-            json: {
-              standby: 200,
-              progress: 20,
-              ok: 30,
-              ko: 10
-            }
-          },
-            {
-              id: 21,
-              application: 1,
-              status: 'ko',
-              json: {
-                standby: 40,
-                progress: 20,
-                ok: 30,
-                ko: 10
-              }
-            },
-            {
-              id: 22,
-              application: 1,
-              status: 'progress',
-              json: {
-                standby: 10,
-                progress: 50,
-                ok: 15,
-                ko: 25
-              }
-            },
-            {
-              id: 23,
-              application: 2,
-              status: 'progress',
-              json: {
-                standby: 10,
-                progress: 50,
-                ok: 15,
-                ko: 25
-              }
-            },
-            {
-              id: 24,
-              application: 3,
-              status: 'ok',
-              json: {
-                standby: 10,
-                progress: 20,
-                ok: 30,
-                ko: 10
-              }
-            },
-            {
-              id: 25,
-              application: 3,
-              status: 'progress',
-              json: {
-                standby: 40,
-                progress: 20,
-                ok: 30,
-                ko: 10
-              }
-            },
-            {
-              id: 26,
-              application: 4,
-              status: 'ok',
-              json: {
-                standby: 10,
-                progress: 50,
-                ok: 15,
-                ko: 25
-              }
-            },
-            {
-              id: 27,
-              application: 4,
-              status: 'ko',
-              json: {
-                standby: 40,
-                progress: 20,
-                ok: 30,
-                ko: 10
-              }
-            }],
-          applications: [
-
-            {
-              id: 1,
-              name: "Application 1"
-            },
-            {
-              id: 2,
-              name: "Application 2"
-            },
-            {
-              id: 3,
-              name: "Application 3"
-            },
-            {
-              id: 4,
-              name: "Application 4"
-            },
-            {
-              id: 5,
-              name: "Application 5"
-            }
-          ]
+          sources: CampaignListData,
+          applications: ApplicationListData
         };
 
       }]);
 })();
+
 
 
 

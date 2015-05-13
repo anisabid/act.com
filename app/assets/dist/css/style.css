@@ -157,16 +157,24 @@ ol {
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
-.page-container > .page-container-left {
+#page-container {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+#page-container > .page-container-left {
   float: left;
 }
-.page-container > .page-container-right {
+#page-container > .page-container-right {
   overflow: hidden;
 }
-.page-container > .page-container-right > .page-container-left {
+#page-container > .page-container-right > .page-container-left {
   overflow: hidden;
 }
-.page-container > .page-container-right > .page-container-right {
+#page-container > .page-container-right > .page-container-right {
   float: right;
 }
 /** Header

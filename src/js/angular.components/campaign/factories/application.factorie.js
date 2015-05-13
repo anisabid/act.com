@@ -3,16 +3,16 @@
 (function () {
 
   angular.module('actApp')
-    .factory('CampaignFactory', ['$http', '$q', 'ActRest',
+    .factory('ApplicationFactory', ['$http', '$q', 'ActRest',
       function ($http, $q, ActRest) {
 
         var $f = {
-          getCampaignList: function () {
+          getApplicationList: function () {
             var defer = $q.defer();
 
             var params = {
-              method: ActRest.campaign.list.method,
-              url: ActRest.campaign.list.url
+              method: ActRest.application.list.method,
+              url: ActRest.baseUrl + ActRest.application.list.url
             };
 
             $http(params)
@@ -21,14 +21,14 @@
               })
               .error(function (data, status) {
                 return defer.reject(status);
-              });
+              })
 
             return defer.promise;
           }
         };
 
         return {
-          getCampaignList: $f.getCampaignList
+          getApplicationList: $f.getApplicationList
         };
 
       }]);
