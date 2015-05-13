@@ -20,26 +20,41 @@
             templateUrl: FormatUrlProvider.getTemplatePath('main') + 'main.html',
             controller: 'MainController'
           })
-            .state('main.dashboard', {
-              url: '/dashboard',
-              templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'list.html',
-              controller: 'DashboardController',
-              resolve: {
-                CampaignListData: ['CampaignFactory',
-                  function(CampaignFactory) {
-                    return CampaignFactory.getCampaignList();
-                  }],
-                ApplicationListData: ['ApplicationFactory',
-                  function(ApplicationFactory) {
-                    return ApplicationFactory.getApplicationList();
-                  }]
-              }
-            })
-            .state('main.campaign', {
-              abstract: true,
-              templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'detail.html',
-              controller: 'CampaignController'
-            })
+          .state('main.dashboard', {
+            url: '/dashboard',
+            templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'list.html',
+            controller: 'DashboardController',
+            resolve: {
+              CampaignListData: ['CampaignFactory',
+                function (CampaignFactory) {
+                  return CampaignFactory.getCampaignList();
+                }],
+              ApplicationListData: ['ApplicationFactory',
+                function (ApplicationFactory) {
+                  return ApplicationFactory.getApplicationList();
+                }]
+            }
+          })
+          .state('main.campaign', {
+            abstract: true,
+            templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'detail.html',
+            controller: 'CampaignController',
+            resolve: {
+              CampaignListData: ['CampaignFactory',
+                function (CampaignFactory) {
+                  return CampaignFactory.getCampaignList();
+                }],
+              TestListData: ['TestFactory',
+                function (TestFactory) {
+                  return TestFactory.getTestList();
+                }],
+              CampaignDetailData: ['CampaignFactory',
+                function (CampaignFactory) {
+                  return CampaignFactory.getCampaignDetail();
+                }
+              ]
+            }
+          })
           .state('main.campaign.detail', {
             url: '/campaign/:campaignId',
             views: {
@@ -52,19 +67,8 @@
               'viewPageContainerCenter': {
                 templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'detail.center.html'
               }
-            }/*,
-            resolve: {
-              CampaignListData: ['CampaignFactory',
-                function(CampaignFactory) {
-                  return CampaignFactory.getCampaignList();
-                }],
-              TestListData: ['TestFactory',
-                function(TestFactory) {
-                  return TestFactory.gettestList();
-                }]
-            }*/
-          })
-        ;
+            }
+          });
 
       }])
 

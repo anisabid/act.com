@@ -20,26 +20,41 @@
             templateUrl: FormatUrlProvider.getTemplatePath('main') + 'main.html',
             controller: 'MainController'
           })
-            .state('main.dashboard', {
-              url: '/dashboard',
-              templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'list.html',
-              controller: 'DashboardController',
-              resolve: {
-                CampaignListData: ['CampaignFactory',
-                  function(CampaignFactory) {
-                    return CampaignFactory.getCampaignList();
-                  }],
-                ApplicationListData: ['ApplicationFactory',
-                  function(ApplicationFactory) {
-                    return ApplicationFactory.getApplicationList();
-                  }]
-              }
-            })
-            .state('main.campaign', {
-              abstract: true,
-              templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'detail.html',
-              controller: 'CampaignController'
-            })
+          .state('main.dashboard', {
+            url: '/dashboard',
+            templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'list.html',
+            controller: 'DashboardController',
+            resolve: {
+              CampaignListData: ['CampaignFactory',
+                function (CampaignFactory) {
+                  return CampaignFactory.getCampaignList();
+                }],
+              ApplicationListData: ['ApplicationFactory',
+                function (ApplicationFactory) {
+                  return ApplicationFactory.getApplicationList();
+                }]
+            }
+          })
+          .state('main.campaign', {
+            abstract: true,
+            templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'detail.html',
+            controller: 'CampaignController',
+            resolve: {
+              CampaignListData: ['CampaignFactory',
+                function (CampaignFactory) {
+                  return CampaignFactory.getCampaignList();
+                }],
+              TestListData: ['TestFactory',
+                function (TestFactory) {
+                  return TestFactory.getTestList();
+                }],
+              CampaignDetailData: ['CampaignFactory',
+                function (CampaignFactory) {
+                  return CampaignFactory.getCampaignDetail();
+                }
+              ]
+            }
+          })
           .state('main.campaign.detail', {
             url: '/campaign/:campaignId',
             views: {
@@ -52,19 +67,8 @@
               'viewPageContainerCenter': {
                 templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'detail.center.html'
               }
-            }/*,
-            resolve: {
-              CampaignListData: ['CampaignFactory',
-                function(CampaignFactory) {
-                  return CampaignFactory.getCampaignList();
-                }],
-              TestListData: ['TestFactory',
-                function(TestFactory) {
-                  return TestFactory.gettestList();
-                }]
-            }*/
-          })
-        ;
+            }
+          });
 
       }])
 
@@ -137,16 +141,95 @@ var Obj = {
 (function () {
 
   angular.module('actApp')
-    .controller('CampaignController', ['$scope', 'CampaignListData', 'TestListData', function ($scope, CampaignListData, TestListData) {
+    .controller('CampaignController', ['$scope', '$state', 'CampaignListData', 'TestListData', 'CampaignDetailData',
+      function ($scope, $state, CampaignListData, TestListData, CampaignDetailData) {
 
-      $scope.campaign = {
-        sources: CampaignListData
-      };
-      $scope.test = {
-        sources: TestListData
-      };
-    }]);
+        $scope.campaign = {
+          sources: CampaignListData,
+          tests: TestListData,
+          detail: CampaignDetailData
+        };
 
+        $scope.remove = function(scope) {
+          scope.remove();
+        };
+
+        $scope.toggle = function(scope) {
+          scope.toggle();
+        };
+
+        $scope.moveLastToTheBeginning = function () {
+          var a = $scope.data.pop();
+          $scope.data.splice(0,0, a);
+        };
+
+        $scope.newSubItem = function(scope) {
+          var nodeData = scope.$modelValue;
+          nodeData.nodes.push({
+            id: nodeData.id * 10 + nodeData.nodes.length,
+            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
+            nodes: []
+          });
+        };
+
+        $scope.collapseAll = function() {
+          $scope.$broadcast('collapseAll');
+        };
+
+        $scope.expandAll = function() {
+          $scope.$broadcast('expandAll');
+        };
+
+        $scope.data = [{
+          "id": 1,
+          "title": "node1",
+          "nodes": [
+            {
+              "id": 11,
+              "title": "node1.1",
+              "nodes": [
+                {
+                  "id": 111,
+                  "title": "node1.1.1",
+                  "nodes": []
+                }
+              ]
+            },
+            {
+              "id": 12,
+              "title": "node1.2",
+              "nodes": []
+            }
+          ]
+        }, {
+          "id": 2,
+          "title": "node2",
+          "nodes": [
+            {
+              "id": 21,
+              "title": "node2.1",
+              "nodes": []
+            },
+            {
+              "id": 22,
+              "title": "node2.2",
+              "nodes": []
+            }
+          ]
+        }, {
+          "id": 3,
+          "title": "node3",
+          "nodes": [
+            {
+              "id": 31,
+              "title": "node3.1",
+              "nodes": []
+            }
+          ]
+        }];
+
+
+      }]);
 })();
 'use strict';
 
@@ -198,7 +281,25 @@ var Obj = {
 
             var params = {
               method: ActRest.campaign.list.method,
-              url: ActRest.campaign.list.url
+              url: ActRest.baseUrl + ActRest.campaign.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          },
+          getCampaignDetail: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.campaign.detail.method,
+              url: ActRest.baseUrl + ActRest.campaign.detail.url
             };
 
             $http(params)
@@ -214,7 +315,8 @@ var Obj = {
         };
 
         return {
-          getCampaignList: $f.getCampaignList
+          getCampaignList: $f.getCampaignList,
+          getCampaignDetail: $f.getCampaignDetail
         };
 
       }]);
@@ -229,7 +331,7 @@ var Obj = {
       function ($http, $q, ActRest) {
 
         var $f = {
-          gettestList: function () {
+          getTestList: function () {
             var defer = $q.defer();
 
             var params = {
@@ -250,12 +352,13 @@ var Obj = {
         };
 
         return {
-          gettestList: $f.gettestList
+          getTestList: $f.getTestList
         };
 
       }]);
 
 })();
+
 'use strict';
 
 (function () {
@@ -518,7 +621,6 @@ var Obj = {
     }]);
 
 })();
-
 'use strict';
 
 (function () {

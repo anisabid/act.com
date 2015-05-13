@@ -28,5 +28,8 @@
     "gulp-concat": "^2.5.2",
     "gulp-less": "^3.0.3",
     "http-server": "^0.8.0"
+  },
+  "dependencies": {
+    "ng-tiny-scrollbar": "^0.8.0"
   }
 }

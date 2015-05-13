@@ -1,0 +1,18 @@
+<section class="sidebar-campaigns">
+    <header class="campaigns-header">
+
+    </header>
+    <div class="campaigns-body ">
+        <div class="campaigns-items">
+            <am-campaign
+                    ng-repeat="source in campaign.sources | filter: filterCampaign.applicationId track by $index"
+                    parameters="source">
+
+            </am-campaign>
+        </div>
+    </div>
+</section>
+
+
+
+

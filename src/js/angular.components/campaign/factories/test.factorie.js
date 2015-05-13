@@ -7,7 +7,7 @@
       function ($http, $q, ActRest) {
 
         var $f = {
-          gettestList: function () {
+          getTestList: function () {
             var defer = $q.defer();
 
             var params = {
@@ -28,7 +28,7 @@
         };
 
         return {
-          gettestList: $f.gettestList
+          getTestList: $f.getTestList
         };
 
       }]);
