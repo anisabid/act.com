@@ -1,6 +1,6 @@
 <header class="campaign-header">
 
-
+{{campaign.currentItem.name}}
 
 </header>
 
@@ -29,15 +29,9 @@
 </script>
 
 <div ui-tree>
-    <ol ui-tree-nodes="" ng-model="data" id="tree-root">
+    <ol ui-tree-nodes ng-model="campaign.detail" id="tree-root">
         <li ng-repeat="node in campaign.detail" ui-tree-node ng-include="'nodes_renderer.html'"></li>
     </ol>
 </div>
 
 
-<div class="col-sm-6">
-    <div class="info">
-        {{info}}
-    </div>
-    <pre class="code">{{ campaign.detail | json }}</pre>
-</div>

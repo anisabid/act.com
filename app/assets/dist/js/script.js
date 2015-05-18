@@ -160,7 +160,8 @@ var Obj = {
         $scope.scrollbarConfig = ActScrollbarConfig;
 
         $scope.campaign = {
-          sources: CampaignListData,
+          items: CampaignListData,
+          currentItem: CampaignListData[1],
           tests: TestListData,
           detail: CampaignDetailData
         };
@@ -177,6 +178,7 @@ var Obj = {
 
       }]);
 })();
+
 'use strict';
 
 (function () {
@@ -539,7 +541,6 @@ var Obj = {
       };
     }]);
 })();
-
 'use strict';
 
 (function () {
@@ -585,6 +586,7 @@ var Obj = {
 })();
 
 
+
 'use strict';
 
 (function () {
@@ -597,4 +599,3 @@ var Obj = {
 
       }]);
 })();
-

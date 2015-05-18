@@ -5,7 +5,7 @@
     <div class="campaigns-body ">
         <div class="campaigns-items">
             <am-campaign
-                    ng-repeat="source in campaign.sources | filter: filterCampaign.applicationId track by $index"
+                    ng-repeat="source in campaign.items | filter: filterCampaign.applicationId track by $index"
                     parameters="source">
             </am-campaign>
         </div>

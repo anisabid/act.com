@@ -9,7 +9,8 @@
         $scope.scrollbarConfig = ActScrollbarConfig;
 
         $scope.campaign = {
-          sources: CampaignListData,
+          items: CampaignListData,
+          currentItem: CampaignListData[1],
           tests: TestListData,
           detail: CampaignDetailData
         };
