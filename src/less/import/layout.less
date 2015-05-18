@@ -1,3 +1,7 @@
+// --------------------------------------------------
+// Import / layout
+// --------------------------------------------------
+
 #page-header{
 
 }
@@ -12,7 +16,18 @@
   overflow: hidden;
 
   > .page-container-left{
-    float: left;
+    /*float: left;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: @base-width-sidebar-left;
+    border-right: 5px solid @base-color-light;
+    background: #FFFFFF;
+
+    overflow: auto;
+
 
     .sidebar-campaigns{
       .campaigns-body{
@@ -25,7 +40,12 @@
   > .page-container-right{
     overflow: hidden;
     > .page-container-left{
-      overflow: hidden;
+      position: absolute;
+      left: @base-width-sidebar-left;
+      right: @base-width-sidebar-right;
+      top: 0;
+      bottom: 0;
+
     }
     > .page-container-right{
       float: right;

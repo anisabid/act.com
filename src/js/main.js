@@ -4,7 +4,8 @@
 
   var actApp = angular.module('actApp', [
     'ui.router',
-    'ui.tree'
+    'ui.tree',
+    'ngScrollbars'
   ]);
 
 

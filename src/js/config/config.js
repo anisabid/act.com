@@ -27,7 +27,19 @@ var Obj = {
     });
 
   angular.module('actApp')
+    .constant('ActScrollbarConfig', {
+
+      autoHideScrollbar: true,
+      theme: 'light',
+      advanced: {
+        updateOnContentResize: true
+      }
+
+    });
+
+  angular.module('actApp')
     .constant('ActRest', {
+
       baseUrl: 'http://localhost:8888/jsonmock/',
       campaign: {
         list: {

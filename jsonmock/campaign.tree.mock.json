@@ -1,44 +1,51 @@
 [
   {
     "id": 1,
-    "title": "1. dragon-breath",
-    "items": []
-  },
-  {
-    "id": 2,
-    "title": "2. moiré-vision",
-    "items": [
+    "title": "node1 20",
+    "nodes": [
       {
-        "id": 21,
-        "title": "2.1. tofu-animation",
-        "items": [
+        "id": 11,
+        "title": "node1.1",
+        "nodes": [
           {
-            "id": 211,
-            "title": "2.1.1. spooky-giraffe",
-            "items": []
-          },
-          {
-            "id": 212,
-            "title": "2.1.2. bubble-burst",
-            "items": []
+            "id": 111,
+            "title": "node1.1.1",
+            "nodes": []
           }
         ]
       },
       {
+        "id": 12,
+        "title": "node1.2",
+        "nodes": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "node2",
+    "nodes": [
+      {
+        "id": 21,
+        "title": "node2.1",
+        "nodes": []
+      },
+      {
         "id": 22,
-        "title": "2.2. barehand-atomsplitting",
-        "items": []
+        "title": "node2.2",
+        "nodes": []
       }
     ]
   },
   {
     "id": 3,
-    "title": "3. unicorn-zapper",
-    "items": []
-  },
-  {
-    "id": 4,
-    "title": "4. romantic-transclusion",
-    "items": []
+    "title": "node3",
+    "nodes": [
+      {
+        "id": 31,
+        "title": "node3.1",
+        "nodes": []
+      }
+    ]
   }
 ]

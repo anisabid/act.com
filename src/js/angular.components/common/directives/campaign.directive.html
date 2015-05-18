@@ -3,15 +3,15 @@
         <div class="container">
             <section class="view-global">
                 <a ui-sref="main.campaign.detail({campaignId:campaign.parameters.id})" ui->
-                    <h2 class="title"><span class="ref">#ACT0002</span> :: Nom de la campagne</h2>
-                    <aside class="aside">Crée par <span class="v author">Joans Geyrik</span> le <span class="v date">11 janvier 01 2015</span>
+                    <h2 class="title"><span class="ref">{{campaign.parameters.name}}</h2>
+                    <aside class="aside">Crée par <span class="v author">{{campaign.parameters.user.name}}</span> le <span class="v date">{{campaign.parameters.date}}</span>
                     </aside>
                     <div class="indicators clearfix">
                         <div class="left">
-                            <am-indicator title="Sénarios" class="scenarios" parameters="campaign.parameters.json"></am-indicator>
+                            <am-indicator title="Sénarios" class="scenarios" parameters="campaign.parameters.scenarios.series.json"></am-indicator>
 
                             <am-indicator title="éxigences" class="requirements"
-                                          parameters="campaign.parameters.json"></am-indicator>
+                                          parameters="campaign.parameters.requirements.series.json"></am-indicator>
 
                         </div>
                         <div class="right">
@@ -56,11 +56,11 @@
                 <div class="left">
                     <div class="left">
                         <am-indicator title="Sénarios" show="true" class="scenarios"
-                                      parameters="campaign.parameters.json"></am-indicator>
+                                      parameters="campaign.parameters.scenarios.series.json"></am-indicator>
                     </div>
                     <div class="right">
                         <am-chart-bar class="graph d3js bar"
-                                      parameters="campaign.parameters.json"
+                                      parameters="campaign.parameters.scenarios.series.json"
                                       width="70"
                                       height="70"></am-chart-bar>
                     </div>

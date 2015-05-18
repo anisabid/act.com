@@ -166,7 +166,15 @@ ol {
   overflow: hidden;
 }
 #page-container > .page-container-left {
-  float: left;
+  /*float: left;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 285px;
+  border-right: 5px solid #dcdee0;
+  background: #FFFFFF;
+  overflow: auto;
 }
 #page-container > .page-container-left .sidebar-campaigns .campaigns-body {
   /*position: absolute;
@@ -177,10 +185,21 @@ ol {
   overflow: hidden;
 }
 #page-container > .page-container-right > .page-container-left {
-  overflow: hidden;
+  position: absolute;
+  left: 285px;
+  right: 300px;
+  top: 0;
+  bottom: 0;
 }
 #page-container > .page-container-right > .page-container-right {
   float: right;
+}
+#act .mCSB_container_wrapper {
+  margin: auto;
+}
+#act .mCSB_container_wrapper .mCSB_container {
+  width: auto !important;
+  padding: 0;
 }
 /** Header
  ************************************************** */
@@ -732,4 +751,56 @@ body .page-container {
 }
 body .page-container .campaign-list {
   padding: 0 15px;
+}
+.btn {
+  margin-right: 8px;
+  cursor: pointer;
+}
+.angular-ui-tree-nodes.hidden {
+  display: none;
+  visibility: hidden;
+}
+.angular-ui-tree-handle {
+  background: #f8faff;
+  border: 1px solid #dae2ea;
+  color: #7c9eb2;
+  padding: 10px 10px;
+}
+.angular-ui-tree-handle:hover {
+  color: #438eb9;
+  background: #f4f6f7;
+  border-color: #dce2e8;
+}
+.angular-ui-tree-placeholder {
+  background: #f0f9ff;
+  border: 2px dashed #bed2db;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.group-title {
+  background-color: #687074 !important;
+  color: #FFF !important;
+}
+/* --- Tree --- */
+.tree-node {
+  border: 1px solid #dae2ea;
+  background: #f8faff;
+  color: #7c9eb2;
+}
+.tree-node-content {
+  margin: 10px;
+}
+.tree-handle {
+  padding: 10px;
+  background: #428bca;
+  color: #FFF;
+  margin-right: 10px;
+}
+.angular-ui-tree-placeholder {
+  background: #f0f9ff;
+  border: 2px dashed #bed2db;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
