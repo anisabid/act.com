@@ -154,6 +154,21 @@ var Obj = {
 (function () {
 
   angular.module('actApp')
+    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
+      function ($scope, $state, CampaignListData, ApplicationListData) {
+
+        $scope.dashboard = {
+          sources: CampaignListData,
+          applications: ApplicationListData
+        };
+
+      }]);
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
     .controller('CampaignController', ['$scope', '$state', 'CampaignListData', 'TestListData', 'CampaignDetailData', 'ActScrollbarConfig',
       function ($scope, $state, CampaignListData, TestListData, CampaignDetailData, ActScrollbarConfig) {
 
@@ -178,7 +193,6 @@ var Obj = {
 
       }]);
 })();
-
 'use strict';
 
 (function () {
@@ -541,6 +555,7 @@ var Obj = {
       };
     }]);
 })();
+
 'use strict';
 
 (function () {
@@ -569,21 +584,6 @@ var Obj = {
 
 })();
 
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
-      function ($scope, $state, CampaignListData, ApplicationListData) {
-
-        $scope.dashboard = {
-          sources: CampaignListData,
-          applications: ApplicationListData
-        };
-
-      }]);
-})();
 
 
 

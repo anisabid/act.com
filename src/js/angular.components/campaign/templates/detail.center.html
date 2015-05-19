@@ -1,25 +1,45 @@
 <header class="campaign-header">
 
-{{campaign.currentItem.name}}
+    {{campaign.currentItem.name}}
 
 </header>
-
 
 
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
     <div ui-tree-handle>
-        <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><span
-                class="fa"
-                ng-class="{
-          'fa-chevron-right': collapsed,
-          'fa-chevron-down': !collapsed
-        }"></span></a>
-        {{node.title}}
-        <a class="pull-right btn btn-danger btn-xs" data-nodrag ng-click="remove(this)"><span
-                class="fa fa-remove"></span></a>
-        <a class="pull-right btn btn-primary btn-xs" data-nodrag ng-click="newSubItem(this)" style="margin-right: 8px;"><span
-                class="fa fa-plus"></span></a>
+        <div class="navigation">
+            <div class="drag">
+                <i class="fa fa-navicon"></i>
+            </div>
+            <div class="options" data-nodrag>
+                <div class="wrap">
+                    <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag
+                       ng-click="toggle(this)">
+                        <span class="fa" ng-class="{ 'fa-chevron-right': collapsed, 'fa-chevron-down': !collapsed}"></span>
+                    </a>
+                    <a class="btn" href="" ng-click="newSubItem(this)"><i class="fa fa-plus"></i> </a>
+                    <a class="btn" href=""><i class="fa fa-pencil"></i> </a>
+                    <a class="btn" href="" ng-click="remove(this)"><i class="fa fa-remove"></i> </a>
+                    <a class="btn" href=""><i class="fa fa-eye"></i> </a>
+                    <a class="btn" href=""><i class="fa fa-comments-o"></i> </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="title">
+            {{node.title}}
+        </div>
+
+        <div class="status" data-nodrag>
+            <a href=""><i class="fa fa-circle-o base-color-status-standby"></i> </a>
+            <ul class="list">
+                <li><a href=""><i class="fa fa-circle-o base-color-status-standby"></i> Standbay</a> </li>
+                <li><a href=""><i class="fa fa-circle-o base-color-status-progress"></i> Progress</a> </li>
+                <li><a href=""><i class="fa fa-thumbs-o-up base-color-status-ok"></i> Ok</a> </li>
+                <li><a href=""><i class="fa fa-thumbs-o-down base-color-status-ko"></i> Ko</a> </li>
+            </ul>
+        </div>
     </div>
     <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
         <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
@@ -28,7 +48,7 @@
     </ol>
 </script>
 
-<div ui-tree>
+<div class="tree" ui-tree>
     <ol ui-tree-nodes ng-model="campaign.detail" id="tree-root">
         <li ng-repeat="node in campaign.detail" ui-tree-node ng-include="'nodes_renderer.html'"></li>
     </ol>

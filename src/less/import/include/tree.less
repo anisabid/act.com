@@ -1,60 +1,203 @@
+@t-tree-height: 26px;
+@t-background-placeholder: #f0f0f0;
+
+.angular-ui-tree-handle(){
+
+    background: #FFFFFF;
+    border: 1px solid @base-color-grey-light;
+    padding: 1px;
+    width: 100%;
+    min-height: @t-tree-height;
+    line-height: @t-tree-height;
+    .rounded(1px);
+    margin-bottom: 5px;
+    .display();
+
+    .navigation,
+    .options,
+    .wrap{
+      .user-select(none);
+      .display();
+    }
+
+    .fa{
+      line-height: @t-tree-height;
+      font-size: @base-font-size-large;
+    }
+
+    .btn{
+      padding: 0;
+      margin: 0 2px;
+      width:15px ;
+      display: block;
+    }
+
+    &:hover{
+      .navigation{
+        .options{
+          display: block;
+        }
+      }
+    }
+
+    // Navigation
+    .navigation{
+
+
+      // Drag
+      .drag{
+        padding-right: 1px;
+        margin-right: 1px;
+        border-right: 1px solid @base-color-grey-light;
+        .fa{
+          width: @t-tree-height;
+          height: @t-tree-height;
+          line-height: @t-tree-height;
+          background: @base-color-status-ok;
+          text-align: center;
+          color: #FFFFFF;
+          font-size: @base-font-size-large;
+        }
+
+      }
+
+
+
+      // Options
+      .options{
+        padding-right: 1px;
+        margin-right: 0;
+        border-right: 1px solid @base-color-grey-light;
+        display: none;
+        .wrap{
+          cursor: default;
+          padding: 0 5px 0 2px;
+          background: @base-color-grey-lightest-x;
+        }
+        .btn{
+          text-align: center;
+          color: @base-color-grey;
+          &:hover{
+            color: @base-color-grey-darker;
+          }
+        }
+      }
+
+    }
+
+    // Title
+    .title{
+      .flex();
+      margin-left: 10px;
+    }
+
+    // Status
+    .status{
+      cursor: default;
+      position: relative;
+      border-left: 1px solid @base-color-grey-light;
+      > a{
+        display: block;
+        padding-left: 1px;
+        margin-left: 1px;
+        width: @t-tree-height;
+        text-align: center;
+        color: @base-color-status-standby;
+      }
+
+      &:hover
+      {
+
+        &:after{
+          content: "";
+          border-bottom: 2px solid @base-color-grey-lightest;
+          border-left: 2px solid #fff;
+          border-right: 1px solid #fff;
+          left: -1px;
+          right: -1px;
+          bottom: -1px;
+          position: absolute;
+          z-index: @base-z-index-50;
+        }
+
+        > a{
+          background-color: @base-color-grey-lightest;
+        }
+        .list {
+          display: block;
+        }
+
+      }
+
+      .list{
+        position: absolute;
+        top: @t-tree-height;
+        right: -1px;
+        border: 1px solid #FFFFFF;
+        background-color: #FFFFFF;
+        outline: 1px solid @base-color-grey-light;
+        z-index: @base-z-index-20;
+        display: none;
+        background-color: @base-color-grey-lightest;
+        li{
+          display: block;
+          line-height: @base-font-size-medium;
+          font-size: @base-font-size-small;
+          width: 80px;
+          padding: 0 10px;
+          &:hover{
+            background-color: @base-color-grey-lighter;
+          }
+        }
+
+      }
+    }
+
+}
+
+
+
+// Tree Style
 .tree{
-  .btn {
-    margin-right: 8px;
-  }
+
+  width: 90%;
+  margin: 10px 5%;
 
   .angular-ui-tree-handle {
-    background: #f8faff;
-    border: 1px solid #dae2ea;
-    color: #7c9eb2;
-    padding: 10px 10px;
+
+    .angular-ui-tree-handle();
+
   }
 
-  .angular-ui-tree-handle:hover {
-    color: #438eb9;
-    background: #f4f6f7;
-    border-color: #dce2e8;
+  .angular-ui-tree-nodes{
+    &.hidden{
+      display: none;
+      visibility: hidden;
+    }
+    .angular-ui-tree-nodes{
+      padding-left: @t-tree-height + 4 ;
+    }
+
   }
 
   .angular-ui-tree-placeholder {
-    background: #f0f9ff;
-    border: 2px dashed #bed2db;
+    background: @t-background-placeholder;
+    border: 2px dashed @base-color-grey-light;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
 
-
-  .group-title {
-    background-color: #687074 !important;
-    color: #FFF !important;
+}
+// Drag Style
+.angular-ui-tree-nodes.angular-ui-tree-drag{
+  .angular-ui-tree-handle();
+  .navigation,
+  .title{
+    display: inline-block !important;
+  }
+  .status{
+    display: none !important;
   }
 
-
-  /* --- Tree --- */
-  .tree-node {
-    border: 1px solid #dae2ea;
-    background: #f8faff;
-    color: #7c9eb2;
-  }
-  .tree-node-content {
-    margin: 10px;
-  }
-  .tree-handle {
-    padding: 10px;
-    background: #428bca;
-    color: #FFF;
-    margin-right: 10px;
-  }
-
-  .angular-ui-tree-handle:hover {
-  }
-
-  .angular-ui-tree-placeholder {
-    background: #f0f9ff;
-    border: 2px dashed #bed2db;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
 }
