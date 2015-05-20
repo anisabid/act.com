@@ -120,11 +120,11 @@ var Obj = {
   angular.module('actApp')
     .constant('ActRest', {
 
-      baseUrl: 'http://localhost:8888/jsonmock/',
+      baseUrl: 'http://localhost:3000/', //'http://localhost:8888/jsonmock/',
       campaign: {
         list: {
           method: 'GET',
-          url: 'campaigns.mock.json'
+          url: 'campaign' //'campaigns.mock.json'
         },
         detail: {
           method: 'GET',
@@ -134,7 +134,7 @@ var Obj = {
       application: {
         list: {
           method: 'GET',
-          url: 'applications.mock.json'
+          url: 'application' //'applications.mock.json'
         }
       },
       test: {
@@ -149,21 +149,6 @@ var Obj = {
 
 })();
 
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
-      function ($scope, $state, CampaignListData, ApplicationListData) {
-
-        $scope.dashboard = {
-          sources: CampaignListData,
-          applications: ApplicationListData
-        };
-
-      }]);
-})();
 'use strict';
 
 (function () {
@@ -584,6 +569,21 @@ var Obj = {
 
 })();
 
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
+      function ($scope, $state, CampaignListData, ApplicationListData) {
+
+        $scope.dashboard = {
+          sources: CampaignListData,
+          applications: ApplicationListData
+        };
+
+      }]);
+})();
 
 
 

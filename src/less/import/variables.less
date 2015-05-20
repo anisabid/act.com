@@ -103,15 +103,22 @@
 
 // Global
 // --------------------------------------------------
+//## Define the [description]
 @base-color-master: #303133;
 @base-color-master-light: #939599;
 @base-color-master-lighter: #cccccc;
 @base-color-blue:#009fe3;
 @base-color-selected: #5d8fbe;
 @base-color-border: #c4c7cc;
+
 // Font Family
+// --------------------------------------------------
+//## Define the [description]
 @base-font-family: 'Roboto', sans-serif;
+
 // Font Size
+// --------------------------------------------------
+//## Define the [description]
 @base-font-size: 12px;
 @base-font-size-initial: 12px;
 @base-font-size-medium: 12px;
@@ -129,13 +136,18 @@
 
 
 // Font Weight
+// --------------------------------------------------
+//## Define the [description]
 @base-font-weight-thin: 100;
 @base-font-weight-light: 300;
 @base-font-weight-normal: 400;
 @base-font-weight-medium: 500;
 @base-font-weight-bold: 700;
 @base-font-weight-ultra-bold: 900;
+
 // Z-index
+// --------------------------------------------------
+//## Define the [description]
 @base-z-index-1: 10;
 @base-z-index-2: 20;
 @base-z-index-3: 30;
@@ -153,5 +165,42 @@
 @base-z-index-80: 800;
 @base-z-index-90: 900;
 // Layout
+// --------------------------------------------------
+//## Define the [description]
 @base-width-sidebar-left: 285px;
 @base-width-sidebar-right: 300px;
+
+// Base Media queries breakpoints
+// --------------------------------------------------
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+@screen-xs:                  460px;
+@screen-xs-min:              @screen-xs;
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+@base-media-large:         ~"only screen and (min-width: @{screen-lg-min})";
+@base-media-medium:         ~"only screen and (min-width: @{screen-md-min}) and (max-width: @{screen-md-max})";
+@base-media-small:          ~"only screen and (min-width: @{screen-sm-min}) and (max-width: @{screen-sm-max})";
+@base-media-extra-small:    ~"only screen and (max-width: @{screen-xs-max})";
+@base-media-extra-x-small:  ~"only screen and (max-width: @{screen-xs-min})";

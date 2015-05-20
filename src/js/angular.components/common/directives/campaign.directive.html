@@ -3,8 +3,8 @@
         <div class="container">
             <section class="view-global">
                 <a ui-sref="main.campaign.detail({campaignId:campaign.parameters.id})" ui->
-                    <h2 class="title"><span class="ref">{{campaign.parameters.name}}</h2>
-                    <aside class="aside">Crée par <span class="v author">{{campaign.parameters.user.name}}</span> le <span class="v date">{{campaign.parameters.date}}</span>
+                    <h2 class="title title-of-camaign"><span class="ref">{{campaign.parameters.name}}</span></h2>
+                    <aside class="aside">Crée par <span class="v author">{{campaign.parameters.user.name}}</span> le <span class="v date">{{campaign.parameters.date | date : 'yyyy-MM-dd'}}</span>
                     </aside>
                     <div class="indicators clearfix">
                         <div class="left">

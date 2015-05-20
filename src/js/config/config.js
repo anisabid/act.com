@@ -40,11 +40,11 @@ var Obj = {
   angular.module('actApp')
     .constant('ActRest', {
 
-      baseUrl: 'http://localhost:8888/jsonmock/',
+      baseUrl: 'http://localhost:3000/', //'http://localhost:8888/jsonmock/',
       campaign: {
         list: {
           method: 'GET',
-          url: 'campaigns.mock.json'
+          url: 'campaign' //'campaigns.mock.json'
         },
         detail: {
           method: 'GET',
@@ -54,7 +54,7 @@ var Obj = {
       application: {
         list: {
           method: 'GET',
-          url: 'applications.mock.json'
+          url: 'application' //'applications.mock.json'
         }
       },
       test: {
