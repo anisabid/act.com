@@ -6,33 +6,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-.base-color-status-standby{
-  color: @base-color-status-standby;
-}
-.base-color-status-progress{
-  color: @base-color-status-progress;
-}
-.base-color-status-ok{
-  color: @base-color-status-ok;
-}
-.base-color-status-ko{
-  color: @base-color-status-ko;
-}
-
-.base-background-status-standby{
-  background-color: @base-color-status-standby;
-}
-.base-background-status-progress{
-  background-color: @base-color-status-progress;
-}
-.base-background-status-ok{
-  background-color: @base-color-status-ok;
-}
-.base-background-status-ko{
-  background-color: @base-color-status-ko;
-}
-
 /* http://sonspring.com/journal/clearing-floats */
 
 .clear {
@@ -69,6 +42,41 @@
   zoom: 1;
 }
 
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/*---------------------------------------------------
+    LESS Hover Active
+  ---------------------------------------------------*/
+.color-hover-active(@color) {
+  @hover: 90%;
+  @active: 94%;
+  &:hover {
+    color: mix(@color, #fff, @hover);
+  }
+  &:active {
+    color: mix(@color, #000, @active);;
+  }
+}
+
+.background-hover-active(@color) {
+  @hover: 90%;
+  @active: 94%;
+  &:hover {
+    background-color: mix(@color, #fff, @hover);
+  }
+  &:active {
+    background-color: mix(@color, #000, @active);;
+  }
+}
 
 /*---------------------------------------------------
     LESS Elements 0.9

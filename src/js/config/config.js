@@ -48,7 +48,7 @@ var Obj = {
         },
         detail: {
           method: 'GET',
-          url: 'campaign.tree.mock.json'
+          url: 'campaignTree' //'campaign.tree.mock.json'
         }
       },
       application: {
@@ -60,8 +60,7 @@ var Obj = {
       test: {
         list: {
           method: 'GET',
-          url: 'tests.mock.json'
-
+          url: 'test' //'tests.mock.json'
         }
       }
 

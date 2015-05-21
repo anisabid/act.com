@@ -10,6 +10,8 @@ module.exports = function () {
         name: faker.company.bsBuzz()
       }
     }),
+
+
     // campaign
     "campaign": _.times(10, function (n) {
       return {
@@ -62,6 +64,80 @@ module.exports = function () {
             }
           }
         }
+      }
+    }),
+    // campaignTree
+    "campaignTree": [
+      {
+        "id": 1,
+        "title": "node1 20",
+        "status": "progress",
+        "nodes": [
+          {
+            "id": 11,
+            "title": "node1.1",
+            "status": "ok",
+            "nodes": [
+              {
+                "id": 111,
+                "title": "node1.1.1",
+                "status": "ok",
+                "nodes": []
+              }
+            ]
+          },
+          {
+            "id": 12,
+            "title": "node1.2",
+            "status": "standby",
+            "nodes": []
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "node2",
+        "status": "ko",
+        "nodes": [
+          {
+            "id": 21,
+            "title": "node2.1",
+            "status": "ko",
+            "nodes": []
+          },
+          {
+            "id": 22,
+            "title": "node2.2",
+            "status": "ko",
+            "nodes": []
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "node3",
+        "status": "standby",
+        "nodes": [
+          {
+            "id": 31,
+            "title": "node3.1",
+            "status": "standby",
+            "nodes": []
+          }
+        ]
+      }
+    ],
+
+    "test": _.times(20, function (n) {
+      var begin = 200;
+      function getId(n){
+        return begin + n;
+      }
+      return {
+        "id": getId(n),
+        "title": "node-"+getId(n),
+        "status": "standby",
+        "nodes": []
       }
     })
 

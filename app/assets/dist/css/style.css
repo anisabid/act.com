@@ -352,18 +352,19 @@ ol {
   bottom: 0;
   overflow: hidden;
 }
-#page-container > .page-container-left {
-  /*float: left;*/
+#page-container > .page-container-left,
+#page-container > .view-left {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
+  overflow: auto;
   width: 285px;
   border-right: 5px solid #dcdee0;
   background: #FFFFFF;
-  overflow: auto;
 }
-#page-container > .page-container-left .sidebar-campaigns .campaigns-body {
+#page-container > .page-container-left .sidebar-campaigns .campaigns-body,
+#page-container > .view-left .sidebar-campaigns .campaigns-body {
   /*position: absolute;
         top: 0;
         bottom: 0;*/
@@ -378,8 +379,16 @@ ol {
   top: 0;
   bottom: 0;
 }
-#page-container > .page-container-right > .page-container-right {
-  float: right;
+#page-container > .page-container-right > .page-container-right,
+#page-container > .page-container-right > .view-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  width: 300px;
+  border-left: 5px solid #dcdee0;
+  background: #FFFFFF;
 }
 #act .mCSB_container_wrapper {
   margin: auto;
@@ -589,6 +598,12 @@ ol {
   border-style: solid;
   border-color: #333333;
 }
+.view-center .campaign {
+  margin: 0;
+  border-left-width: 0;
+  border-top-width: 5px;
+  background-color: #fbfbfb;
+}
 .status-standby.campaign,
 .status-standby .campaign,
 .standby.campaign,
@@ -623,6 +638,11 @@ ol {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #303133;
+}
+.view-center .campaign .container {
+  width: 100%;
+  border-width: 0 0 1px 0;
+  padding: 0 10px;
 }
 .campaign .container .nav.category {
   position: absolute;
@@ -675,8 +695,41 @@ ol {
 .show-view-scenarios.campaign .container .nav.category ul li.btn-show-view-scenarios .fa.fa-chevron-down {
   display: none;
 }
+.campaign .container .title-of-campaign {
+  font-size: 14px;
+  padding-top: 10px;
+  height: 30px;
+  overflow: hidden;
+}
+.campaign .container .aside-of-campaign {
+  font-size: 10px;
+  color: #cccccc;
+}
+.campaign .container .aside-of-campaign .v {
+  color: #939599;
+}
 .campaign .container .view-global {
   padding-left: 10px;
+}
+.view-center .campaign .container .view-global {
+  padding-left: 0;
+  float: left;
+  width: 33%;
+  position: relative;
+  top: inherit;
+  left: inherit;
+  right: inherit;
+  bottom: inherit;
+  background-color: #fbfbfb;
+  -webkit-transition: all 20s linear;
+  -moz-transition: all 20s linear;
+  -o-transition: all 20s linear;
+  transition: all 20s linear;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 .campaign .container .view-global a {
   color: #303133;
@@ -684,10 +737,6 @@ ol {
 .campaign .container .view-global .title {
   font-size: 14px;
   padding-top: 10px;
-}
-.campaign .container .view-global .title.title-of-camaign {
-  height: 23px;
-  overflow: hidden;
 }
 .campaign .container .view-global .aside {
   font-size: 10px;
@@ -737,6 +786,26 @@ ol {
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+}
+.view-center .campaign .container .view-requirements,
+.view-center .campaign .container .view-scenarios {
+  float: left;
+  width: 33%;
+  position: relative;
+  top: inherit;
+  left: inherit;
+  right: inherit;
+  bottom: inherit;
+  background-color: #fbfbfb;
+  -webkit-transition: all 20s linear;
+  -moz-transition: all 20s linear;
+  -o-transition: all 20s linear;
+  transition: all 20s linear;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 .campaign .container .view-requirements .left,
 .campaign .container .view-scenarios .left,

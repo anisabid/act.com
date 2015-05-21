@@ -2,6 +2,11 @@
 // Import / layout
 // --------------------------------------------------
 
+.separator (@direction: right){
+  border-@{direction} : 5px solid @base-color-light;
+  background: #FFFFFF;
+}
+
 #page-header{
 
 }
@@ -15,19 +20,16 @@
   bottom: 0;
   overflow: hidden;
 
-  > .page-container-left{
-    /*float: left;*/
+  > .page-container-left,
+  > .view-left{
+
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-
-    width: @base-width-sidebar-left;
-    border-right: 5px solid @base-color-light;
-    background: #FFFFFF;
-
     overflow: auto;
-
+    width: @base-width-sidebar-left;
+    .separator();
 
     .sidebar-campaigns{
       .campaigns-body{
@@ -46,9 +48,20 @@
       top: 0;
       bottom: 0;
 
+
+
     }
-    > .page-container-right{
-      float: right;
+    > .page-container-right,
+    > .view-right{
+      //float: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: auto;
+      width: @base-width-sidebar-right;
+
+      .separator(left);
     }
   }
 }

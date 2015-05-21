@@ -2,14 +2,17 @@
   {
     "id": 1,
     "title": "node1 20",
+    "status": "progress",
     "nodes": [
       {
         "id": 11,
         "title": "node1.1",
+        "status": "ok",
         "nodes": [
           {
             "id": 111,
             "title": "node1.1.1",
+            "status": "ok",
             "nodes": []
           }
         ]
@@ -17,6 +20,7 @@
       {
         "id": 12,
         "title": "node1.2",
+        "status": "standby",
         "nodes": []
       }
     ]
@@ -24,15 +28,18 @@
   {
     "id": 2,
     "title": "node2",
+    "status": "ko",
     "nodes": [
       {
         "id": 21,
         "title": "node2.1",
+        "status": "ko",
         "nodes": []
       },
       {
         "id": 22,
         "title": "node2.2",
+        "status": "ko",
         "nodes": []
       }
     ]
@@ -40,10 +47,12 @@
   {
     "id": 3,
     "title": "node3",
+    "status": "standby",
     "nodes": [
       {
         "id": 31,
         "title": "node3.1",
+        "status": "standby",
         "nodes": []
       }
     ]

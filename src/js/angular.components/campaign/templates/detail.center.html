@@ -1,57 +1,140 @@
 <header class="campaign-header">
+  <div class="campaign" ng-class="showView">
+    <div class="container">
+      <h2 class="title title-of-campaign"><span class="ref">{{campaign.currentItem.name}}</span></h2>
+      <aside class="aside asside-of-campaign">Crée par <span class="v author">{{campaign.currentItem.user.name}}</span> le <span class="v date">{{campaign.currentItem.date | date : 'yyyy-MM-dd'}}</span>
+      </aside>
 
-    {{campaign.currentItem.name}}
+      <section class="view-global">
+          <!--h2 class="title title-of-camaign"><span class="ref">{{campaign.currentItem.name}}</span></h2>
+          <aside class="aside">Crée par <span class="v author">{{campaign.currentItem.user.name}}</span> le <span class="v date">{{campaign.currentItem.date | date : 'yyyy-MM-dd'}}</span-->
+          </aside>
+          <div class="indicators clearfix">
+            <div class="left">
+              <am-indicator title="Sénarios" class="scenarios" parameters="campaign.currentItem.scenarios.series.json"></am-indicator>
 
+              <am-indicator title="éxigences" class="requirements"
+                            parameters="campaign.currentItem.requirements.series.json"></am-indicator>
+
+            </div>
+            <div class="right">
+              <am-chart-circle class="graph d3js circle"
+                               parameters="campaign.currentItem.json"
+                               width="70"
+                               height="70"></am-chart-circle>
+            </div>
+          </div>
+
+      </section>
+      <section class="view-requirements clearfix">
+
+        <div class="left">
+          <div class="left">
+            <am-indicator title="Exigences" show="true" class="scenarios"
+                          parameters="campaign.currentItem.json"></am-indicator>
+          </div>
+          <div class="right">
+            <am-chart-bar class="graph d3js bar"
+                          parameters="campaign.currentItem.json"
+                          width="70"
+                          height="70"></am-chart-bar>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="left">
+            <am-indicator title="Tests" class="scenarios" show="true"
+                          parameters="campaign.currentItem.json"></am-indicator>
+          </div>
+          <div class="right">
+            <am-chart-bar class="graph d3js bar"
+                          parameters="campaign.currentItem.json"
+                          width="70"
+                          height="70"></am-chart-bar>
+          </div>
+        </div>
+
+      </section>
+      <section class="view-scenarios">
+        <div class="left">
+          <div class="left">
+            <am-indicator title="Sénarios" show="true" class="scenarios"
+                          parameters="campaign.currentItem.scenarios.series.json"></am-indicator>
+          </div>
+          <div class="right">
+            <am-chart-bar class="graph d3js bar"
+                          parameters="campaign.currentItem.scenarios.series.json"
+                          width="70"
+                          height="70"></am-chart-bar>
+          </div>
+        </div>
+
+
+        <div class="right">
+          <div class="left">
+            <am-indicator title="Tests" class="scenarios" show="true"
+                          parameters="campaign.currentItem.json"></am-indicator>
+          </div>
+          <div class="right">
+            <am-chart-bar class="graph d3js bar"
+                          parameters="campaign.currentItem.json"
+                          width="70"
+                          height="70"></am-chart-bar>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </header>
 
 
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
-    <div ui-tree-handle>
-        <div class="navigation">
-            <div class="drag">
-                <i class="fa fa-navicon"></i>
-            </div>
-            <div class="options" data-nodrag>
-                <div class="wrap">
-                    <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag
-                       ng-click="toggle(this)">
-                        <span class="fa" ng-class="{ 'fa-chevron-right': collapsed, 'fa-chevron-down': !collapsed}"></span>
-                    </a>
-                    <a class="btn" href="" ng-click="newSubItem(this)"><i class="fa fa-plus"></i> </a>
-                    <a class="btn" href=""><i class="fa fa-pencil"></i> </a>
-                    <a class="btn" href="" ng-click="remove(this)"><i class="fa fa-remove"></i> </a>
-                    <a class="btn" href=""><i class="fa fa-eye"></i> </a>
-                    <a class="btn" href=""><i class="fa fa-comments-o"></i> </a>
-                </div>
-            </div>
+  <div ui-tree-handle>
+    <div class="navigation">
+      <div class="drag">
+        <i class="fa fa-navicon"></i>
+      </div>
+      <div class="options" data-nodrag>
+        <div class="wrap">
+          <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag
+             ng-click="toggle(this)">
+            <span class="fa" ng-class="{ 'fa-chevron-right': collapsed, 'fa-chevron-down': !collapsed}"></span>
+          </a>
+          <a class="btn" href="" ng-click="newSubItem(this)"><i class="fa fa-plus"></i> </a>
+          <a class="btn" href=""><i class="fa fa-pencil"></i> </a>
+          <a class="btn" href="" ng-click="remove(this)"><i class="fa fa-remove"></i> </a>
+          <a class="btn" href=""><i class="fa fa-eye"></i> </a>
+          <a class="btn" href=""><i class="fa fa-comments-o"></i> </a>
         </div>
-
-        <div class="title">
-            {{node.title}}
-        </div>
-
-        <div class="status" data-nodrag>
-            <a href=""><i class="fa fa-circle-o base-color-status-standby"></i> </a>
-            <ul class="list">
-                <li><a href=""><i class="fa fa-circle-o base-color-status-standby"></i> Standbay</a> </li>
-                <li><a href=""><i class="fa fa-circle-o base-color-status-progress"></i> Progress</a> </li>
-                <li><a href=""><i class="fa fa-thumbs-o-up base-color-status-ok"></i> Ok</a> </li>
-                <li><a href=""><i class="fa fa-thumbs-o-down base-color-status-ko"></i> Ko</a> </li>
-            </ul>
-        </div>
+      </div>
     </div>
-    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
-        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
 
-        </li>
-    </ol>
+    <div class="title">
+      {{node.title}}
+    </div>
+
+    <div class="status" data-nodrag>
+      <a href=""><i class="fa fa-circle-o base-color-status-standby"></i> </a>
+      <ul class="list">
+        <li><a href=""><i class="fa fa-circle-o base-color-status-standby"></i> Standbay</a></li>
+        <li><a href=""><i class="fa fa-circle-o base-color-status-progress"></i> Progress</a></li>
+        <li><a href=""><i class="fa fa-thumbs-o-up base-color-status-ok"></i> Ok</a></li>
+        <li><a href=""><i class="fa fa-thumbs-o-down base-color-status-ko"></i> Ko</a></li>
+      </ul>
+    </div>
+  </div>
+  <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+
+    </li>
+  </ol>
 </script>
 
 <div class="tree" ui-tree>
-    <ol ui-tree-nodes ng-model="campaign.detail" id="tree-root">
-        <li ng-repeat="node in campaign.detail" ui-tree-node ng-include="'nodes_renderer.html'"></li>
-    </ol>
+  <ol ui-tree-nodes ng-model="campaign.detail" id="tree-root">
+    <li ng-repeat="node in campaign.detail" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+  </ol>
 </div>
 
 
