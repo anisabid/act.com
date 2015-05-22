@@ -1,0 +1,39 @@
+<div ui-tree-handle>
+  <div class="navigation">
+    <div class="drag" ng-class="node.status">
+      <i class="fa fa-navicon"></i>
+    </div>
+    <div class="options" data-nodrag>
+      <div class="wrap">
+        <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag
+           ng-click="toggle(this)">
+          <span class="fa" ng-class="{ 'fa-chevron-right': collapsed, 'fa-chevron-down': !collapsed}"></span>
+        </a>
+        <a class="btn" href="" ng-click="newSubItem(this)"><i class="fa fa-plus"></i> </a>
+        <a class="btn" href=""><i class="fa fa-pencil"></i> </a>
+        <a class="btn" href="" ng-click="remove(this)"><i class="fa fa-remove"></i> </a>
+        <a class="btn" href=""><i class="fa fa-eye"></i> </a>
+        <a class="btn" href=""><i class="fa fa-comments-o"></i> </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="title">
+    {{node.title}}
+  </div>
+
+  <div class="status" data-nodrag>
+    <a href=""><i class="fa fa-circle-o base-color-status-standby"></i> </a>
+    <ul class="list">
+      <li><a href=""><i class="fa fa-circle-o base-color-status-standby"></i> Standbay</a></li>
+      <li><a href=""><i class="fa fa-circle-o base-color-status-progress"></i> Progress</a></li>
+      <li><a href=""><i class="fa fa-thumbs-o-up base-color-status-ok"></i> Ok</a></li>
+      <li><a href=""><i class="fa fa-thumbs-o-down base-color-status-ko"></i> Ko</a></li>
+    </ul>
+  </div>
+</div>
+<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+  <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'/app/assets/dist/tpl/common/directives/nodes.directive.html'">
+
+  </li>
+</ol>

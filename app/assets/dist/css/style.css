@@ -122,30 +122,6 @@ ol {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.base-color-status-standby {
-  color: #333333;
-}
-.base-color-status-progress {
-  color: #f7ca18;
-}
-.base-color-status-ok {
-  color: #2bb38a;
-}
-.base-color-status-ko {
-  color: #e34b51;
-}
-.base-background-status-standby {
-  background-color: #333333;
-}
-.base-background-status-progress {
-  background-color: #f7ca18;
-}
-.base-background-status-ok {
-  background-color: #2bb38a;
-}
-.base-background-status-ko {
-  background-color: #e34b51;
-}
 /* http://sonspring.com/journal/clearing-floats */
 .clear {
   clear: both;
@@ -175,6 +151,9 @@ ol {
 .clearfix {
   zoom: 1;
 }
+/*---------------------------------------------------
+    LESS Hover Active
+  ---------------------------------------------------*/
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -344,6 +323,17 @@ ol {
     display: none !important;
   }
 }
+.panel .header {
+  zoom: 1;
+}
+.panel .header:before,
+.panel .header:after {
+  content: " ";
+  display: table;
+}
+.panel .header:after {
+  clear: both;
+}
 #page-container {
   position: fixed;
   top: 60px;
@@ -396,6 +386,33 @@ ol {
 #act .mCSB_container_wrapper .mCSB_container {
   width: auto !important;
   padding: 0;
+}
+.base-color-status-standby {
+  color: #333333;
+}
+.base-color-status-progress {
+  color: #f7ca18;
+}
+.base-color-status-ok {
+  color: #2bb38a;
+}
+.base-color-status-ko {
+  color: #e34b51;
+}
+.base-background-status-standby {
+  background-color: #333333;
+}
+.base-background-status-progress {
+  background-color: #f7ca18;
+}
+.base-background-status-ok {
+  background-color: #2bb38a;
+}
+.base-background-status-ko {
+  background-color: #e34b51;
+}
+.campaign-filter {
+  margin: 20px 0 10px 0;
 }
 /** Header
  ************************************************** */
@@ -475,82 +492,32 @@ ol {
   color: #383d49;
 }
 /* ** End Header ** */
-.campaign-filter {
+.filter-header {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  zoom: 1;
   border-top: 1px solid #c4c7cc;
   border-bottom: 1px solid #c4c7cc;
   display: block;
   width: 100%;
-  margin: 20px 0 10px 0;
 }
-.campaign-filter li,
-.campaign-filter .btn-group {
-  float: left;
+.filter-header:before,
+.filter-header:after {
+  content: " ";
+  display: table;
 }
-.campaign-filter li a,
-.campaign-filter .btn-group a,
-.campaign-filter li .btn,
-.campaign-filter .btn-group .btn {
-  padding: 0 10px;
-  line-height: 36px;
-  border-left: 1px solid #c4c7cc;
-  color: #cccccc;
-  display: block;
-  float: left;
+.filter-header:after {
+  clear: both;
+}
+.filter-header .filter-application {
   position: relative;
 }
-.campaign-filter li .btn:last-child,
-.campaign-filter .btn-group .btn:last-child {
-  border-right: 1px solid #c4c7cc;
-}
-.campaign-filter li input[type="radio"],
-.campaign-filter .btn-group input[type="radio"] {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
-.campaign-filter li input[type="radio"]:checked + label,
-.campaign-filter .btn-group input[type="radio"]:checked + label {
-  color: #009fe3;
-}
-.campaign-filter li input[type="radio"]:checked + label:after,
-.campaign-filter .btn-group input[type="radio"]:checked + label:after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  border: 1px solid #FFFFFF;
-}
-.campaign-filter li.filter-search,
-.campaign-filter .btn-group.filter-search,
-.campaign-filter li.filter-application,
-.campaign-filter .btn-group.filter-application {
-  float: right;
-}
-.campaign-filter .filter-application {
-  position: relative;
-  /*.drop-down-toggle:focus{
-      &:after{
-        content: "";
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        right: 0;
-        border: 1px solid #FFFFFF;
-      }
-    }
-    .drop-down-toggle:focus + .drop-down-menu{
-      display: block;
-      .drop-shadow(0, 3px, 5px, 0.1);
-    }*/
-}
-.campaign-filter .filter-application .drop-down-menu {
+.filter-header .filter-application .drop-down-menu {
   position: absolute;
   top: 37px;
-  right: -1px;
+  right: 0px;
   background: #FFFFFF;
   z-index: 100;
   display: none;
@@ -558,16 +525,22 @@ ol {
   border: 1px solid #c4c7cc;
   border-top: 0;
 }
-.campaign-filter .filter-application .drop-down-menu li {
+.filter-header .filter-application .drop-down-menu li {
   float: none;
   display: block;
 }
-.campaign-filter .filter-application .drop-down-menu li a {
+.filter-header .filter-application .drop-down-menu li a {
   display: block;
   border: none;
   float: none;
+  padding: 2px 10px;
+  text-transform: capitalize;
+  color: #cccccc;
 }
-.campaign-filter .filter-application:hover .drop-down-toggle:after {
+.filter-header .filter-application .drop-down-menu li a:hover {
+  color: #303133;
+}
+.filter-header .filter-application:hover .drop-down-toggle:after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -575,7 +548,134 @@ ol {
   right: 0;
   border: 1px solid #FFFFFF;
 }
-.campaign-filter .filter-application:hover .drop-down-menu {
+.filter-header .filter-application:hover .drop-down-menu {
+  display: block;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+.filter-header .filter-application .drop-down-menu {
+  position: absolute;
+  top: 37px;
+  right: 0px;
+  background: #FFFFFF;
+  z-index: 100;
+  display: none;
+  min-width: 200px;
+  border: 1px solid #c4c7cc;
+  border-top: 0;
+}
+.filter-header .filter-application .drop-down-menu li {
+  float: none;
+  display: block;
+}
+.filter-header .filter-application .drop-down-menu li a {
+  display: block;
+  border: none;
+  float: none;
+  padding: 2px 10px;
+  text-transform: capitalize;
+  color: #cccccc;
+}
+.filter-header .filter-application .drop-down-menu li a:hover {
+  color: #303133;
+}
+.filter-header .filter-application:hover .drop-down-toggle:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border: 1px solid #FFFFFF;
+}
+.filter-header .filter-application:hover .drop-down-menu {
+  display: block;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+.filter-list-horizontal li {
+  float: left;
+}
+.table.filter-list-horizontal li {
+  display: table-cell;
+  float: none;
+}
+.filter-list-horizontal .btn {
+  padding: 0 10px;
+  line-height: 36px;
+  border-right: 1px solid #c4c7cc;
+  color: #cccccc;
+  display: block;
+  position: relative;
+}
+.table.filter-list-horizontal .btn {
+  text-align: center;
+}
+.filter-list-horizontal input[type="radio"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+.filter-list-horizontal input[type="radio"]:checked + label {
+  color: #009fe3;
+}
+.filter-list-horizontal input[type="radio"]:checked + label:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border: 1px solid #FFFFFF;
+}
+.filter-list-horizontal.right {
+  float: right;
+  border-left: 1px solid #c4c7cc;
+}
+.filter-list-horizontal.left {
+  float: left;
+}
+.filter-list-horizontal.table {
+  display: table;
+  width: 100%;
+}
+.filter-list-vertical {
+  position: relative;
+}
+.filter-list-vertical .drop-down-menu {
+  position: absolute;
+  top: 37px;
+  right: 0px;
+  background: #FFFFFF;
+  z-index: 100;
+  display: none;
+  min-width: 200px;
+  border: 1px solid #c4c7cc;
+  border-top: 0;
+}
+.filter-list-vertical .drop-down-menu li {
+  float: none;
+  display: block;
+}
+.filter-list-vertical .drop-down-menu li a {
+  display: block;
+  border: none;
+  float: none;
+  padding: 2px 10px;
+  text-transform: capitalize;
+  color: #cccccc;
+}
+.filter-list-vertical .drop-down-menu li a:hover {
+  color: #303133;
+}
+.filter-list-vertical:hover .drop-down-toggle:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border: 1px solid #FFFFFF;
+}
+.filter-list-vertical:hover .drop-down-menu {
   display: block;
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);

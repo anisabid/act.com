@@ -71,17 +71,17 @@ module.exports = function () {
       {
         "id": 1,
         "title": "node1 20",
-        "status": "progress",
+        "status": "1",
         "nodes": [
           {
             "id": 11,
             "title": "node1.1",
-            "status": "ok",
+            "status": "2",
             "nodes": [
               {
                 "id": 111,
                 "title": "node1.1.1",
-                "status": "ok",
+                "status": "2",
                 "nodes": []
               }
             ]
@@ -89,7 +89,7 @@ module.exports = function () {
           {
             "id": 12,
             "title": "node1.2",
-            "status": "standby",
+            "status": "0",
             "nodes": []
           }
         ]
@@ -97,18 +97,18 @@ module.exports = function () {
       {
         "id": 2,
         "title": "node2",
-        "status": "ko",
+        "status": "2",
         "nodes": [
           {
             "id": 21,
             "title": "node2.1",
-            "status": "ko",
+            "status": "2",
             "nodes": []
           },
           {
             "id": 22,
             "title": "node2.2",
-            "status": "ko",
+            "status": "3",
             "nodes": []
           }
         ]
@@ -116,12 +116,12 @@ module.exports = function () {
       {
         "id": 3,
         "title": "node3",
-        "status": "standby",
+        "status": "0",
         "nodes": [
           {
             "id": 31,
             "title": "node3.1",
-            "status": "standby",
+            "status": "0",
             "nodes": []
           }
         ]
@@ -136,7 +136,7 @@ module.exports = function () {
       return {
         "id": getId(n),
         "title": "node-"+getId(n),
-        "status": "standby",
+        "status": 0,
         "nodes": []
       }
     })

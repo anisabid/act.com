@@ -38,6 +38,14 @@ var Obj = {
     });
 
   angular.module('actApp')
+    .constant('ActStatusConfig', {
+
+      status: ['standby', 'progress', 'ok', 'ko'],
+      color: ['#333333', '#f7ca18', '#2bb38a', '#e34b51']
+
+    });
+
+  angular.module('actApp')
     .constant('ActRest', {
 
       baseUrl: 'http://localhost:3000/', //'http://localhost:8888/jsonmock/',

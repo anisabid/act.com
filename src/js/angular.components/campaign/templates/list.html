@@ -1,51 +1,59 @@
-<div class="campaign-filter">
-    <div class="filter-group btn-group" ng-init="filter.group = ''">
-        <input type="radio" ng-model="filter.status" name="options" id="option-filter-all" value="" checked>
-        <label class="btn active" for="option-filter-all">Tous</label>
+<div class="campaign-filter filter-header">
+  <ul class="filter-group filter-list-horizontal left" ng-init="filter.group = ''">
+    <li>
+      <input type="radio" ng-model="filter.status" name="options" id="option-filter-all" value="" checked>
+      <label class="btn" for="option-filter-all">Tous</label>
+    </li>
+    <li>
+      <input type="radio" ng-model="filter.status" name="options" id="option-filter-progress" value="progress">
+      <label class="btn" for="option-filter-progress">En cour d'exécution</label>
+    </li>
+    <li>
+      <input type="radio" ng-model="filter.status" name="options" id="option-filter-end" value="end">
+      <label class="btn" for="option-filter-end">Terminer</label>
+    </li>
+    <li>
+      <input type="radio" ng-model="filter.status" name="options" id="option-filter-ok" value="ok">
+      <label class="btn" for="option-filter-ok">OK</label>
+    </li>
+    <li>
+      <input type="radio" ng-model="filter.status" name="options" id="option-filter-ko" value="ko">
+      <label class="btn" for="option-filter-ko">KO</label>
+    </li>
+    <li>
+      <input type="radio" ng-model="filter.group" name="options" id="option-filter-recent" value="recent">
+      <label class="btn" for="option-filter-recent">Les plus récentes</label>
+    </li>
+    <li>
+      <input type="radio" ng-model="filter.group" name="options" id="option-filter-my-service" value="my-service">
+      <label class="btn" for="option-filter-my-service">Mon service</label>
+    </li>
+    <li>
+      <input type="radio" ng-model="filter.group" name="options" id="option-filter-affect" value="affect">
+      <label class="btn" for="option-filter-affect">Affecter</label>
+    </li>
+  </ul>
+  <ul class="filter-group filter-list-horizontal right">
+    <li class="filter-list-vertical drop-down">
+      <a class="drop-down-toggle btn" href="" ng-init="filterCampaign.applicationName='[Select Application]'">{{filterCampaign.applicationName}}</a>
 
-        <input type="radio" ng-model="filter.status" name="options" id="option-filter-progress" value="progress">
-        <label class="btn" for="option-filter-progress">En cour d'exécution</label>
+      <div class="drop-down-menu">
+        <ul>
+          <li><a ng-click="filterCampaign.applicationName='Toutes les applications'; filterCampaign.applicationId={}"
+                 href="">Toutes les applications</a></li>
+          <li ng-repeat="item in dashboard.applications"><a
+          ng-click="filterCampaign.applicationName=item.name; filterCampaign.applicationId={application: item.id}"
+          href="">{{item.name}}</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="filter-search">
+      <a href="" class="btn"><i class="fa fa-search"></i></a>
+    </li>
 
-        <input type="radio" ng-model="filter.status" name="options" id="option-filter-end" value="end">
-        <label class="btn" for="option-filter-end">Terminer</label>
-
-        <input type="radio" ng-model="filter.status" name="options" id="option-filter-ok" value="ok">
-        <label class="btn" for="option-filter-ok">OK</label>
-
-        <input type="radio" ng-model="filter.status" name="options" id="option-filter-ko" value="ko">
-        <label class="btn" for="option-filter-ko">KO</label>
-
-        <input type="radio" ng-model="filter.group" name="options" id="option-filter-recent" value="recent">
-        <label class="btn" for="option-filter-recent">Les plus récentes</label>
-
-        <input type="radio" ng-model="filter.group" name="options" id="option-filter-my-service" value="my-service">
-        <label class="btn" for="option-filter-my-service">Mon service</label>
-
-        <input type="radio" ng-model="filter.group" name="options" id="option-filter-affect" value="affect">
-        <label class="btn" for="option-filter-affect">Affecter</label>
-
-    </div>
-    <ul class="clearfix">
-        <li class="filter-search">
-            <a href=""><i class="fa fa-search"></i></a>
-        </li>
-        <li class="filter-application drop-down">
-            <a class="drop-down-toggle" href="" ng-init="filterCampaign.applicationName='[Select Application]'">{{filterCampaign.applicationName}}</a>
-
-            <div class="drop-down-menu">
-                <ul>
-                    <li><a ng-click="filterCampaign.applicationName='Toutes les applications'; filterCampaign.applicationId={}"
-                           href="">Toutes les applications</a></li>
-                    <li ng-repeat="item in dashboard.applications"><a
-                            ng-click="filterCampaign.applicationName=item.name; filterCampaign.applicationId={application: item.id}"
-                            href="">{{item.name}}</a></li>
-                </ul>
-            </div>
-        </li>
-
-    </ul>
+  </ul>
 </div>
 <div class="campaign-list clearfix">
-    <am-campaign ng-repeat="source in dashboard.sources | filter: filterCampaign.applicationId track by $index"
-                 parameters="source"></am-campaign>
+  <am-campaign ng-repeat="source in dashboard.sources | filter: filterCampaign.applicationId track by $index"
+               parameters="source"></am-campaign>
 </div>

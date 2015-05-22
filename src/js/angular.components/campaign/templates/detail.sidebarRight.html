@@ -1,3 +1,34 @@
-<div class="col-sm-6">
-  <pre class="code" style="line-height: 12px;">{{ campaign.detail | json }}</pre>
+<section class="panel test-list">
+  <header class="header">
+    <div class="filter-header">
+      <ul class="table filter-list-horizontal">
+        <li>
+          <input type="radio" ng-model="filter.sidebarRight" name="options" id="option-filter-scenario" value="" ng-checked="true" >
+          <label class="btn" for="option-filter-scenario">Scénario</label>
+        </li>
+        <li>
+          <input type="radio" ng-model="filter.status" name="options" id="option-filter-requirement" value="progress">
+          <label class="btn" for="option-filter-requirement">Exigence</label>
+        </li>
+        <li>
+          <input type="radio" ng-model="filter.status" name="options" id="option-filter-test" value="end">
+          <label class="btn" for="option-filter-test">Test</label>
+        </li>
+
+        <li class="filter-search">
+          <a href="" class="btn"><i class="fa fa-search"></i></a>
+        </li>
+      </ul>
+
+    </div>
+
+  </header>
+</section>
+
+
+<div class="tree" ui-tree id="tree-test">
+  <ol ui-tree-nodes ng-model="campaign.tests" >
+    <li ng-repeat="node in campaign.tests" ui-tree-node ng-include="'/app/assets/dist/tpl/common/directives/nodes.directive.html'"></li>
+  </ol>
 </div>
+
