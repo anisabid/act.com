@@ -552,6 +552,23 @@ var Obj = {
 
 (function () {
 
+// recommended
+  function status () {
+    return function (items) {
+      return items.filter(function (item) {
+        return /^a/i.test(item.name);
+      });
+    };
+  }
+
+  /*angular.module('actApp')
+    .filter('status', staus);*/
+
+})();
+'use strict';
+
+(function () {
+
   angular.module('actApp')
     .provider('FormatUrl', ['ActPaths', function (ActPaths) {
 
@@ -592,6 +609,8 @@ var Obj = {
       }]);
 })();
 
+
+
 'use strict';
 
 (function () {
@@ -604,5 +623,3 @@ var Obj = {
 
       }]);
 })();
-
-

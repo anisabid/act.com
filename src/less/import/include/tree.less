@@ -1,164 +1,171 @@
 @t-tree-height: 26px;
 @t-background-placeholder: #f0f0f0;
 
-.angular-ui-tree-handle(){
+.angular-ui-tree-handle() {
 
-    background: #FFFFFF;
-    border: 1px solid @base-color-grey-light;
-    padding: 1px;
-    width: 100%;
-    min-height: @t-tree-height;
+  background: #FFFFFF;
+  border: 1px solid @base-color-grey-light;
+  padding: 1px;
+  width: 100%;
+  min-height: @t-tree-height;
+  line-height: @t-tree-height;
+  .rounded(1px);
+  margin-bottom: 5px;
+  //.display();
+  .clearfix();
+
+  .drag,
+  .options,
+  .wrap {
+    .user-select(none);
+    // .display();
+  }
+
+  .fa {
     line-height: @t-tree-height;
-    .rounded(1px);
-    margin-bottom: 5px;
-    .display();
+    font-size: @base-font-size-large;
+  }
 
-    .navigation,
-    .options,
-    .wrap{
-      .user-select(none);
-      .display();
+  .btn {
+    padding: 0;
+    margin: 0 2px;
+    width: 15px;
+    display: block;
+  }
+
+  &:hover {
+    .view-center & {
+      .navigation {
+        .options {
+          display: block;
+        }
+      }
+    }
+  }
+
+  // Navigation
+  .navigation {
+    float: left;
+    // Drag
+    .drag {
+      float: left;
+      padding-right: 1px;
+      margin-right: 1px;
+      border-right: 1px solid @base-color-grey-light;
+      .fa {
+        width: @t-tree-height;
+        height: @t-tree-height;
+        line-height: @t-tree-height;
+        background: @base-color-status-ok;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: @base-font-size-large;
+      }
+
     }
 
-    .fa{
-      line-height: @t-tree-height;
-      font-size: @base-font-size-large;
+    // Options
+    .options {
+      float: left;
+      padding-right: 1px;
+      margin-right: 0;
+      border-right: 1px solid @base-color-grey-light;
+      display: none;
+      .wrap {
+        cursor: default;
+        padding: 0 5px 0 2px;
+        background: @base-color-grey-lightest-xl;
+      }
+      .btn {
+        float: left;
+        text-align: center;
+        color: @base-color-grey;
+        &:hover {
+          color: @base-color-grey-darker;
+        }
+      }
     }
 
-    .btn{
-      padding: 0;
-      margin: 0 2px;
-      width:15px ;
+  }
+
+  // Title
+  .title {
+    float: left;
+    margin-left: 10px;
+    line-height: 26px;
+    height: 26px;
+  }
+
+  // Status
+  .status {
+    float: right;
+    cursor: default;
+    position: relative;
+    border-left: 1px solid @base-color-grey-light;
+    display: none;
+    .view-center & {
       display: block;
     }
-
-    &:hover{
-      .navigation{
-        .options{
-          display: block;
-        }
-      }
+    > a {
+      display: block;
+      padding-left: 1px;
+      margin-left: 1px;
+      width: @t-tree-height;
+      text-align: center;
+      color: @base-color-status-standby;
     }
 
-    // Navigation
-    .navigation{
+    &:hover {
 
-
-      // Drag
-      .drag{
-        padding-right: 1px;
-        margin-right: 1px;
-        border-right: 1px solid @base-color-grey-light;
-        .fa{
-          width: @t-tree-height;
-          height: @t-tree-height;
-          line-height: @t-tree-height;
-          background: @base-color-status-ok;
-          text-align: center;
-          color: #FFFFFF;
-          font-size: @base-font-size-large;
-        }
-
-      }
-
-
-
-      // Options
-      .options{
-        padding-right: 1px;
-        margin-right: 0;
-        border-right: 1px solid @base-color-grey-light;
-        display: none;
-        .wrap{
-          cursor: default;
-          padding: 0 5px 0 2px;
-          background: @base-color-grey-lightest-xl;
-        }
-        .btn{
-          text-align: center;
-          color: @base-color-grey;
-          &:hover{
-            color: @base-color-grey-darker;
-          }
-        }
-      }
-
-    }
-
-    // Title
-    .title{
-      .flex();
-      margin-left: 10px;
-    }
-
-    // Status
-    .status{
-      cursor: default;
-      position: relative;
-      border-left: 1px solid @base-color-grey-light;
-      > a{
-        display: block;
-        padding-left: 1px;
-        margin-left: 1px;
-        width: @t-tree-height;
-        text-align: center;
-        color: @base-color-status-standby;
-      }
-
-      &:hover
-      {
-
-        &:after{
-          content: "";
-          border-bottom: 2px solid @base-color-grey-lightest;
-          border-left: 2px solid #fff;
-          border-right: 1px solid #fff;
-          left: -1px;
-          right: -1px;
-          bottom: -1px;
-          position: absolute;
-          z-index: @base-z-index-50;
-        }
-
-        > a{
-          background-color: @base-color-grey-lightest;
-        }
-        .list {
-          display: block;
-        }
-
-      }
-
-      .list{
-        position: absolute;
-        top: @t-tree-height;
+      &:after {
+        content: "";
+        border-bottom: 2px solid @base-color-grey-lightest;
+        border-left: 2px solid #fff;
+        border-right: 1px solid #fff;
+        left: -1px;
         right: -1px;
-        border: 1px solid #FFFFFF;
-        background-color: #FFFFFF;
-        outline: 1px solid @base-color-grey-light;
-        z-index: @base-z-index-20;
-        display: none;
-        background-color: @base-color-grey-lightest;
-        li{
-          display: block;
-          line-height: @base-font-size-medium;
-          font-size: @base-font-size-small;
-          width: 80px;
-          padding: 0 10px;
-          &:hover{
-            background-color: @base-color-grey-lighter;
-          }
-        }
-
+        bottom: -1px;
+        position: absolute;
+        z-index: @base-z-index-50;
       }
+
+      > a {
+        background-color: @base-color-grey-lightest;
+      }
+      .list {
+        display: block;
+      }
+
     }
+
+    .list {
+      position: absolute;
+      top: @t-tree-height;
+      right: -1px;
+      border: 1px solid #FFFFFF;
+      background-color: #FFFFFF;
+      outline: 1px solid @base-color-grey-light;
+      z-index: @base-z-index-20;
+      display: none;
+      background-color: @base-color-grey-lightest;
+      li {
+        display: block;
+        line-height: @base-font-size-medium;
+        font-size: @base-font-size-small;
+        width: 80px;
+        padding: 0 10px;
+        &:hover {
+          background-color: @base-color-grey-lighter;
+        }
+      }
+
+    }
+  }
 
 }
 
-
-
 // Tree Style
-.tree{
+.tree {
 
   width: 90%;
   margin: 10px 5%;
@@ -169,13 +176,13 @@
 
   }
 
-  .angular-ui-tree-nodes{
-    &.hidden{
+  .angular-ui-tree-nodes {
+    &.hidden {
       display: none;
       visibility: hidden;
     }
-    .angular-ui-tree-nodes{
-      padding-left: @t-tree-height + 4 ;
+    .angular-ui-tree-nodes {
+      padding-left: @t-tree-height + 4;
     }
 
   }
@@ -189,14 +196,15 @@
   }
 
 }
+
 // Drag Style
-.angular-ui-tree-nodes.angular-ui-tree-drag{
+.angular-ui-tree-nodes.angular-ui-tree-drag {
   .angular-ui-tree-handle();
   .navigation,
-  .title{
-    display: inline-block !important;
+  .title {
+    //display: inline-block !important;
   }
-  .status{
+  .status {
     display: none !important;
   }
 

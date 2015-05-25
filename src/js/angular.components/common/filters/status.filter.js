@@ -11,7 +11,7 @@
     };
   }
 
-  angular.module('actApp')
-    .filter('status', staus);
+  /*angular.module('actApp')
+    .filter('status', staus);*/
 
 })();
