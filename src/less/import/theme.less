@@ -46,3 +46,70 @@
 
 }
 
+// Status Color
+@list: standby, progress, ok, ko;
+.status-color() {
+  .for(@list);
+  .-each(@value) {
+    &.@{value}, .@{value} & {
+      color: ~"@{base-color-status-@{value}}";
+    }
+  }
+}
+
+// Status Border
+.status-border() {
+  .for(@list);
+  .-each(@value) {
+    &.@{value}, .@{value} & {
+      border-color: ~"@{base-color-status-@{value}}";
+    }
+  }
+}
+
+// Status Background
+.status-background() {
+  .for(@list);
+  .-each(@value) {
+    &.@{value}, .@{value} & {
+      background-color: ~"@{base-color-status-@{value}}";
+    }
+  }
+}
+
+.init-status-color() {
+  .for(@list);
+  .-each(@value) {
+    .status-color.@{value}, .@{value} .status-color {
+      color: ~"@{base-color-status-@{value}}";
+    }
+  }
+}
+
+.init-status-border() {
+  .for(@list);
+  .-each(@value) {
+    .status-bg.@{value}, .@{value} .status-bg {
+      border-color: ~"@{base-color-status-@{value}}";
+    }
+  }
+}
+
+.init-status-background() {
+  .for(@list);
+  .-each(@value) {
+    .status-bg.@{value}, .@{value} .status-bg {
+      background-color: ~"@{base-color-status-@{value}}";
+    }
+  }
+}
+
+.campaign-sub-header {
+  .clearfix();
+  border-bottom: 1px solid @base-color-border;
+  background-color: @base-background;
+  .breadcrumb {
+    .breadcrumb ();
+  }
+}
+

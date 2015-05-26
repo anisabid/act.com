@@ -313,6 +313,103 @@ var Obj = {
 
 })();
 
+
+'use strict';
+
+(function () {
+
+  function status (ActStatusConfig, type, imput) {
+    switch (type) {
+      case 'color':
+        return ActStatusConfig.color[imput];
+        break;
+      default:
+        // do something
+        return ActStatusConfig.status[imput];
+    }
+  }
+
+  angular.module('actApp')
+    .filter('statusToColor', ['ActStatusConfig', function (ActStatusConfig) {
+      return function (input) {
+        return status(ActStatusConfig, 'color', input);
+      };
+    }]);
+
+  angular.module('actApp')
+    .filter('statusToText', ['ActStatusConfig', function (ActStatusConfig) {
+      return function (input) {
+        return status(ActStatusConfig, 'text', input);
+      };
+    }]);
+
+  angular.module('actApp')
+    .filter('statusToClass', ['ActStatusConfig', function (ActStatusConfig) {
+      return function (input) {
+        return status(ActStatusConfig, 'class', input);
+      };
+    }]);
+
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .provider('FormatUrl', ['ActPaths', function (ActPaths) {
+
+      this.getBaseUrl = function () {
+        return ActPaths.baseUrl;
+      };
+
+      this.getTemplatePath = function (stringUrl) {
+        return this.getBaseUrl() + ActPaths.templates[stringUrl];
+      };
+
+      this.getDirectivePath = function (stringUrl) {
+        return this.getBaseUrl() + ActPaths.directives[stringUrl];
+      };
+
+      this.$get = function () {
+
+        return this;
+
+      };
+    }]);
+
+})();
+
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
+      function ($scope, $state, CampaignListData, ApplicationListData) {
+
+        $scope.dashboard = {
+          sources: CampaignListData,
+          applications: ApplicationListData
+        };
+
+      }]);
+})();
+
+
+
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('MainController', ['$scope', '$state',
+      function($scope) {
+
+        $scope.main = {};
+
+      }]);
+})();
+
 'use strict';
 
 (function () {
@@ -546,80 +643,4 @@ var Obj = {
         }
       };
     }]);
-})();
-
-'use strict';
-
-(function () {
-
-// recommended
-  function status () {
-    return function (items) {
-      return items.filter(function (item) {
-        return /^a/i.test(item.name);
-      });
-    };
-  }
-
-  /*angular.module('actApp')
-    .filter('status', staus);*/
-
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .provider('FormatUrl', ['ActPaths', function (ActPaths) {
-
-      this.getBaseUrl = function () {
-        return ActPaths.baseUrl;
-      };
-
-      this.getTemplatePath = function (stringUrl) {
-        return this.getBaseUrl() + ActPaths.templates[stringUrl];
-      };
-
-      this.getDirectivePath = function (stringUrl) {
-        return this.getBaseUrl() + ActPaths.directives[stringUrl];
-      };
-
-      this.$get = function () {
-
-        return this;
-
-      };
-    }]);
-
-})();
-
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
-      function ($scope, $state, CampaignListData, ApplicationListData) {
-
-        $scope.dashboard = {
-          sources: CampaignListData,
-          applications: ApplicationListData
-        };
-
-      }]);
-})();
-
-
-
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('MainController', ['$scope', '$state',
-      function($scope) {
-
-        $scope.main = {};
-
-      }]);
 })();

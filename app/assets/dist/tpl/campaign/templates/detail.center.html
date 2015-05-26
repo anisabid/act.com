@@ -2,28 +2,30 @@
   <div class="campaign" ng-class="showView">
     <div class="container">
       <h2 class="title title-of-campaign"><span class="ref">{{campaign.currentItem.name}}</span></h2>
-      <aside class="aside asside-of-campaign">Crée par <span class="v author">{{campaign.currentItem.user.name}}</span> le <span class="v date">{{campaign.currentItem.date | date : 'yyyy-MM-dd'}}</span>
+      <aside class="aside asside-of-campaign">Crée par <span class="v author">{{campaign.currentItem.user.name}}</span> le <span
+      class="v date">{{campaign.currentItem.date | date : 'yyyy-MM-dd'}}</span>
       </aside>
 
       <section class="view-global">
-          <!--h2 class="title title-of-camaign"><span class="ref">{{campaign.currentItem.name}}</span></h2>
-          <aside class="aside">Crée par <span class="v author">{{campaign.currentItem.user.name}}</span> le <span class="v date">{{campaign.currentItem.date | date : 'yyyy-MM-dd'}}</span-->
-          </aside>
-          <div class="indicators clearfix">
-            <div class="left">
-              <am-indicator title="Scénarios" class="scenarios" parameters="campaign.currentItem.scenarios.series.json"></am-indicator>
+        <!--h2 class="title title-of-camaign"><span class="ref">{{campaign.currentItem.name}}</span></h2>
+        <aside class="aside">Crée par <span class="v author">{{campaign.currentItem.user.name}}</span> le <span class="v date">{{campaign.currentItem.date | date : 'yyyy-MM-dd'}}</span-->
+        </aside>
+        <div class="indicators clearfix">
+          <div class="left">
+            <am-indicator title="Scénarios" class="scenarios"
+                          parameters="campaign.currentItem.scenarios.series.json"></am-indicator>
 
-              <am-indicator title="Exigences" class="requirements"
-                            parameters="campaign.currentItem.requirements.series.json"></am-indicator>
+            <am-indicator title="Exigences" class="requirements"
+                          parameters="campaign.currentItem.requirements.series.json"></am-indicator>
 
-            </div>
-            <div class="right">
-              <am-chart-circle class="graph d3js circle"
-                               parameters="campaign.currentItem.json"
-                               width="70"
-                               height="70"></am-chart-circle>
-            </div>
           </div>
+          <div class="right">
+            <am-chart-circle class="graph d3js circle"
+                             parameters="campaign.currentItem.json"
+                             width="70"
+                             height="70"></am-chart-circle>
+          </div>
+        </div>
 
       </section>
       <section class="view-requirements clearfix">
@@ -87,9 +89,29 @@
   </div>
 </header>
 
+<section class="campaign-sub-header">
+  <aside class="breadcrumb">
+    <ul>
+      <li><a href=""><i class="fa fa-home"></i> </a></li>
+      <li><a href="">Level 2</a></li>
+      <li><a href="">Level 3</a></li>
+      <li><a href="">Level 4</a></li>
+    </ul>
+  </aside>
 
-<div class="tree" ui-tree id="tree-main">
-  <ol ui-tree-nodes ng-model="campaign.detail">
-    <li ng-repeat="node in campaign.detail" ui-tree-node ng-include="'/app/assets/dist/tpl/common/directives/nodes.directive.html'"></li>
-  </ol>
-</div>
+  <nav>
+    <ul>
+      <li><a href=""></a></li>
+    </ul>
+  </nav>
+
+</section>
+
+<section class="campaign-body">
+  <div class="tree" ui-tree id="tree-main">
+    <ol ui-tree-nodes ng-model="campaign.detail">
+      <li ng-repeat="node in campaign.detail" ui-tree-node
+          ng-include="'/app/assets/dist/tpl/common/directives/nodes.directive.html'"></li>
+    </ol>
+  </div>
+</section>

@@ -137,6 +137,7 @@ module.exports = function () {
         "id": getId(n),
         "title": "node-"+getId(n),
         "status": 0,
+        "description": faker.lorem.paragraph() ,
         "nodes": []
       }
     })

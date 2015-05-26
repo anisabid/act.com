@@ -1,24 +1,27 @@
 @t-tree-height: 26px;
 @t-background-placeholder: #f0f0f0;
+@t-info-width: 230px;
 
 .angular-ui-tree-handle() {
 
   background: #FFFFFF;
   border: 1px solid @base-color-grey-light;
-  padding: 1px;
+  border-bottom: 0;
+  padding: 0;
   width: 100%;
   min-height: @t-tree-height;
   line-height: @t-tree-height;
   .rounded(1px);
-  margin-bottom: 5px;
-  //.display();
   .clearfix();
 
+  .view-center & {
+    // in view center
+    padding: 1px;
+  }
   .drag,
   .options,
   .wrap {
     .user-select(none);
-    // .display();
   }
 
   .fa {
@@ -35,12 +38,19 @@
 
   &:hover {
     .view-center & {
+      // in view center
       .navigation {
         .options {
           display: block;
         }
       }
     }
+  }
+
+  .view-center & {
+    // in view center
+    margin-bottom: 5px;
+    border-bottom: 1px solid @base-color-grey-light;
   }
 
   // Navigation
@@ -52,14 +62,35 @@
       padding-right: 1px;
       margin-right: 1px;
       border-right: 1px solid @base-color-grey-light;
-      .fa {
-        width: @t-tree-height;
+      .wrap {
+        //.status-background();
+        .status-border();
+        border-left-width: 2px;
+        border-left-style: solid;
+
         height: @t-tree-height;
+      }
+      .fa {
+        /*display: none;*/
+        width: @t-tree-height;
         line-height: @t-tree-height;
-        background: @base-color-status-ok;
+
         text-align: center;
-        color: #FFFFFF;
+        color: @base-color-grey-light;
         font-size: @base-font-size-large;
+        //background-color: transparent;
+
+      }
+
+      .view-center & {
+        // in view center
+        .wrap {
+          border-left-width: 0;
+          .status-background();
+        }
+        .fa {
+          display: block;
+        }
       }
 
     }
@@ -96,6 +127,54 @@
     height: 26px;
   }
 
+  .info {
+    float: right;
+    display: block;
+    margin-right: 5px;
+    color: @base-color-grey-light;
+    cursor: default;
+    position: relative;
+
+    .info-body{
+      display: none;
+      position: absolute;
+      top: 26px;
+      right: 0;
+      background-color: @base-color-white;
+      border: 1px solid @base-color-grey-light;
+      .drop-shadow(2px, 5px, 10px, 0.5);
+      padding: 5px;
+      z-index: @base-z-index-1;
+      width: @t-info-width;
+      font-size: @base-font-size;
+      font-weight: @base-font-weight-light;
+      line-height: @base-font-size-medium;
+      color: @base-color-grey;
+      cursor: text;
+      .user-select(initial);
+      &:before{
+        position: absolute;
+        top: -6px;
+        right: 0;
+        display: none;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #2c2d30;
+        border-left: 6px solid transparent;
+        content: '';
+      }
+    }
+
+    &:hover .info-body{
+      display: block;
+    }
+
+    .view-center & {
+      // in view center
+      display: none;
+    }
+
+  }
+
   // Status
   .status {
     float: right;
@@ -104,6 +183,7 @@
     border-left: 1px solid @base-color-grey-light;
     display: none;
     .view-center & {
+      // in view center
       display: block;
     }
     > a {
@@ -167,8 +247,16 @@
 // Tree Style
 .tree {
 
-  width: 90%;
-  margin: 10px 5%;
+  width: 100%;
+  border-bottom: 1px solid @base-color-grey-light;
+
+  .view-center & {
+    // in view center
+    width: 90%;
+    margin: 10px 5%;
+    border-bottom: 0;
+
+  }
 
   .angular-ui-tree-handle {
 
@@ -202,7 +290,7 @@
   .angular-ui-tree-handle();
   .navigation,
   .title {
-    //display: inline-block !important;
+    float: left;
   }
   .status {
     display: none !important;

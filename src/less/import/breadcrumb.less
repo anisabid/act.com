@@ -1,0 +1,104 @@
+@b-border: 30px;
+@b-background: @base-color-yellow;
+.breadcrumb () {
+  list-style: none;
+  overflow: hidden;
+  font-size: @base-font-size;
+  text-transform: uppercase;
+  ul {
+    float: left;
+    li {
+      float: left;
+      a {
+        color: @base-color-white;
+        text-decoration: none;
+        padding: 2px 0 2px (@b-border - 10);
+        background: @b-background;
+        position: relative;
+        display: block;
+        float: left;
+
+        &:after {
+          content: " ";
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: @b-border solid transparent; /* Go big on the size, and let overflow hide */
+          border-bottom: @b-border solid transparent;
+          border-left: (@b-border - 20) solid @b-background;
+          position: absolute;
+          top: 50%;
+          margin-top: -(@b-border);
+          left: 100%;
+          z-index: 2;
+        }
+
+        &:before {
+          content: " ";
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: @b-border solid transparent; /* Go big on the size, and let overflow hide */
+          border-bottom: @b-border solid transparent;
+          border-left: (@b-border - 20) solid white;
+          position: absolute;
+          top: 50%;
+          margin-top: -(@b-border);
+          margin-left: 1px;
+          left: 100%;
+          z-index: 1;
+        }
+
+      }
+
+      &:first-child a {
+        padding-left: 5px;
+      }
+
+
+      &:nth-child(2) a {
+        background: mix(@b-background, #fff, 90%);
+      }
+      &:nth-child(2) a:after {
+        border-left-color: mix(@b-background, #fff, 90%);
+      }
+      &:nth-child(3) a {
+        background: mix(@b-background, #fff, 70%);
+      }
+      &:nth-child(3) a:after {
+        border-left-color: mix(@b-background, #fff, 70%);
+      }
+      &:nth-child(4) a {
+        background: mix(@b-background, #fff, 50%);
+      }
+      &:nth-child(4) a:after {
+        border-left-color: mix(@b-background, #fff, 50%);
+      }
+      &:nth-child(5) a {
+        background: mix(@b-background, #fff, 30%);
+      }
+      &:nth-child(5) a:after {
+        border-left-color: mix(@b-background, #fff, 30%);
+      }
+      &:last-child a {
+        background: white !important;
+        color: black;
+        pointer-events: none;
+        cursor: default;
+      }
+      &:last-child a:after {
+        border: 0;
+      }
+      &:last-child a:before {
+        margin-left: 0;
+      }
+      & a:hover {
+        background:  mix(@b-background, #000, 90%);
+      }
+      & a:hover:after {
+        border-left-color: mix(@b-background, #000, 90%) !important;
+      }
+
+    }
+  }
+}
