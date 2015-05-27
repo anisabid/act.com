@@ -1,17 +1,21 @@
-<section class="sidebar-campaigns">
+<!-- Begin layout separator horizontal -->
+<a href="" class="layout_sep h" ng-click="toggleSidebar('left')"></a>
+<!-- End layout separator horizontal -->
+<div class="wrap"
+     ng-scrollbars
+     ng-scrollbars-config="scrollbarConfig">
+
+  <section class="sidebar-campaigns">
     <header class="campaigns-header">
 
     </header>
     <div class="campaigns-body ">
-        <div class="campaigns-items">
-            <am-campaign
-                    ng-repeat="source in campaign.items | filter: filterCampaign.applicationId track by $index"
-                    parameters="source">
-            </am-campaign>
-        </div>
+      <div class="campaigns-items">
+        <am-campaign
+        ng-repeat="source in campaign.items | filter: filterCampaign.applicationId track by $index"
+        parameters="source">
+        </am-campaign>
+      </div>
     </div>
-</section>
-
-
-
-
+  </section>
+</div>

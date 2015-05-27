@@ -342,31 +342,46 @@ ol {
   bottom: 0;
   overflow: hidden;
 }
-#page-container > .view-left {
+#page-container > .view-left,
+#page-container > .view-left > .wrap {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
-  overflow: auto;
-  width: 285px;
-  border-right: 5px solid #dcdee0;
+  overflow: hidden;
   background: #FFFFFF;
+  width: 285px;
 }
-#page-container > .view-left .sidebar-campaigns .campaigns-body {
+#page-container > .view-left .layout_sep.h,
+#page-container > .view-left > .wrap .layout_sep.h {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #dcdee0;
+  z-index: 10;
+  cursor: w-resize;
+}
+#page-container > .view-left .sidebar-campaigns .campaigns-body,
+#page-container > .view-left > .wrap .sidebar-campaigns .campaigns-body {
   /*position: absolute;
         top: 0;
         bottom: 0;*/
 }
-#page-container > .view-left:after {
-  content: "";
-  position: absolute;
-  right: -5px;
-  top: 50%;
-  width: 5px;
-  height: 50px;
-  margin-top: -25px;
-  background-color: #ff0000;
-  z-index: 10;
+#page-container > .view-left {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.hide-view-left #page-container > .view-left,
+.hide-view-left#page-container > .view-left {
+  -webkit-transform: translate(-280px, 0);
+  -moz-transform: translate(-280px, 0);
+  -o-transform: translate(-280px, 0);
+  -ms-transform: translate(-280px, 0);
+  transform: translate(-280px, 0);
 }
 #page-container > .page-container-right {
   overflow: hidden;
@@ -377,16 +392,33 @@ ol {
   right: 300px;
   top: 0;
   bottom: 0;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.hide-view-left #page-container > .page-container-right > .page-container-left,
+.hide-view-left#page-container > .page-container-right > .page-container-left {
+  left: 5px;
 }
 #page-container > .page-container-right > .view-right {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  overflow: auto;
-  width: 300px;
-  border-left: 5px solid #dcdee0;
+  overflow: hidden;
   background: #FFFFFF;
+  width: 300px;
+}
+#page-container > .page-container-right > .view-right .layout_sep.h {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #dcdee0;
+  z-index: 10;
+  cursor: w-resize;
 }
 #page-container > .page-container-right > .view-right .tab {
   height: 100%;

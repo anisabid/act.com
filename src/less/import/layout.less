@@ -2,9 +2,22 @@
 // Import / layout
 // --------------------------------------------------
 
+
 .separator (@direction: right) {
-  border-@{direction} : 5px solid @base-color-light;
-  background: #FFFFFF;
+  //border-@{direction} : 5px solid @base-color-light;
+  //padding-@{direction}: 5px;
+
+  .layout_sep.h {
+    position: absolute;
+    @{direction}: 0;
+    top: 0;
+    bottom: 0;
+    width: @base-separator-width;
+    background-color: @base-color-light;
+    z-index: @base-z-index-1;
+    cursor: w-resize;
+  }
+
 }
 
 .panel {
@@ -27,16 +40,22 @@
   bottom: 0;
   overflow: hidden;
 
-
-  > .view-left {
+  > .view-left ,
+  > .view-left > .wrap{
 
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    overflow: auto;
+    overflow: hidden;
+    background: #FFFFFF;
     width: @base-width-sidebar-left;
+
     .separator();
+
+    //.translate(-@base-width-sidebar-left, 0);
+
+
 
     .sidebar-campaigns {
       .campaigns-body {
@@ -46,17 +65,13 @@
       }
     }
 
-    &:after{
-      content: "";
-      position: absolute;
-      right: -5px;
-      top: 50%;
-      width: 5px;
-      height: 50px;
-      margin-top: -25px;
-      background-color: #ff0000;
-      z-index: @base-z-index-1;
-
+  }
+  > .view-left{
+    .transition(@base-transition-delay, @base-transition-timing-function);
+    .hide-view-left &,
+    .hide-view-left&{
+      // hide view left
+      .translate(-(@base-width-sidebar-left - @base-separator-width), 0);
     }
   }
   > .page-container-right {
@@ -68,7 +83,15 @@
       top: 0;
       bottom: 0;
 
-      .campaign-sub-header{
+      .transition(@base-transition-delay, @base-transition-timing-function);
+
+      .hide-view-left &,
+      .hide-view-left&{
+        // hide view left
+        left: 5px;
+      }
+
+      .campaign-sub-header {
       }
 
     }
@@ -79,14 +102,15 @@
       top: 0;
       right: 0;
       bottom: 0;
-      overflow: auto;
+      overflow: hidden;
+      background: #FFFFFF;
       width: @base-width-sidebar-right;
 
       .separator(left);
 
-      .tab{
+      .tab {
         height: 100%;
-        .panel{
+        .panel {
           height: 50%;
           overflow: hidden;
           position: relative;

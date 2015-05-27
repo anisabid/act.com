@@ -7,12 +7,20 @@
       function ($scope, $state, CampaignListData, TestListData, CampaignDetailData, ActScrollbarConfig) {
 
         $scope.scrollbarConfig = ActScrollbarConfig;
+        $scope.sidebarHide = {
+          left : false,
+          right: false
+        }
 
         $scope.campaign = {
           items: CampaignListData,
           currentItem: CampaignListData[1],
           tests: TestListData,
           detail: CampaignDetailData
+        };
+
+        $scope.toggleSidebar = function (direction) {
+          $scope.sidebarHide[direction] = !$scope.sidebarHide[direction];
         };
 
         $scope.newSubItem = function (scope) {
