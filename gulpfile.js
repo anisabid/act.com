@@ -49,7 +49,8 @@ gulp.task('templates', function () {
 });
 
 
-gulp.task('watch', function () {
+gulp.task('watch', ['build'], function () {
+
   gulp.watch([
     options.path.src.less,
     options.path.src.js,

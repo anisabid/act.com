@@ -37,14 +37,51 @@
 .campaign-filter {
   margin: 20px 0 10px 0;
 }
-
-.campaign-header {
-
-  .update {
-
+.view-center{
+  @vcc-header-height: 149px;
+  @vcc-sub-header-height: 23px;
+  @vcc-sub-body-margin-top: 10px;
+  @vcc-sub-body-margin-bottom: 10px;
+  .campaign-header {
+    .update {
+    }
   }
-
+  .campaign-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: @vcc-header-height + @vcc-sub-header-height + @vcc-sub-body-margin-top;
+    bottom: @vcc-sub-body-margin-bottom ;
+  }
 }
+
+
+.panel{
+  @panel-header-height: 30px;
+  .panel-header{
+    //border-top: 1px solid @base-color-border ;
+    border-bottom: 1px solid @base-color-border ;
+    .title{
+      color: @base-color-text;
+      font-size: @base-font-size-medium;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      font-weight: @base-font-weight-normal;
+      .view-right &{
+        height: @panel-header-height;
+      }
+    }
+  }
+  .panel-body{
+    overflow: hidden;
+    position: absolute;
+    top: @panel-header-height;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
 
 // Status Color
 @list: standby, progress, ok, ko;

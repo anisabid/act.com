@@ -93,9 +93,9 @@
   <aside class="breadcrumb">
     <ul>
       <li><a href=""><i class="fa fa-home"></i> </a></li>
-      <li><a href="">Level 2</a></li>
-      <li><a href="">Level 3</a></li>
-      <li><a href="">Level 4</a></li>
+      <li><a href="">Node 1</a></li>
+      <li><a href="">Node 1.2</a></li>
+      <li><a href="">Node 1.2.3</a></li>
     </ul>
   </aside>
 
@@ -107,7 +107,7 @@
 
 </section>
 
-<section class="campaign-body">
+<section class="campaign-body"  ng-scrollbars ng-scrollbars-config="scrollbarConfig">
   <div class="tree" ui-tree id="tree-main">
     <ol ui-tree-nodes ng-model="campaign.detail">
       <li ng-repeat="node in campaign.detail" ui-tree-node

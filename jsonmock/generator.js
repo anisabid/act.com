@@ -70,25 +70,54 @@ module.exports = function () {
     "campaignTree": [
       {
         "id": 1,
-        "title": "node1 20",
+        "title": "Création d'un ordre simple ACTION Achat avec prix limite",
         "status": "1",
         "nodes": [
           {
             "id": 11,
-            "title": "node1.1",
+            "title": "Ordre simple achat",
             "status": "2",
-            "nodes": [
-              {
-                "id": 111,
-                "title": "node1.1.1",
-                "status": "2",
-                "nodes": []
-              }
-            ]
+            "nodes": []
           },
           {
             "id": 12,
-            "title": "node1.2",
+            "title": "Ordre simple vente",
+            "status": "0",
+            "nodes": []
+          },
+          {
+            "id": 13,
+            "title": "Ordre simple action avec prix limite",
+            "status": "0",
+            "nodes": []
+          },
+          {
+            "id": 14,
+            "title": "Ordre simple action en mode confirmation",
+            "status": "0",
+            "nodes": []
+          },
+          {
+            "id": 15,
+            "title": "Ordre simple avec exécution partielle",
+            "status": "0",
+            "nodes": []
+          },
+          {
+            "id": 16,
+            "title": "Ordre bloc",
+            "status": "0",
+            "nodes": []
+          },
+          {
+            "id": 17,
+            "title": "Ordre bloc avec exec partielle",
+            "status": "0",
+            "nodes": []
+          },
+          {
+            "id": 17,
+            "title": "Bonus capés",
             "status": "0",
             "nodes": []
           }
@@ -96,18 +125,106 @@ module.exports = function () {
       },
       {
         "id": 2,
-        "title": "node2",
+        "title": "Obligations",
         "status": "2",
         "nodes": [
           {
             "id": 21,
-            "title": "node2.1",
+            "title": "1- Ordre simple OBLIGATION - ACHAT",
             "status": "2",
-            "nodes": []
+            "nodes": [
+              {
+                "id": 211,
+                "title": "Ouverture de l'application SANTORIN",
+                "status": "3",
+                "nodes": []
+              },
+              {
+                "id": 212,
+                "title": "Création d'un ordre Obligation",
+                "status": "3",
+                "nodes": []
+              }
+            ]
           },
           {
             "id": 22,
-            "title": "node2.2",
+            "title": "2- Ordre simple OBLIGATION - VENTE",
+            "status": "2",
+            "nodes": [
+              {
+                "id": 221,
+                "title": "Ouverture de l'application SANTORIN",
+                "status": "3",
+                "nodes": []
+              },
+              {
+                "id": 222,
+                "title": "Création d'un ordre Obligation",
+                "status": "3",
+                "nodes": []
+              }
+            ]
+          },
+          {
+            "id": 23,
+            "title": "Ordre simple obligation TPA",
+            "status": "3",
+            "nodes": [
+              {
+                "id": 231,
+                "title": "Ouverture de l'application SANTORIN",
+                "status": "3",
+                "nodes": []
+              },
+              {
+                "id": 232,
+                "title": "Création d'un ordre Obligation TPA",
+                "status": "3",
+                "nodes": []
+              },
+              {
+                "id": 233,
+                "title": "Traitement dans la MCE négo",
+                "status": "3",
+                "nodes": []
+              },
+              {
+                "id": 234,
+                "title": "Traitement dans l'ETC",
+                "status": "3",
+                "nodes": []
+              },
+              {
+                "id": 235,
+                "title": "Vérification dans Santorin",
+                "status": "3",
+                "nodes": []
+              }
+            ]
+          },
+          {
+            "id": 24,
+            "title": "Ordre simple Obligation avec exécution partielle - Achat",
+            "status": "2",
+            "nodes": [
+              {
+                "id": 241,
+                "title": "Ouverture de l'application SANTORIN",
+                "status": "3",
+                "nodes": []
+              },
+              {
+                "id": 242,
+                "title": "Création d'un ordre Obligation",
+                "status": "3",
+                "nodes": []
+              }
+            ]
+          },
+          {
+            "id": 25,
+            "title": "Ordre bloc avec exécution partielle",
             "status": "3",
             "nodes": []
           }
@@ -130,14 +247,16 @@ module.exports = function () {
 
     "test": _.times(20, function (n) {
       var begin = 200;
-      function getId(n){
+
+      function getId (n) {
         return begin + n;
       }
+
       return {
         "id": getId(n),
-        "title": "node-"+getId(n),
+        "title": "node-" + getId(n),
         "status": 0,
-        "description": faker.lorem.paragraph() ,
+        "description": faker.lorem.paragraph(),
         "nodes": []
       }
     })

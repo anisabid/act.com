@@ -342,7 +342,6 @@ ol {
   bottom: 0;
   overflow: hidden;
 }
-#page-container > .page-container-left,
 #page-container > .view-left {
   position: absolute;
   top: 0;
@@ -353,11 +352,21 @@ ol {
   border-right: 5px solid #dcdee0;
   background: #FFFFFF;
 }
-#page-container > .page-container-left .sidebar-campaigns .campaigns-body,
 #page-container > .view-left .sidebar-campaigns .campaigns-body {
   /*position: absolute;
         top: 0;
         bottom: 0;*/
+}
+#page-container > .view-left:after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  width: 5px;
+  height: 50px;
+  margin-top: -25px;
+  background-color: #ff0000;
+  z-index: 10;
 }
 #page-container > .page-container-right {
   overflow: hidden;
@@ -369,7 +378,6 @@ ol {
   top: 0;
   bottom: 0;
 }
-#page-container > .page-container-right > .page-container-right,
 #page-container > .page-container-right > .view-right {
   position: absolute;
   top: 0;
@@ -379,6 +387,14 @@ ol {
   width: 300px;
   border-left: 5px solid #dcdee0;
   background: #FFFFFF;
+}
+#page-container > .page-container-right > .view-right .tab {
+  height: 100%;
+}
+#page-container > .page-container-right > .view-right .tab .panel {
+  height: 50%;
+  overflow: hidden;
+  position: relative;
 }
 #act .mCSB_container_wrapper {
   margin: auto;
@@ -413,6 +429,34 @@ ol {
 }
 .campaign-filter {
   margin: 20px 0 10px 0;
+}
+.view-center .campaign-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 182px;
+  bottom: 10px;
+}
+.panel .panel-header {
+  border-bottom: 1px solid #c4c7cc;
+}
+.panel .panel-header .title {
+  color: #5d8fbd;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  font-weight: 400;
+}
+.view-right .panel .panel-header .title {
+  height: 30px;
+}
+.panel .panel-body {
+  overflow: hidden;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 .campaign-sub-header {
   zoom: 1;
@@ -846,7 +890,7 @@ ol {
   border-width: 0 0 1px 0;
   padding: 0 10px;
 }
-.view-left .campaign .container {
+.view-left .collapsed .campaign .container {
   height: auto;
 }
 .campaign .container .nav.category {
@@ -856,7 +900,7 @@ ol {
   right: 0px;
   background: #FFFFFF;
 }
-.view-left .campaign .container .nav.category {
+.view-left .collapsed .campaign .container .nav.category {
   display: none;
 }
 .campaign .container .nav.category ul li {
@@ -918,6 +962,7 @@ ol {
 }
 .campaign .container .view-global {
   padding-left: 10px;
+  position: relative;
 }
 .view-center .campaign .container .view-global {
   padding-left: 0;
@@ -942,6 +987,16 @@ ol {
 .campaign .container .view-global a {
   color: #303133;
 }
+.campaign .container .view-global .collapsible-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: white;
+}
+.view-center .campaign .container .view-global .collapsible-toggle {
+  display: none;
+}
 .campaign .container .view-global .title {
   font-size: 14px;
   padding-top: 10px;
@@ -950,7 +1005,7 @@ ol {
   font-size: 10px;
   color: #cccccc;
 }
-.view-left .campaign .container .view-global .aside {
+.view-left .collapsed .campaign .container .view-global .aside {
   margin-bottom: 10px;
 }
 .campaign .container .view-global .aside .v {
@@ -959,7 +1014,7 @@ ol {
 .campaign .container .view-global .indicators {
   margin-top: 5px;
 }
-.view-left .campaign .container .view-global .indicators {
+.view-left .collapsed .campaign .container .view-global .indicators {
   display: none;
 }
 .campaign .container .view-global .indicators .left,
@@ -1021,8 +1076,8 @@ ol {
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-.view-left .campaign .container .view-requirements,
-.view-left .campaign .container .view-scenarios {
+.view-left .collapsed .campaign .container .view-requirements,
+.view-left .collapsed .campaign .container .view-scenarios {
   display: none;
 }
 .campaign .container .view-requirements .left,
@@ -1324,7 +1379,7 @@ ol {
   width: 230px;
   font-size: 12px;
   font-weight: 300;
-  line-height: 12px;
+  line-height: 13px;
   color: #626262;
   cursor: text;
   -webkit-user-select: initial;
@@ -1396,7 +1451,7 @@ ol {
 }
 .tree .angular-ui-tree-handle .status .list li {
   display: block;
-  line-height: 12px;
+  line-height: 13px;
   font-size: 10px;
   width: 80px;
   padding: 0 10px;
@@ -1576,7 +1631,7 @@ ol {
   width: 230px;
   font-size: 12px;
   font-weight: 300;
-  line-height: 12px;
+  line-height: 13px;
   color: #626262;
   cursor: text;
   -webkit-user-select: initial;
@@ -1648,7 +1703,7 @@ ol {
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .status .list li {
   display: block;
-  line-height: 12px;
+  line-height: 13px;
   font-size: 10px;
   width: 80px;
   padding: 0 10px;

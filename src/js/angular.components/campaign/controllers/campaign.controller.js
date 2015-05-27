@@ -15,12 +15,12 @@
           detail: CampaignDetailData
         };
 
-
-      $scope.newSubItem = function(scope) {
+        $scope.newSubItem = function (scope) {
           var nodeData = scope.$modelValue;
           nodeData.nodes.push({
             id: nodeData.id * 10 + nodeData.nodes.length,
             title: nodeData.title + '.' + (nodeData.nodes.length + 1),
+            status: 0,
             nodes: []
           });
         };

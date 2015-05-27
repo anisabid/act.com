@@ -14,7 +14,12 @@
         link: function (scope, elem, attrs) {
 
           scope.campaign = {
-            parameters: scope.parameters
+            bodyCollapsed: true,
+            parameters: scope.parameters,
+            // Function collapsible content
+            collapsibleToggle: function () {
+              scope.campaign.bodyCollapsed = !scope.campaign.bodyCollapsed;
+            }
           };
 
         }

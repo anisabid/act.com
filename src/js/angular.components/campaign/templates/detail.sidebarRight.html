@@ -1,34 +1,57 @@
-<section class="panel test-list">
-  <header class="header">
-    <div class="filter-header">
-      <ul class="table filter-list-horizontal">
-        <li>
-          <input type="radio" ng-model="filter.sidebarRight" name="options" id="option-filter-scenario" value="" ng-checked="true" >
-          <label class="btn" for="option-filter-scenario">Scénario</label>
-        </li>
-        <li>
-          <input type="radio" ng-model="filter.status" name="options" id="option-filter-requirement" value="progress">
-          <label class="btn" for="option-filter-requirement">Exigence</label>
-        </li>
-        <li>
-          <input type="radio" ng-model="filter.status" name="options" id="option-filter-test" value="end">
-          <label class="btn" for="option-filter-test">Test</label>
-        </li>
+<header class="header">
+  <div class="filter-header">
+    <ul class="table filter-list-horizontal">
+      <li>
+        <input type="radio" ng-model="filter.sidebarRight" name="options" id="option-filter-scenario" value="" ng-checked="true">
+        <label class="btn" for="option-filter-scenario">Scénario</label>
+      </li>
+      <li>
+        <input type="radio" ng-model="filter.status" name="options" id="option-filter-requirement" value="progress">
+        <label class="btn" for="option-filter-requirement">Exigence</label>
+      </li>
+      <li>
+        <input type="radio" ng-model="filter.status" name="options" id="option-filter-test" value="end">
+        <label class="btn" for="option-filter-test">Test</label>
+      </li>
 
-        <li class="filter-search">
-          <a href="" class="btn"><i class="fa fa-search"></i></a>
-        </li>
-      </ul>
+      <li class="filter-search">
+        <a href="" class="btn"><i class="fa fa-search"></i></a>
+      </li>
+    </ul>
 
+  </div>
+
+</header>
+
+<section class="tab">
+  <section class="panel">
+    <header class="panel-header">
+      <div class="title">
+        scénarios utiliser
+      </div>
+    </header>
+    <div class="panel-body" ui-view="viewPageContainerLeft" ng-scrollbars ng-scrollbars-config="scrollbarConfig">
+      <div class="tree" ui-tree>
+        <ol ui-tree-nodes ng-model="campaign.tests">
+          <li ng-repeat="node in campaign.tests" ui-tree-node
+              ng-include="'/app/assets/dist/tpl/common/directives/nodes.directive.html'"></li>
+        </ol>
+      </div>
     </div>
-
-  </header>
+  </section>
+  <section class="panel">
+    <header class="panel-header">
+      <div class="title">
+        scénarios non utiliser
+      </div>
+    </header>
+    <div class="panel-body"  ui-view="viewPageContainerLeft" ng-scrollbars ng-scrollbars-config="scrollbarConfig">
+      <div class="tree" ui-tree>
+        <ol ui-tree-nodes ng-model="campaign.tests">
+          <li ng-repeat="node in campaign.tests" ui-tree-node
+              ng-include="'/app/assets/dist/tpl/common/directives/nodes.directive.html'"></li>
+        </ol>
+      </div>
+    </div>
+  </section>
 </section>
-
-
-<div class="tree" ui-tree id="tree-test">
-  <ol ui-tree-nodes ng-model="campaign.tests" >
-    <li ng-repeat="node in campaign.tests" ui-tree-node ng-include="'/app/assets/dist/tpl/common/directives/nodes.directive.html'"></li>
-  </ol>
-</div>
-
