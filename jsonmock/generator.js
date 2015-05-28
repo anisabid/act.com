@@ -77,7 +77,20 @@ module.exports = function () {
             "id": 11,
             "title": "Ordre simple achat",
             "status": "2",
-            "nodes": []
+            "nodes": [
+              {
+                "id": 111,
+                "title": "Ouverture de l'application SANTORIN",
+                "status": "1",
+                "nodes": []
+              },
+              {
+                "id": 112,
+                "title": "Création d'un ordre Obligation",
+                "status": "3",
+                "nodes": []
+              }
+            ]
           },
           {
             "id": 12,
@@ -131,12 +144,12 @@ module.exports = function () {
           {
             "id": 21,
             "title": "1- Ordre simple OBLIGATION - ACHAT",
-            "status": "2",
+            "status": "0",
             "nodes": [
               {
                 "id": 211,
                 "title": "Ouverture de l'application SANTORIN",
-                "status": "3",
+                "status": "1",
                 "nodes": []
               },
               {
@@ -150,7 +163,7 @@ module.exports = function () {
           {
             "id": 22,
             "title": "2- Ordre simple OBLIGATION - VENTE",
-            "status": "2",
+            "status": "3",
             "nodes": [
               {
                 "id": 221,

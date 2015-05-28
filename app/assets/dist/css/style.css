@@ -1354,6 +1354,15 @@ ol {
 .view-center .tree .angular-ui-tree-handle:hover .navigation .options {
   display: block;
 }
+.view-center .tree .angular-ui-tree-handle:hover .update .navigation .options {
+  display: none;
+}
+.view-center .tree .angular-ui-tree-handle:hover .update .title {
+  display: none;
+}
+.view-center .tree .angular-ui-tree-handle:hover .update .title-update {
+  display: block;
+}
 .view-center .tree .angular-ui-tree-handle {
   margin-bottom: 5px;
   border-bottom: 1px solid #e3e3e3;
@@ -1451,11 +1460,49 @@ ol {
   margin-left: 10px;
   line-height: 26px;
   height: 26px;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tree .angular-ui-tree-handle .title-update {
+  display: none;
+  zoom: 1;
+  float: left;
+  width: 70%;
+  position: relative;
+}
+.tree .angular-ui-tree-handle .title-update:before,
+.tree .angular-ui-tree-handle .title-update:after {
+  content: " ";
+  display: table;
+}
+.tree .angular-ui-tree-handle .title-update:after {
+  clear: both;
+}
+.tree .angular-ui-tree-handle .title-update .input-text {
+  width: 100%;
+  border: 0;
+  padding: 0 10px 0 31px;
+  margin: 0;
+  float: left;
+  line-height: 26px;
+}
+.tree .angular-ui-tree-handle .title-update .input-submit {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 26px;
+  text-align: center;
+}
+.tree .angular-ui-tree-handle .title-update .input-submit:hover {
+  color: #10cfbd;
 }
 .tree .angular-ui-tree-handle .info {
   float: right;
   display: block;
-  margin-right: 5px;
+  margin-right: 15px;
   color: #e3e3e3;
   cursor: default;
   position: relative;
@@ -1650,6 +1697,15 @@ ol {
 .view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .navigation .options {
   display: block;
 }
+.view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .navigation .options {
+  display: none;
+}
+.view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .title {
+  display: none;
+}
+.view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .title-update {
+  display: block;
+}
 .view-center .angular-ui-tree-nodes.angular-ui-tree-drag {
   margin-bottom: 5px;
   border-bottom: 1px solid #e3e3e3;
@@ -1747,11 +1803,49 @@ ol {
   margin-left: 10px;
   line-height: 26px;
   height: 26px;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .title-update {
+  display: none;
+  zoom: 1;
+  float: left;
+  width: 70%;
+  position: relative;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .title-update:before,
+.angular-ui-tree-nodes.angular-ui-tree-drag .title-update:after {
+  content: " ";
+  display: table;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .title-update:after {
+  clear: both;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .title-update .input-text {
+  width: 100%;
+  border: 0;
+  padding: 0 10px 0 31px;
+  margin: 0;
+  float: left;
+  line-height: 26px;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .title-update .input-submit {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 26px;
+  text-align: center;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .title-update .input-submit:hover {
+  color: #10cfbd;
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .info {
   float: right;
   display: block;
-  margin-right: 5px;
+  margin-right: 15px;
   color: #e3e3e3;
   cursor: default;
   position: relative;

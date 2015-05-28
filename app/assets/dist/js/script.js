@@ -162,14 +162,10 @@ var Obj = {
 (function () {
 
   angular.module('actApp')
-    .controller('CampaignController', ['$scope', '$state', 'CampaignListData', 'TestListData', 'CampaignDetailData', 'ActScrollbarConfig',
-      function ($scope, $state, CampaignListData, TestListData, CampaignDetailData, ActScrollbarConfig) {
+    .controller('CampaignController', ['$scope', '$state', '$window', 'CampaignListData', 'TestListData', 'CampaignDetailData', 'ActScrollbarConfig',
+      function ($scope, $state, $window, CampaignListData, TestListData, CampaignDetailData, ActScrollbarConfig) {
 
         $scope.scrollbarConfig = ActScrollbarConfig;
-        $scope.sidebarHide = {
-          left : false,
-          right: false
-        }
 
         $scope.campaign = {
           items: CampaignListData,
@@ -178,21 +174,51 @@ var Obj = {
           detail: CampaignDetailData
         };
 
+
+        // Actions Toggle Sidebar
+        $scope.sidebarHide = {
+          left : false,
+          right: false
+        };
         $scope.toggleSidebar = function (direction) {
           $scope.sidebarHide[direction] = !$scope.sidebarHide[direction];
         };
 
-        $scope.newSubItem = function (scope) {
-          var nodeData = scope.$modelValue;
-          nodeData.nodes.push({
-            id: nodeData.id * 10 + nodeData.nodes.length,
-            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
-            status: 0,
-            nodes: []
-          });
+
+        // Actions Tree
+
+        $scope.onRemove = function(scope) {
+          if ($window.confirm('Are you sure to remove ?')) {
+            scope.remove();
+          }
         };
 
-        $scope.newSubItem = function (scope) {
+        $scope.update = false;
+        $scope.onUpdate = function() {
+          //$scope.update = !$scope.update;
+          alert('x');
+        };
+
+        $scope.onStatusChange = function (scope) {
+          var nodeData = scope.$parentNodeScope.$modelValue;
+
+          var nodeParent = scope.$parentNodeScope;
+
+          var nodesParent = scope.$parentNodesScope;
+
+          console.log(nodeData.nodes.length);
+          console.log(nodeData);
+
+          console.log(nodesParent.$modelValue);
+
+          console.log(nodeParent.$childNodesScope);
+        };
+
+
+
+
+
+        $scope.onAddItem = function (scope) {
           var nodeData = scope.$modelValue;
           nodeData.nodes.push({
             id: nodeData.id * 10 + nodeData.nodes.length,
@@ -331,37 +357,6 @@ var Obj = {
       }]);
 
 })();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
-      function ($scope, $state, CampaignListData, ApplicationListData) {
-
-        $scope.dashboard = {
-          sources: CampaignListData,
-          applications: ApplicationListData
-        };
-
-      }]);
-})();
-
-
-
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('MainController', ['$scope', '$state',
-      function($scope) {
-
-        $scope.main = {};
-
-      }]);
-})();
-
 
 'use strict';
 
@@ -607,6 +602,34 @@ var Obj = {
 
 (function () {
 
+  angular.module('actApp')
+    .provider('FormatUrl', ['ActPaths', function (ActPaths) {
+
+      this.getBaseUrl = function () {
+        return ActPaths.baseUrl;
+      };
+
+      this.getTemplatePath = function (stringUrl) {
+        return this.getBaseUrl() + ActPaths.templates[stringUrl];
+      };
+
+      this.getDirectivePath = function (stringUrl) {
+        return this.getBaseUrl() + ActPaths.directives[stringUrl];
+      };
+
+      this.$get = function () {
+
+        return this;
+
+      };
+    }]);
+
+})();
+
+'use strict';
+
+(function () {
+
   function status (ActStatusConfig, type, imput) {
     switch (type) {
       case 'color':
@@ -645,25 +668,28 @@ var Obj = {
 (function () {
 
   angular.module('actApp')
-    .provider('FormatUrl', ['ActPaths', function (ActPaths) {
+    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
+      function ($scope, $state, CampaignListData, ApplicationListData) {
 
-      this.getBaseUrl = function () {
-        return ActPaths.baseUrl;
-      };
+        $scope.dashboard = {
+          sources: CampaignListData,
+          applications: ApplicationListData
+        };
 
-      this.getTemplatePath = function (stringUrl) {
-        return this.getBaseUrl() + ActPaths.templates[stringUrl];
-      };
-
-      this.getDirectivePath = function (stringUrl) {
-        return this.getBaseUrl() + ActPaths.directives[stringUrl];
-      };
-
-      this.$get = function () {
-
-        return this;
-
-      };
-    }]);
-
+      }]);
 })();
+
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('MainController', ['$scope', '$state',
+      function($scope) {
+
+        $scope.main = {};
+
+      }]);
+})();
+
+
