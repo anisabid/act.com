@@ -5,7 +5,8 @@
   var actApp = angular.module('actApp', [
     'ui.router',
     'ui.tree',
-    'ngScrollbars'
+    'ngScrollbars',
+    '720kb.tooltips'
   ]);
 
 

@@ -5,7 +5,8 @@
   var actApp = angular.module('actApp', [
     'ui.router',
     'ui.tree',
-    'ngScrollbars'
+    'ngScrollbars',
+    '720kb.tooltips'
   ]);
 
 
@@ -191,6 +192,16 @@ var Obj = {
           });
         };
 
+        $scope.newSubItem = function (scope) {
+          var nodeData = scope.$modelValue;
+          nodeData.nodes.push({
+            id: nodeData.id * 10 + nodeData.nodes.length,
+            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
+            status: 0,
+            nodes: []
+          });
+        };
+
       }]);
 })();
 'use strict';
@@ -320,6 +331,37 @@ var Obj = {
       }]);
 
 })();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
+      function ($scope, $state, CampaignListData, ApplicationListData) {
+
+        $scope.dashboard = {
+          sources: CampaignListData,
+          applications: ApplicationListData
+        };
+
+      }]);
+})();
+
+
+
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('MainController', ['$scope', '$state',
+      function($scope) {
+
+        $scope.main = {};
+
+      }]);
+})();
+
 
 'use strict';
 
@@ -624,35 +666,4 @@ var Obj = {
       };
     }]);
 
-})();
-
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
-      function ($scope, $state, CampaignListData, ApplicationListData) {
-
-        $scope.dashboard = {
-          sources: CampaignListData,
-          applications: ApplicationListData
-        };
-
-      }]);
-})();
-
-
-
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('MainController', ['$scope', '$state',
-      function($scope) {
-
-        $scope.main = {};
-
-      }]);
 })();

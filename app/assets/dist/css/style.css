@@ -363,6 +363,27 @@ ol {
   z-index: 10;
   cursor: w-resize;
 }
+#page-container > .view-left .layout_sep.h .fa,
+#page-container > .view-left > .wrap .layout_sep.h .fa {
+  top: 50%;
+  position: absolute;
+  left: 0;
+  width: 5px;
+  overflow: hidden;
+  color: #626262;
+}
+.hide-view-left#page-container > .view-left .layout_sep.h .fa,
+.hide-view-left#page-container > .view-left > .wrap .layout_sep.h .fa {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 #page-container > .view-left .sidebar-campaigns .campaigns-body,
 #page-container > .view-left > .wrap .sidebar-campaigns .campaigns-body {
   /*position: absolute;
@@ -419,6 +440,25 @@ ol {
   background-color: #dcdee0;
   z-index: 10;
   cursor: w-resize;
+}
+#page-container > .page-container-right > .view-right .layout_sep.h .fa {
+  top: 50%;
+  position: absolute;
+  left: 0;
+  width: 5px;
+  overflow: hidden;
+  color: #626262;
+}
+.hide-view-left#page-container > .page-container-right > .view-right .layout_sep.h .fa {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 #page-container > .page-container-right > .view-right .tab {
   height: 100%;
@@ -518,7 +558,8 @@ ol {
 .campaign-sub-header .breadcrumb ul li a {
   color: white;
   text-decoration: none;
-  padding: 2px 0 2px 20px;
+  padding: 0 0 0 20px;
+  line-height: 22px;
   background: #f8d053;
   position: relative;
   display: block;
@@ -554,6 +595,16 @@ ol {
   margin-left: 1px;
   left: 100%;
   z-index: 1;
+}
+.campaign-sub-header .breadcrumb ul li .text-ellipsis {
+  width: 50px;
+  overflow: hidden;
+  height: 22px;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.campaign-sub-header .breadcrumb ul li:hover .text-ellipsis {
+  width: auto;
 }
 .campaign-sub-header .breadcrumb ul li:first-child a {
   padding-left: 5px;
@@ -885,18 +936,22 @@ ol {
   border-color: #333333;
 }
 .campaign.standby,
+.campaign .standby,
 .standby .campaign {
   border-color: #333333;
 }
 .campaign.progress,
+.campaign .progress,
 .progress .campaign {
   border-color: #f7ca18;
 }
 .campaign.ok,
+.campaign .ok,
 .ok .campaign {
   border-color: #2bb38a;
 }
 .campaign.ko,
+.campaign .ko,
 .ko .campaign {
   border-color: #e34b51;
 }
@@ -1025,9 +1080,10 @@ ol {
   right: 0;
   padding: 10px;
   background-color: white;
-}
-.view-center .campaign .container .view-global .collapsible-toggle {
   display: none;
+}
+.view-left .campaign .container .view-global .collapsible-toggle {
+  display: block;
 }
 .campaign .container .view-global .title {
   font-size: 14px;
@@ -1317,18 +1373,22 @@ ol {
   height: 26px;
 }
 .tree .angular-ui-tree-handle .navigation .drag .wrap.standby,
+.tree .angular-ui-tree-handle .navigation .drag .wrap .standby,
 .standby .tree .angular-ui-tree-handle .navigation .drag .wrap {
   border-color: #333333;
 }
 .tree .angular-ui-tree-handle .navigation .drag .wrap.progress,
+.tree .angular-ui-tree-handle .navigation .drag .wrap .progress,
 .progress .tree .angular-ui-tree-handle .navigation .drag .wrap {
   border-color: #f7ca18;
 }
 .tree .angular-ui-tree-handle .navigation .drag .wrap.ok,
+.tree .angular-ui-tree-handle .navigation .drag .wrap .ok,
 .ok .tree .angular-ui-tree-handle .navigation .drag .wrap {
   border-color: #2bb38a;
 }
 .tree .angular-ui-tree-handle .navigation .drag .wrap.ko,
+.tree .angular-ui-tree-handle .navigation .drag .wrap .ko,
 .ko .tree .angular-ui-tree-handle .navigation .drag .wrap {
   border-color: #e34b51;
 }
@@ -1344,18 +1404,22 @@ ol {
   border-left-width: 0;
 }
 .view-center .tree .angular-ui-tree-handle .navigation .drag .wrap.standby,
+.view-center .tree .angular-ui-tree-handle .navigation .drag .wrap .standby,
 .standby .view-center .tree .angular-ui-tree-handle .navigation .drag .wrap {
   background-color: #333333;
 }
 .view-center .tree .angular-ui-tree-handle .navigation .drag .wrap.progress,
+.view-center .tree .angular-ui-tree-handle .navigation .drag .wrap .progress,
 .progress .view-center .tree .angular-ui-tree-handle .navigation .drag .wrap {
   background-color: #f7ca18;
 }
 .view-center .tree .angular-ui-tree-handle .navigation .drag .wrap.ok,
+.view-center .tree .angular-ui-tree-handle .navigation .drag .wrap .ok,
 .ok .view-center .tree .angular-ui-tree-handle .navigation .drag .wrap {
   background-color: #2bb38a;
 }
 .view-center .tree .angular-ui-tree-handle .navigation .drag .wrap.ko,
+.view-center .tree .angular-ui-tree-handle .navigation .drag .wrap .ko,
 .ko .view-center .tree .angular-ui-tree-handle .navigation .drag .wrap {
   background-color: #e34b51;
 }
@@ -1442,6 +1506,26 @@ ol {
   border-left: 1px solid #e3e3e3;
   display: none;
 }
+.tree .angular-ui-tree-handle .status .current-status.standby,
+.tree .angular-ui-tree-handle .status .current-status .standby,
+.standby .tree .angular-ui-tree-handle .status .current-status {
+  color: #333333;
+}
+.tree .angular-ui-tree-handle .status .current-status.progress,
+.tree .angular-ui-tree-handle .status .current-status .progress,
+.progress .tree .angular-ui-tree-handle .status .current-status {
+  color: #f7ca18;
+}
+.tree .angular-ui-tree-handle .status .current-status.ok,
+.tree .angular-ui-tree-handle .status .current-status .ok,
+.ok .tree .angular-ui-tree-handle .status .current-status {
+  color: #2bb38a;
+}
+.tree .angular-ui-tree-handle .status .current-status.ko,
+.tree .angular-ui-tree-handle .status .current-status .ko,
+.ko .tree .angular-ui-tree-handle .status .current-status {
+  color: #e34b51;
+}
 .view-center .tree .angular-ui-tree-handle .status {
   display: block;
 }
@@ -1472,21 +1556,37 @@ ol {
 }
 .tree .angular-ui-tree-handle .status .list {
   position: absolute;
-  top: 26px;
-  right: -1px;
+  top: -1px;
+  right: 28px;
   border: 1px solid #FFFFFF;
   background-color: #FFFFFF;
   outline: 1px solid #e3e3e3;
   z-index: 200;
   display: none;
   background-color: #f1f1f1;
+  width: 132px;
 }
 .tree .angular-ui-tree-handle .status .list li {
   display: block;
   line-height: 13px;
   font-size: 10px;
-  width: 80px;
-  padding: 0 10px;
+  width: 32px;
+  padding: 0 2px;
+  float: left;
+}
+.tree .angular-ui-tree-handle .status .list li .btn {
+  margin: 0 auto;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+.tree .angular-ui-tree-handle .status .list li input[type="radio"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+.tree .angular-ui-tree-handle .status .list li a {
+  padding: 0 8px;
+  display: block;
 }
 .tree .angular-ui-tree-handle .status .list li:hover {
   background-color: #e9e9e9;
@@ -1569,18 +1669,22 @@ ol {
   height: 26px;
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap.standby,
+.angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap .standby,
 .standby .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap {
   border-color: #333333;
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap.progress,
+.angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap .progress,
 .progress .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap {
   border-color: #f7ca18;
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap.ok,
+.angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap .ok,
 .ok .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap {
   border-color: #2bb38a;
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap.ko,
+.angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap .ko,
 .ko .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap {
   border-color: #e34b51;
 }
@@ -1596,18 +1700,22 @@ ol {
   border-left-width: 0;
 }
 .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap.standby,
+.view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap .standby,
 .standby .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap {
   background-color: #333333;
 }
 .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap.progress,
+.view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap .progress,
 .progress .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap {
   background-color: #f7ca18;
 }
 .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap.ok,
+.view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap .ok,
 .ok .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap {
   background-color: #2bb38a;
 }
 .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap.ko,
+.view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap .ko,
 .ko .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .navigation .drag .wrap {
   background-color: #e34b51;
 }
@@ -1694,6 +1802,26 @@ ol {
   border-left: 1px solid #e3e3e3;
   display: none;
 }
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status.standby,
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status .standby,
+.standby .angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status {
+  color: #333333;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status.progress,
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status .progress,
+.progress .angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status {
+  color: #f7ca18;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status.ok,
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status .ok,
+.ok .angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status {
+  color: #2bb38a;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status.ko,
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status .ko,
+.ko .angular-ui-tree-nodes.angular-ui-tree-drag .status .current-status {
+  color: #e34b51;
+}
 .view-center .angular-ui-tree-nodes.angular-ui-tree-drag .status {
   display: block;
 }
@@ -1724,21 +1852,37 @@ ol {
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .status .list {
   position: absolute;
-  top: 26px;
-  right: -1px;
+  top: -1px;
+  right: 28px;
   border: 1px solid #FFFFFF;
   background-color: #FFFFFF;
   outline: 1px solid #e3e3e3;
   z-index: 200;
   display: none;
   background-color: #f1f1f1;
+  width: 132px;
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .status .list li {
   display: block;
   line-height: 13px;
   font-size: 10px;
-  width: 80px;
-  padding: 0 10px;
+  width: 32px;
+  padding: 0 2px;
+  float: left;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .list li .btn {
+  margin: 0 auto;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .list li input[type="radio"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+.angular-ui-tree-nodes.angular-ui-tree-drag .status .list li a {
+  padding: 0 8px;
+  display: block;
 }
 .angular-ui-tree-nodes.angular-ui-tree-drag .status .list li:hover {
   background-color: #e9e9e9;

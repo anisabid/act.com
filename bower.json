@@ -18,7 +18,8 @@
     "font-awesome": "^4.3.0",
     "d3": "~3.5.5",
     "angular-ui-tree": "~2.4.0",
-    "ng-scrollbars": "~0.0.5"
+    "ng-scrollbars": "~0.0.5",
+    "angular-tooltips": "~0.1.9"
   },
   "devDependencies": {
     "jquery-circle-progress": "~1.1.2"

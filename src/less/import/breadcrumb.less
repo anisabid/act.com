@@ -1,4 +1,6 @@
 @b-border: 30px;
+@b-width-ellipsis: 50px;
+@b-line-height: 22px;
 @b-background: @base-color-yellow;
 .breadcrumb () {
   list-style: none;
@@ -12,7 +14,8 @@
       a {
         color: @base-color-white;
         text-decoration: none;
-        padding: 2px 0 2px (@b-border - 10);
+        padding: 0 0 0 (@b-border - 10);
+        line-height: @b-line-height;
         background: @b-background;
         position: relative;
         display: block;
@@ -49,6 +52,18 @@
           z-index: 1;
         }
 
+      }
+
+      .text-ellipsis{
+        width: @b-width-ellipsis;
+        overflow: hidden;
+        height: @b-line-height;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+      }
+
+      &:hover .text-ellipsis{
+        width: auto;
       }
 
       &:first-child a {

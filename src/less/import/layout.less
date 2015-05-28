@@ -16,6 +16,20 @@
     background-color: @base-color-light;
     z-index: @base-z-index-1;
     cursor: w-resize;
+    .fa{
+      top: 50%;
+      position: absolute;
+      left: 0;
+      width: 5px;
+      overflow: hidden;
+      color: @base-color-grey;
+
+      .hide-view-left&{
+        .transition(@base-transition-delay, @base-transition-timing-function);
+        .rotation(180deg);
+      }
+
+    }
   }
 
 }

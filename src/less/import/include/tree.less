@@ -182,10 +182,17 @@
     position: relative;
     border-left: 1px solid @base-color-grey-light;
     display: none;
+
+    .current-status{
+      .status-color();
+
+    }
+
     .view-center & {
       // in view center
       display: block;
     }
+
     > a {
       display: block;
       padding-left: 1px;
@@ -220,20 +227,39 @@
 
     .list {
       position: absolute;
-      top: @t-tree-height;
-      right: -1px;
+      top: -1px;
+      right: @t-tree-height + 2;
       border: 1px solid #FFFFFF;
       background-color: #FFFFFF;
       outline: 1px solid @base-color-grey-light;
       z-index: @base-z-index-20;
       display: none;
       background-color: @base-color-grey-lightest;
+      width: 132px;
       li {
         display: block;
         line-height: @base-font-size-medium;
         font-size: @base-font-size-small;
-        width: 80px;
-        padding: 0 10px;
+        width: 32px;
+        padding: 0 2px;
+        float: left;
+
+        .btn{
+          margin: 0 auto;
+          cursor: pointer;
+          width: 100%;
+          text-align: center;
+        }
+
+        input[type="radio"] {
+          position: absolute;
+          clip: rect(0, 0, 0, 0);
+        }
+
+        a{
+          padding: 0 8px;
+          display: block;
+        }
         &:hover {
           background-color: @base-color-grey-lighter;
         }

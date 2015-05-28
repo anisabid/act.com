@@ -2,7 +2,8 @@
   <div class="campaign" ng-class="showView">
     <div class="container">
       <section class="view-global">
-        <a href="" class="collapsible-toggle fa fa-chevron-circle-right" ng-class="{'fa-chevron-circle-down': !campaign.bodyCollapsed}" ng-click="campaign.collapsibleToggle()"></a>
+        <a href="" class="collapsible-toggle fa fa-chevron-circle-right"
+           ng-class="{'fa-chevron-circle-down': !campaign.bodyCollapsed}" ng-click="campaign.collapsibleToggle()"></a>
         <a ui-sref="main.campaign.detail({campaignId:campaign.parameters.id})">
           <h2 class="title title-of-campaign"><span class="ref">{{campaign.parameters.name}}</span></h2>
           <aside class="aside aside-of-campaign">Crée par <span class="v author">{{campaign.parameters.user.name}}</span> le <span
@@ -85,9 +86,10 @@
       </section>
       <nav class="nav category" ng-init="showView=''">
         <ul>
-          <li class="btn-show-view-requirements"><a href=""
-                                                    ng-click=" showView = (showView == 'show-view-requirements') ?  '' : 'show-view-requirements' "><i
-          class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i>Exigences<i
+          <li class="btn-show-view-requirements">
+            <a href=""
+               ng-click=" showView = (showView == 'show-view-requirements') ?  '' : 'show-view-requirements' ">
+              <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i>Exigences<i
           class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></li>
           <li class="btn-show-view-scenarios"><a href=""
                                                  ng-click=" showView = (showView == 'show-view-scenarios') ?  '' : 'show-view-scenarios' "><i

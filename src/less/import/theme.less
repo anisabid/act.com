@@ -85,10 +85,11 @@
 
 // Status Color
 @list: standby, progress, ok, ko;
+
 .status-color() {
   .for(@list);
   .-each(@value) {
-    &.@{value}, .@{value} & {
+    &.@{value}, & .@{value}, .@{value} & {
       color: ~"@{base-color-status-@{value}}";
     }
   }
@@ -98,7 +99,7 @@
 .status-border() {
   .for(@list);
   .-each(@value) {
-    &.@{value}, .@{value} & {
+    &.@{value}, & .@{value}, .@{value} & {
       border-color: ~"@{base-color-status-@{value}}";
     }
   }
@@ -108,7 +109,7 @@
 .status-background() {
   .for(@list);
   .-each(@value) {
-    &.@{value}, .@{value} & {
+    &.@{value}, & .@{value}, .@{value} & {
       background-color: ~"@{base-color-status-@{value}}";
     }
   }
