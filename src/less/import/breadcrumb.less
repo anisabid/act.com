@@ -54,7 +54,7 @@
 
       }
 
-      .text-ellipsis{
+      .text-ellipsis {
         width: @b-width-ellipsis;
         overflow: hidden;
         height: @b-line-height;
@@ -62,14 +62,14 @@
         -o-text-overflow: ellipsis;
       }
 
-      &:hover .text-ellipsis{
+      &:hover .text-ellipsis,
+      &:last-child .text-ellipsis{
         width: auto;
       }
 
       &:first-child a {
         padding-left: 5px;
       }
-
 
       &:nth-child(2) a {
         background: mix(@b-background, #fff, 90%);
@@ -100,6 +100,7 @@
         color: black;
         pointer-events: none;
         cursor: default;
+        width: auto;
       }
       &:last-child a:after {
         border: 0;
@@ -108,7 +109,7 @@
         margin-left: 0;
       }
       & a:hover {
-        background:  mix(@b-background, #000, 90%);
+        background: mix(@b-background, #000, 90%);
       }
       & a:hover:after {
         border-left-color: mix(@b-background, #000, 90%) !important;

@@ -37,14 +37,29 @@
 .campaign-filter {
   margin: 20px 0 10px 0;
 }
-.view-center{
+
+.view-center {
   @vcc-header-height: 149px;
   @vcc-header-height-collapsed: 61px;
   @vcc-sub-header-height: 23px;
   @vcc-sub-body-margin-top: 10px;
   @vcc-sub-body-margin-bottom: 10px;
   .campaign-header {
-    .update {
+    position: relative;
+    .mode-edit {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -85px;
+      z-index: @base-z-index-20;
+      background-color: @base-color-yellow;
+      color: @base-color-yellow-darker;
+      font-size: @base-font-size-medium;
+      text-align: center;
+      padding: 5px 10px;
+      width: 170px;
+      display: block;
+      .border-radius(0, 5px, 5px, 0);
     }
   }
   .campaign-body {
@@ -52,34 +67,32 @@
     left: 0;
     right: 0;
     top: @vcc-header-height + @vcc-sub-header-height + @vcc-sub-body-margin-top;
-    bottom: @vcc-sub-body-margin-bottom ;
+    bottom: @vcc-sub-body-margin-bottom;
 
-    .globalHide-view-center-header &{
+    .globalHide-view-center-header & {
       top: @vcc-header-height-collapsed + @vcc-sub-header-height + @vcc-sub-body-margin-top;;
     }
-
 
   }
 }
 
-
-.panel{
+.panel {
   @panel-header-height: 30px;
-  .panel-header{
+  .panel-header {
     //border-top: 1px solid @base-color-border ;
-    border-bottom: 1px solid @base-color-border ;
-    .title{
+    border-bottom: 1px solid @base-color-border;
+    .title {
       color: @base-color-text;
       font-size: @base-font-size-medium;
       text-transform: uppercase;
       padding: 5px 10px;
       font-weight: @base-font-weight-normal;
-      .view-right &{
+      .view-right & {
         height: @panel-header-height;
       }
     }
   }
-  .panel-body{
+  .panel-body {
     overflow: hidden;
     position: absolute;
     top: @panel-header-height;
@@ -88,7 +101,6 @@
     left: 0;
   }
 }
-
 
 // Status Color
 @list: standby, progress, ok, ko;
@@ -154,7 +166,35 @@
   border-bottom: 1px solid @base-color-border;
   background-color: @base-background;
   .breadcrumb {
+    float: left;
+    padding-right: 20px;
     .breadcrumb ();
+  }
+  .nav {
+    float: right;
+    line-height: 22px;
+    ul {
+      float: left;
+      li {
+        float: left;
+      }
+    }
+    .btn {
+      margin: 1px 2px;
+      //background-color: @base-color-green;
+      padding: 1px 10px;
+      line-height: 18px ;
+      //border: 1px solid @base-color-green-light;
+      //.drop-shadow(0, 0, 2px, 0.2);
+      font-size: @base-font-size;
+      text-transform: capitalize;
+      color: @base-color-text;
+      .rounded(2px);
+      .background-hover-active( @base-color-grey-light);
+      .fa{
+        margin-right: 10px;
+      }
+    }
   }
 }
 

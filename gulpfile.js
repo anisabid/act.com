@@ -4,6 +4,8 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
 var concat = require('gulp-concat');
+var vm = require('vm');
+var jsonServer = require('json-server')
 
 function isOnlyChange (event) {
   return event.type === 'changed';
@@ -41,6 +43,23 @@ gulp.task('javascript', function () {
     .pipe(concat('script.js'))
     .pipe(gulp.dest(options.path.dist.js));
 });
+
+/*
+gulp.task('json', function () {
+  //vm.runInThisContext('json-server  C:\/Personal_Unsaved\/tools\/wamp\/www\/act.com\/jsonmock\/generator.js');
+  setTimeout(function () {
+   vm.runInThisContext('json-server jsonmock/generator.js');
+   }, 1000);
+
+  var server = jsonServer.create(); // Returns an Express server
+  var router = jsonServer.router('jsonmock/generator.js'); // Returns an Express router
+
+  server.use(jsonServer.defaults); // logger, static and cors middlewares
+  server.use(router); // Mount router on '/'
+
+  server.listen(3000)
+})
+*/
 
 // Move templates files
 gulp.task('templates', function () {

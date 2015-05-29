@@ -12,11 +12,15 @@
           items: CampaignListData,
           currentItem: CampaignListData[1],
           tests: TestListData,
-          detail: CampaignDetailData
+          detail: CampaignDetailData,
+          modeEdit: false
+        };
+        // Toggle Mode Edit
+        $scope.toggleModeEdit = function () {
+          $scope.campaign.modeEdit = !$scope.campaign.modeEdit;
+          console.log($scope.campaign.modeEdit);
         };
 
-
-        // Actions Toggle Sidebar
         $scope.globalHide = {
           view: {
             left: false,
@@ -26,18 +30,16 @@
             }
           }
         };
+        // Actions Toggle Sidebar
         $scope.toggleViewLeftRight = function (direction) {
           $scope.globalHide.view[direction] = !$scope.globalHide.view[direction];
         };
-
+        // Actions Toggle Center Header
         $scope.toggleViewCenterHeader = function () {
-          console.log('call toggleViewCenterHeader = '+ $scope.globalHide.view.center.header);
           $scope.globalHide.view.center.header = !$scope.globalHide.view.center.header;
         };
 
-
         // Actions Tree
-
         $scope.onRemove = function (scope) {
           if ($window.confirm('Are you sure to remove ?')) {
             scope.remove();
@@ -45,10 +47,9 @@
         };
 
         $scope.update = false;
-        $scope.onUpdate = function () {
-          //$scope.update = !$scope.update;
-
-        };
+        /*$scope.onUpdate = function () {
+          $scope.update = !$scope.update;
+        };*/
 
         $scope.onStatusChange = function (scope) {
           var nodeData = scope.$parentNodeScope.$modelValue;
@@ -57,12 +58,26 @@
 
           var nodesParent = scope.$parentNodesScope;
 
-          console.log(nodeData.nodes.length);
+          /*console.log(nodeData.nodes.length);
           console.log(nodeData);
 
           console.log(nodesParent.$modelValue);
 
-          console.log(nodeParent.$childNodesScope);
+          console.log(nodeParent.$childNodesScope);*/
+        };
+
+        var getRootNodesScope = function() {
+          return angular.element(document.getElementById("tree-main")).scope();
+        };
+
+        $scope.onCollapseAll = function() {
+          var scope = getRootNodesScope();
+          scope.collapseAll();
+        };
+
+        $scope.onExpandAll = function() {
+          var scope = getRootNodesScope();
+          scope.expandAll();
         };
 
 

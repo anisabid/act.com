@@ -1,7 +1,22 @@
-module.exports = function () {
-  var faker = require("faker");
-  var _ = require("lodash");
+var faker = require("faker");
+var _ = require("lodash");
 
+
+
+
+module.exports = function () {
+  //return setInterval(getJson, 2000)
+
+  return getJson();
+
+}
+
+function cb(){
+  console.log("x");
+}
+
+
+function getJson(){
   return {
     // Application
     "application": _.times(5, function (n) {

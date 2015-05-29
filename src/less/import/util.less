@@ -575,3 +575,30 @@
 .for(@array)   when (default()) {.for-impl_(length(@array))}
 .for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
 .for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+
+
+
+// ............................................................
+// :hover :active
+
+.color-hover-active(@color) {
+  @hover: 90%;
+  @active: 94%;
+  &:hover {
+    color: mix(@color, #fff, @hover);
+  }
+  &:active {
+    color: mix(@color, #000, @active);;
+  }
+}
+
+.background-hover-active(@color) {
+  @hover: 90%;
+  @active: 94%;
+  &:hover {
+    background-color: mix(@color, #fff, @hover);
+  }
+  &:active {
+    background-color: mix(@color, #000, @active);;
+  }
+}

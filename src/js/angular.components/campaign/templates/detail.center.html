@@ -1,5 +1,10 @@
 <header class="campaign-header">
 
+
+  <a href="" ng-click="toggleModeEdit()" class="mode-edit" ng-if="!campaign.modeEdit">
+    Cliquez pour modifier
+  </a>
+
   <am-campaign parameters="campaign.currentItem" full="true" on-callback="toggleViewCenterHeader();"></am-campaign>
 
 </header>
@@ -14,9 +19,11 @@
     </ul>
   </aside>
 
-  <nav>
+  <nav class="nav">
     <ul>
-      <li><a href=""></a></li>
+      <li><a href="" class="btn" ng-click="onExpandAll()"><i class="fa fa-expand"></i>Expand all</a> </li>
+      <li><a href="" class="btn" ng-click="onCollapseAll()"><i class="fa fa-compress"></i>Collapse all</a> </li>
+      <li ng-if="campaign.modeEdit"><a href="" class="btn save" ng-click="campaign.modeEdit = false"><i class="fa fa-save"></i>save</a></li>
     </ul>
   </nav>
 
