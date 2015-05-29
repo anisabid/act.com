@@ -521,6 +521,44 @@ ol {
 .campaign-filter {
   margin: 20px 0 10px 0;
 }
+.dashboard-stats {
+  margin-top: 30px;
+  zoom: 1;
+}
+.dashboard-stats:before,
+.dashboard-stats:after {
+  content: " ";
+  display: table;
+}
+.dashboard-stats:after {
+  clear: both;
+}
+.dashboard-stats ul {
+  width: 1296px;
+  zoom: 1;
+  margin: 0 auto;
+}
+.dashboard-stats ul:before,
+.dashboard-stats ul:after {
+  content: " ";
+  display: table;
+}
+.dashboard-stats ul:after {
+  clear: both;
+}
+.dashboard-stats ul li {
+  width: 304px;
+  height: 145px;
+  margin: 10px;
+  float: left;
+}
+.dashboard-stats ul li a {
+  display: block;
+}
+.dashboard-stats ul li a image {
+  width: 304px;
+  height: 145px;
+}
 .view-center .campaign-header {
   position: relative;
 }
@@ -722,7 +760,7 @@ ol {
 .campaign-sub-header .nav .btn {
   margin: 1px 2px;
   padding: 1px 10px;
-  line-height: 18px ;
+  line-height: 18px;
   font-size: 12px;
   text-transform: capitalize;
   color: #5d8fbd;
@@ -1133,6 +1171,9 @@ ol {
 }
 .show-view-scenarios.campaign .container .nav.category ul li.btn-show-view-scenarios .fa.fa-chevron-down {
   display: none;
+}
+.campaign .container .large-header {
+  margin-bottom: 15px;
 }
 .campaign .container .title-of-campaign {
   font-size: 14px;
