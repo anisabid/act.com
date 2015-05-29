@@ -17,27 +17,37 @@
 
 
         // Actions Toggle Sidebar
-        $scope.sidebarHide = {
-          left : false,
-          right: false
+        $scope.globalHide = {
+          view: {
+            left: false,
+            right: false,
+            center: {
+              header: true
+            }
+          }
         };
-        $scope.toggleSidebar = function (direction) {
-          $scope.sidebarHide[direction] = !$scope.sidebarHide[direction];
+        $scope.toggleViewLeftRight = function (direction) {
+          $scope.globalHide.view[direction] = !$scope.globalHide.view[direction];
+        };
+
+        $scope.toggleViewCenterHeader = function () {
+          console.log('call toggleViewCenterHeader = '+ $scope.globalHide.view.center.header);
+          $scope.globalHide.view.center.header = !$scope.globalHide.view.center.header;
         };
 
 
         // Actions Tree
 
-        $scope.onRemove = function(scope) {
+        $scope.onRemove = function (scope) {
           if ($window.confirm('Are you sure to remove ?')) {
             scope.remove();
           }
         };
 
         $scope.update = false;
-        $scope.onUpdate = function() {
+        $scope.onUpdate = function () {
           //$scope.update = !$scope.update;
-          alert('x');
+
         };
 
         $scope.onStatusChange = function (scope) {
@@ -54,9 +64,6 @@
 
           console.log(nodeParent.$childNodesScope);
         };
-
-
-
 
 
         $scope.onAddItem = function (scope) {

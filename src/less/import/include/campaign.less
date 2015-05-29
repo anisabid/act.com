@@ -20,7 +20,8 @@
  ************************************************** */
 .campaign-item {
   float: left;
-  .sidebar-campaigns & {
+  .sidebar-campaigns &,
+  .view-center & {
     float: none;
   }
 }
@@ -39,8 +40,29 @@
 }
 
 .init-view-left() {
-  .view-left .collapsed & {
+  .view-left .collapsed &,
+  .view-center .collapsed & {
     display: none;
+  }
+}
+
+.collapsible-toggle() {
+  .collapsible-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    //color: @base-color-text;
+    background-color: @base-color-white;
+    display: none;
+    .view-left &,
+    .campaign-header & {
+      display: block;
+    }
+
+    .campaign-header & {
+      background-color: @c-background-detail;
+    }
   }
 }
 
@@ -78,7 +100,8 @@
       padding: 0 10px;
     }
 
-    .view-left .collapsed &{
+    .view-left .collapsed &,
+    .view-center .collapsed & {
       height: auto;
     }
 
@@ -89,7 +112,12 @@
       right: 0px;
       background: #FFFFFF;
 
-      .view-left .collapsed &{
+      &.full {
+        display: none;
+      }
+
+      .view-left .collapsed &,
+      .view-center .collapsed & {
         display: none;
       }
       ul {
@@ -156,11 +184,17 @@
     .aside-of-campaign {
       font-size: 10px;
       color: @base-color-master-lighter;
+      .view-left .collapsed &,
+      .view-center .collapsed & {
+        margin-bottom: 10px;
+      }
       .v {
         color: @base-color-master-light;
 
       }
     }
+
+    .collapsible-toggle();
 
     // Campaign // Container // view global
     .view-global {
@@ -174,17 +208,8 @@
 
       a {
         color: @base-color-master;
-      }
-
-      .collapsible-toggle{
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 10px;
-        background-color: @base-color-white;
-        display: none;
-        .view-left & {
-         display: block;
+        &.collapsible-toggle{
+          //color: @base-color-text;
         }
       }
 
@@ -193,20 +218,11 @@
         padding-top: 10px;
 
       }
-      .aside {
-        font-size: 10px;
-        color: @base-color-master-lighter;
-        .view-left .collapsed &{
-          margin-bottom: 10px;
-        }
-        .v {
-          color: @base-color-master-light;
 
-        }
-      }
       .indicators {
         margin-top: 5px;
-        .view-left .collapsed & {
+        .view-left .collapsed &,
+        .view-center .collapsed & {
           display: none;
         }
         .left,
@@ -250,7 +266,8 @@
         .init-view-center();
       }
 
-      .view-left .collapsed & {
+      .view-left .collapsed &,
+      .view-center .collapsed & {
         display: none;
       }
 

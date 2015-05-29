@@ -42,7 +42,7 @@ var Obj = {
 
       status: ['standby', 'progress', 'ok', 'ko'],
       color: ['#333333', '#f7ca18', '#2bb38a', '#e34b51'],
-      icon: ['fa-power-off', 'fa-thumbs-up', 'fa-thumbs-up', 'fa-thumbs-down']
+      icon: ['fa-power-off', 'fa-warning', 'fa-thumbs-up', 'fa-thumbs-down']
 
     });
 

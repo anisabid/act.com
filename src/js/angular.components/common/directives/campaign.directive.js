@@ -8,7 +8,9 @@
         restrict: 'E',
         replace: true,
         scope: {
-          parameters: '='
+          parameters: '=',
+          full: '=',
+          callback: '&onCallback'
         },
         templateUrl: FormatUrl.getDirectivePath('common') + 'campaign.directive.html',
         link: function (scope, elem, attrs) {
@@ -16,6 +18,7 @@
           scope.campaign = {
             bodyCollapsed: true,
             parameters: scope.parameters,
+            full: scope.full,
             // Function collapsible content
             collapsibleToggle: function () {
               scope.campaign.bodyCollapsed = !scope.campaign.bodyCollapsed;

@@ -39,6 +39,7 @@
 }
 .view-center{
   @vcc-header-height: 149px;
+  @vcc-header-height-collapsed: 61px;
   @vcc-sub-header-height: 23px;
   @vcc-sub-body-margin-top: 10px;
   @vcc-sub-body-margin-bottom: 10px;
@@ -52,6 +53,12 @@
     right: 0;
     top: @vcc-header-height + @vcc-sub-header-height + @vcc-sub-body-margin-top;
     bottom: @vcc-sub-body-margin-bottom ;
+
+    .globalHide-view-center-header &{
+      top: @vcc-header-height-collapsed + @vcc-sub-header-height + @vcc-sub-body-margin-top;;
+    }
+
+
   }
 }
 

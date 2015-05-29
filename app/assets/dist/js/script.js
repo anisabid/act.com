@@ -123,7 +123,7 @@ var Obj = {
 
       status: ['standby', 'progress', 'ok', 'ko'],
       color: ['#333333', '#f7ca18', '#2bb38a', '#e34b51'],
-      icon: ['fa-power-off', 'fa-thumbs-up', 'fa-thumbs-up', 'fa-thumbs-down']
+      icon: ['fa-power-off', 'fa-warning', 'fa-thumbs-up', 'fa-thumbs-down']
 
     });
 
@@ -158,6 +158,243 @@ var Obj = {
 
 })();
 
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('MainController', ['$scope', '$state',
+      function($scope) {
+
+        $scope.main = {};
+
+      }]);
+})();
+
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('CampaignController', ['$scope', '$state', '$window', 'CampaignListData', 'TestListData', 'CampaignDetailData', 'ActScrollbarConfig',
+      function ($scope, $state, $window, CampaignListData, TestListData, CampaignDetailData, ActScrollbarConfig) {
+
+        $scope.scrollbarConfig = ActScrollbarConfig;
+
+        $scope.campaign = {
+          items: CampaignListData,
+          currentItem: CampaignListData[1],
+          tests: TestListData,
+          detail: CampaignDetailData
+        };
+
+
+        // Actions Toggle Sidebar
+        $scope.globalHide = {
+          view: {
+            left: false,
+            right: false,
+            center: {
+              header: true
+            }
+          }
+        };
+        $scope.toggleViewLeftRight = function (direction) {
+          $scope.globalHide.view[direction] = !$scope.globalHide.view[direction];
+        };
+
+        $scope.toggleViewCenterHeader = function () {
+          console.log('call toggleViewCenterHeader = '+ $scope.globalHide.view.center.header);
+          $scope.globalHide.view.center.header = !$scope.globalHide.view.center.header;
+        };
+
+
+        // Actions Tree
+
+        $scope.onRemove = function (scope) {
+          if ($window.confirm('Are you sure to remove ?')) {
+            scope.remove();
+          }
+        };
+
+        $scope.update = false;
+        $scope.onUpdate = function () {
+          //$scope.update = !$scope.update;
+
+        };
+
+        $scope.onStatusChange = function (scope) {
+          var nodeData = scope.$parentNodeScope.$modelValue;
+
+          var nodeParent = scope.$parentNodeScope;
+
+          var nodesParent = scope.$parentNodesScope;
+
+          console.log(nodeData.nodes.length);
+          console.log(nodeData);
+
+          console.log(nodesParent.$modelValue);
+
+          console.log(nodeParent.$childNodesScope);
+        };
+
+
+        $scope.onAddItem = function (scope) {
+          var nodeData = scope.$modelValue;
+          nodeData.nodes.push({
+            id: nodeData.id * 10 + nodeData.nodes.length,
+            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
+            status: 0,
+            nodes: []
+          });
+        };
+
+      }]);
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .factory('ApplicationFactory', ['$http', '$q', 'ActRest',
+      function ($http, $q, ActRest) {
+
+        var $f = {
+          getApplicationList: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.application.list.method,
+              url: ActRest.baseUrl + ActRest.application.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              })
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          getApplicationList: $f.getApplicationList
+        };
+
+      }]);
+
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .factory('CampaignFactory', ['$http', '$q', 'ActRest',
+      function ($http, $q, ActRest) {
+
+        var $f = {
+          getCampaignList: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.campaign.list.method,
+              url: ActRest.baseUrl + ActRest.campaign.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          },
+          getCampaignDetail: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.campaign.detail.method,
+              url: ActRest.baseUrl + ActRest.campaign.detail.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          getCampaignList: $f.getCampaignList,
+          getCampaignDetail: $f.getCampaignDetail
+        };
+
+      }]);
+
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .factory('TestFactory', ['$http', '$q', 'ActRest',
+      function ($http, $q, ActRest) {
+
+        var $f = {
+          getTestList: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.test.list.method,
+              url: ActRest.baseUrl + ActRest.test.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          getTestList: $f.getTestList
+        };
+
+      }]);
+
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
+      function ($scope, $state, CampaignListData, ApplicationListData) {
+
+        $scope.dashboard = {
+          sources: CampaignListData,
+          applications: ApplicationListData
+        };
+
+      }]);
+})();
+
+
 
 'use strict';
 
@@ -169,7 +406,9 @@ var Obj = {
         restrict: 'E',
         replace: true,
         scope: {
-          parameters: '='
+          parameters: '=',
+          full: '=',
+          callback: '&onCallback'
         },
         templateUrl: FormatUrl.getDirectivePath('common') + 'campaign.directive.html',
         link: function (scope, elem, attrs) {
@@ -177,6 +416,7 @@ var Obj = {
           scope.campaign = {
             bodyCollapsed: true,
             parameters: scope.parameters,
+            full: scope.full,
             // Function collapsible content
             collapsibleToggle: function () {
               scope.campaign.bodyCollapsed = !scope.campaign.bodyCollapsed;
@@ -480,233 +720,3 @@ var Obj = {
 
 })();
 
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('CampaignController', ['$scope', '$state', '$window', 'CampaignListData', 'TestListData', 'CampaignDetailData', 'ActScrollbarConfig',
-      function ($scope, $state, $window, CampaignListData, TestListData, CampaignDetailData, ActScrollbarConfig) {
-
-        $scope.scrollbarConfig = ActScrollbarConfig;
-
-        $scope.campaign = {
-          items: CampaignListData,
-          currentItem: CampaignListData[1],
-          tests: TestListData,
-          detail: CampaignDetailData
-        };
-
-
-        // Actions Toggle Sidebar
-        $scope.sidebarHide = {
-          left : false,
-          right: false
-        };
-        $scope.toggleSidebar = function (direction) {
-          $scope.sidebarHide[direction] = !$scope.sidebarHide[direction];
-        };
-
-
-        // Actions Tree
-
-        $scope.onRemove = function(scope) {
-          if ($window.confirm('Are you sure to remove ?')) {
-            scope.remove();
-          }
-        };
-
-        $scope.update = false;
-        $scope.onUpdate = function() {
-          //$scope.update = !$scope.update;
-          alert('x');
-        };
-
-        $scope.onStatusChange = function (scope) {
-          var nodeData = scope.$parentNodeScope.$modelValue;
-
-          var nodeParent = scope.$parentNodeScope;
-
-          var nodesParent = scope.$parentNodesScope;
-
-          console.log(nodeData.nodes.length);
-          console.log(nodeData);
-
-          console.log(nodesParent.$modelValue);
-
-          console.log(nodeParent.$childNodesScope);
-        };
-
-
-
-
-
-        $scope.onAddItem = function (scope) {
-          var nodeData = scope.$modelValue;
-          nodeData.nodes.push({
-            id: nodeData.id * 10 + nodeData.nodes.length,
-            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
-            status: 0,
-            nodes: []
-          });
-        };
-
-      }]);
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .factory('ApplicationFactory', ['$http', '$q', 'ActRest',
-      function ($http, $q, ActRest) {
-
-        var $f = {
-          getApplicationList: function () {
-            var defer = $q.defer();
-
-            var params = {
-              method: ActRest.application.list.method,
-              url: ActRest.baseUrl + ActRest.application.list.url
-            };
-
-            $http(params)
-              .success(function (data) {
-                return defer.resolve(data);
-              })
-              .error(function (data, status) {
-                return defer.reject(status);
-              })
-
-            return defer.promise;
-          }
-        };
-
-        return {
-          getApplicationList: $f.getApplicationList
-        };
-
-      }]);
-
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .factory('CampaignFactory', ['$http', '$q', 'ActRest',
-      function ($http, $q, ActRest) {
-
-        var $f = {
-          getCampaignList: function () {
-            var defer = $q.defer();
-
-            var params = {
-              method: ActRest.campaign.list.method,
-              url: ActRest.baseUrl + ActRest.campaign.list.url
-            };
-
-            $http(params)
-              .success(function (data) {
-                return defer.resolve(data);
-              })
-              .error(function (data, status) {
-                return defer.reject(status);
-              });
-
-            return defer.promise;
-          },
-          getCampaignDetail: function () {
-            var defer = $q.defer();
-
-            var params = {
-              method: ActRest.campaign.detail.method,
-              url: ActRest.baseUrl + ActRest.campaign.detail.url
-            };
-
-            $http(params)
-              .success(function (data) {
-                return defer.resolve(data);
-              })
-              .error(function (data, status) {
-                return defer.reject(status);
-              });
-
-            return defer.promise;
-          }
-        };
-
-        return {
-          getCampaignList: $f.getCampaignList,
-          getCampaignDetail: $f.getCampaignDetail
-        };
-
-      }]);
-
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .factory('TestFactory', ['$http', '$q', 'ActRest',
-      function ($http, $q, ActRest) {
-
-        var $f = {
-          getTestList: function () {
-            var defer = $q.defer();
-
-            var params = {
-              method: ActRest.test.list.method,
-              url: ActRest.baseUrl + ActRest.test.list.url
-            };
-
-            $http(params)
-              .success(function (data) {
-                return defer.resolve(data);
-              })
-              .error(function (data, status) {
-                return defer.reject(status);
-              });
-
-            return defer.promise;
-          }
-        };
-
-        return {
-          getTestList: $f.getTestList
-        };
-
-      }]);
-
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('DashboardController', ['$scope', '$state', 'CampaignListData', 'ApplicationListData',
-      function ($scope, $state, CampaignListData, ApplicationListData) {
-
-        $scope.dashboard = {
-          sources: CampaignListData,
-          applications: ApplicationListData
-        };
-
-      }]);
-})();
-
-
-
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('MainController', ['$scope', '$state',
-      function($scope) {
-
-        $scope.main = {};
-
-      }]);
-})();

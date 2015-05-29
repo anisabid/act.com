@@ -24,7 +24,7 @@
       overflow: hidden;
       color: @base-color-grey;
 
-      .hide-view-left&{
+      .globalHide-view-left&{
         .transition(@base-transition-delay, @base-transition-timing-function);
         .rotation(180deg);
       }
@@ -82,8 +82,8 @@
   }
   > .view-left{
     .transition(@base-transition-delay, @base-transition-timing-function);
-    .hide-view-left &,
-    .hide-view-left&{
+    .globalHide-view-left &,
+    .globalHide-view-left&{
       // hide view left
       .translate(-(@base-width-sidebar-left - @base-separator-width), 0);
     }
@@ -99,8 +99,8 @@
 
       .transition(@base-transition-delay, @base-transition-timing-function);
 
-      .hide-view-left &,
-      .hide-view-left&{
+      .globalHide-view-left &,
+      .globalHide-view-left&{
         // hide view left
         left: 5px;
       }

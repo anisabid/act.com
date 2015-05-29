@@ -1,5 +1,5 @@
 <!-- Begin layout separator horizontal -->
-<a href="" class="layout_sep h" ng-click="toggleSidebar('left')">
+<a href="" class="layout_sep h" ng-click="toggleViewLeftRight('left')">
   <i class="fa fa-angle-left"></i>
 </a>
 <!-- End layout separator horizontal -->
@@ -15,7 +15,7 @@
       <div class="campaigns-items">
         <am-campaign
         ng-repeat="source in campaign.items | filter: filterCampaign.applicationId track by $index"
-        parameters="source">
+        parameters="source" full="false">
         </am-campaign>
       </div>
     </div>

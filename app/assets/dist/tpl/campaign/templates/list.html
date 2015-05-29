@@ -55,5 +55,5 @@
 </div>
 <div class="campaign-list clearfix">
   <am-campaign ng-repeat="source in dashboard.sources | filter: filterCampaign.applicationId track by $index"
-               parameters="source"></am-campaign>
+               parameters="source" full="false"></am-campaign>
 </div>
