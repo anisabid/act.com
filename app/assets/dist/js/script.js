@@ -122,7 +122,8 @@ var Obj = {
     .constant('ActStatusConfig', {
 
       status: ['standby', 'progress', 'ok', 'ko'],
-      color: ['#333333', '#f7ca18', '#2bb38a', '#e34b51']
+      color: ['#333333', '#f7ca18', '#2bb38a', '#e34b51'],
+      icon: ['fa-power-off', 'fa-thumbs-up', 'fa-thumbs-up', 'fa-thumbs-down']
 
     });
 
@@ -157,206 +158,6 @@ var Obj = {
 
 })();
 
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .controller('CampaignController', ['$scope', '$state', '$window', 'CampaignListData', 'TestListData', 'CampaignDetailData', 'ActScrollbarConfig',
-      function ($scope, $state, $window, CampaignListData, TestListData, CampaignDetailData, ActScrollbarConfig) {
-
-        $scope.scrollbarConfig = ActScrollbarConfig;
-
-        $scope.campaign = {
-          items: CampaignListData,
-          currentItem: CampaignListData[1],
-          tests: TestListData,
-          detail: CampaignDetailData
-        };
-
-
-        // Actions Toggle Sidebar
-        $scope.sidebarHide = {
-          left : false,
-          right: false
-        };
-        $scope.toggleSidebar = function (direction) {
-          $scope.sidebarHide[direction] = !$scope.sidebarHide[direction];
-        };
-
-
-        // Actions Tree
-
-        $scope.onRemove = function(scope) {
-          if ($window.confirm('Are you sure to remove ?')) {
-            scope.remove();
-          }
-        };
-
-        $scope.update = false;
-        $scope.onUpdate = function() {
-          //$scope.update = !$scope.update;
-          alert('x');
-        };
-
-        $scope.onStatusChange = function (scope) {
-          var nodeData = scope.$parentNodeScope.$modelValue;
-
-          var nodeParent = scope.$parentNodeScope;
-
-          var nodesParent = scope.$parentNodesScope;
-
-          console.log(nodeData.nodes.length);
-          console.log(nodeData);
-
-          console.log(nodesParent.$modelValue);
-
-          console.log(nodeParent.$childNodesScope);
-        };
-
-
-
-
-
-        $scope.onAddItem = function (scope) {
-          var nodeData = scope.$modelValue;
-          nodeData.nodes.push({
-            id: nodeData.id * 10 + nodeData.nodes.length,
-            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
-            status: 0,
-            nodes: []
-          });
-        };
-
-      }]);
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .factory('ApplicationFactory', ['$http', '$q', 'ActRest',
-      function ($http, $q, ActRest) {
-
-        var $f = {
-          getApplicationList: function () {
-            var defer = $q.defer();
-
-            var params = {
-              method: ActRest.application.list.method,
-              url: ActRest.baseUrl + ActRest.application.list.url
-            };
-
-            $http(params)
-              .success(function (data) {
-                return defer.resolve(data);
-              })
-              .error(function (data, status) {
-                return defer.reject(status);
-              })
-
-            return defer.promise;
-          }
-        };
-
-        return {
-          getApplicationList: $f.getApplicationList
-        };
-
-      }]);
-
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .factory('CampaignFactory', ['$http', '$q', 'ActRest',
-      function ($http, $q, ActRest) {
-
-        var $f = {
-          getCampaignList: function () {
-            var defer = $q.defer();
-
-            var params = {
-              method: ActRest.campaign.list.method,
-              url: ActRest.baseUrl + ActRest.campaign.list.url
-            };
-
-            $http(params)
-              .success(function (data) {
-                return defer.resolve(data);
-              })
-              .error(function (data, status) {
-                return defer.reject(status);
-              });
-
-            return defer.promise;
-          },
-          getCampaignDetail: function () {
-            var defer = $q.defer();
-
-            var params = {
-              method: ActRest.campaign.detail.method,
-              url: ActRest.baseUrl + ActRest.campaign.detail.url
-            };
-
-            $http(params)
-              .success(function (data) {
-                return defer.resolve(data);
-              })
-              .error(function (data, status) {
-                return defer.reject(status);
-              });
-
-            return defer.promise;
-          }
-        };
-
-        return {
-          getCampaignList: $f.getCampaignList,
-          getCampaignDetail: $f.getCampaignDetail
-        };
-
-      }]);
-
-})();
-'use strict';
-
-(function () {
-
-  angular.module('actApp')
-    .factory('TestFactory', ['$http', '$q', 'ActRest',
-      function ($http, $q, ActRest) {
-
-        var $f = {
-          getTestList: function () {
-            var defer = $q.defer();
-
-            var params = {
-              method: ActRest.test.list.method,
-              url: ActRest.baseUrl + ActRest.test.list.url
-            };
-
-            $http(params)
-              .success(function (data) {
-                return defer.resolve(data);
-              })
-              .error(function (data, status) {
-                return defer.reject(status);
-              });
-
-            return defer.promise;
-          }
-        };
-
-        return {
-          getTestList: $f.getTestList
-        };
-
-      }]);
-
-})();
 
 'use strict';
 
@@ -602,38 +403,13 @@ var Obj = {
 
 (function () {
 
-  angular.module('actApp')
-    .provider('FormatUrl', ['ActPaths', function (ActPaths) {
-
-      this.getBaseUrl = function () {
-        return ActPaths.baseUrl;
-      };
-
-      this.getTemplatePath = function (stringUrl) {
-        return this.getBaseUrl() + ActPaths.templates[stringUrl];
-      };
-
-      this.getDirectivePath = function (stringUrl) {
-        return this.getBaseUrl() + ActPaths.directives[stringUrl];
-      };
-
-      this.$get = function () {
-
-        return this;
-
-      };
-    }]);
-
-})();
-
-'use strict';
-
-(function () {
-
   function status (ActStatusConfig, type, imput) {
     switch (type) {
       case 'color':
         return ActStatusConfig.color[imput];
+        break;
+      case 'icon':
+        return ActStatusConfig.icon[imput];
         break;
       default:
         // do something
@@ -662,6 +438,247 @@ var Obj = {
       };
     }]);
 
+  angular.module('actApp')
+    .filter('statusToIcon', ['ActStatusConfig', function (ActStatusConfig) {
+      return function (input) {
+        return status(ActStatusConfig, 'icon', input);
+      };
+    }]);
+
+  angular.module('actApp')
+    .filter('statusToIconColor', ['ActStatusConfig', function (ActStatusConfig) {
+      return function (input) {
+        return status(ActStatusConfig, 'icon', input) +" "+ status(ActStatusConfig, 'color', input);
+      };
+    }]);
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .provider('FormatUrl', ['ActPaths', function (ActPaths) {
+
+      this.getBaseUrl = function () {
+        return ActPaths.baseUrl;
+      };
+
+      this.getTemplatePath = function (stringUrl) {
+        return this.getBaseUrl() + ActPaths.templates[stringUrl];
+      };
+
+      this.getDirectivePath = function (stringUrl) {
+        return this.getBaseUrl() + ActPaths.directives[stringUrl];
+      };
+
+      this.$get = function () {
+
+        return this;
+
+      };
+    }]);
+
+})();
+
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .controller('CampaignController', ['$scope', '$state', '$window', 'CampaignListData', 'TestListData', 'CampaignDetailData', 'ActScrollbarConfig',
+      function ($scope, $state, $window, CampaignListData, TestListData, CampaignDetailData, ActScrollbarConfig) {
+
+        $scope.scrollbarConfig = ActScrollbarConfig;
+
+        $scope.campaign = {
+          items: CampaignListData,
+          currentItem: CampaignListData[1],
+          tests: TestListData,
+          detail: CampaignDetailData
+        };
+
+
+        // Actions Toggle Sidebar
+        $scope.sidebarHide = {
+          left : false,
+          right: false
+        };
+        $scope.toggleSidebar = function (direction) {
+          $scope.sidebarHide[direction] = !$scope.sidebarHide[direction];
+        };
+
+
+        // Actions Tree
+
+        $scope.onRemove = function(scope) {
+          if ($window.confirm('Are you sure to remove ?')) {
+            scope.remove();
+          }
+        };
+
+        $scope.update = false;
+        $scope.onUpdate = function() {
+          //$scope.update = !$scope.update;
+          alert('x');
+        };
+
+        $scope.onStatusChange = function (scope) {
+          var nodeData = scope.$parentNodeScope.$modelValue;
+
+          var nodeParent = scope.$parentNodeScope;
+
+          var nodesParent = scope.$parentNodesScope;
+
+          console.log(nodeData.nodes.length);
+          console.log(nodeData);
+
+          console.log(nodesParent.$modelValue);
+
+          console.log(nodeParent.$childNodesScope);
+        };
+
+
+
+
+
+        $scope.onAddItem = function (scope) {
+          var nodeData = scope.$modelValue;
+          nodeData.nodes.push({
+            id: nodeData.id * 10 + nodeData.nodes.length,
+            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
+            status: 0,
+            nodes: []
+          });
+        };
+
+      }]);
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .factory('ApplicationFactory', ['$http', '$q', 'ActRest',
+      function ($http, $q, ActRest) {
+
+        var $f = {
+          getApplicationList: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.application.list.method,
+              url: ActRest.baseUrl + ActRest.application.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              })
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          getApplicationList: $f.getApplicationList
+        };
+
+      }]);
+
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .factory('CampaignFactory', ['$http', '$q', 'ActRest',
+      function ($http, $q, ActRest) {
+
+        var $f = {
+          getCampaignList: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.campaign.list.method,
+              url: ActRest.baseUrl + ActRest.campaign.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          },
+          getCampaignDetail: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.campaign.detail.method,
+              url: ActRest.baseUrl + ActRest.campaign.detail.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          getCampaignList: $f.getCampaignList,
+          getCampaignDetail: $f.getCampaignDetail
+        };
+
+      }]);
+
+})();
+'use strict';
+
+(function () {
+
+  angular.module('actApp')
+    .factory('TestFactory', ['$http', '$q', 'ActRest',
+      function ($http, $q, ActRest) {
+
+        var $f = {
+          getTestList: function () {
+            var defer = $q.defer();
+
+            var params = {
+              method: ActRest.test.list.method,
+              url: ActRest.baseUrl + ActRest.test.list.url
+            };
+
+            $http(params)
+              .success(function (data) {
+                return defer.resolve(data);
+              })
+              .error(function (data, status) {
+                return defer.reject(status);
+              });
+
+            return defer.promise;
+          }
+        };
+
+        return {
+          getTestList: $f.getTestList
+        };
+
+      }]);
+
 })();
 'use strict';
 
@@ -679,6 +696,8 @@ var Obj = {
       }]);
 })();
 
+
+
 'use strict';
 
 (function () {
@@ -691,5 +710,3 @@ var Obj = {
 
       }]);
 })();
-
-

@@ -35,31 +35,31 @@
 
     <div class="status" data-nodrag ng-hide="node.nodes.length">
       <a href="" class="current-status" ng-class="node.status | statusToClass">
-        <i class="fa fa-circle-o"></i>
+        <i class="fa" ng-class="node.status | statusToIcon"></i>
       </a>
       <ul class="list">
         <li>
           <input type="radio" ng-model="node.status" ng-value="0" name="options-{{node.id}}" id="option-filter-test-{{node.id}}-standbay" ng-change="onStatusChange(this)">
           <label class="btn" for="option-filter-test-{{node.id}}-standbay" tooltips tooltip-size="small" title="Standbay">
-            <i class="fa fa-circle-o base-color-status-standby"></i>
+            <i class="fa fa-power-off base-color-status-standby"></i>
           </label>
         </li>
         <li>
           <input type="radio" ng-model="node.status" ng-value="2" name="options" id="option-filter-test-{{node.id}}-ok" ng-change="onStatusChange(this)">
           <label class="btn" for="option-filter-test-{{node.id}}-ok" tooltips tooltip-size="small" title="Ok">
-            <i class="fa fa-circle-o base-color-status-ok"></i>
+            <i class="fa fa-thumbs-up base-color-status-ok"></i>
           </label>
         </li>
         <li>
           <input type="radio" ng-model="node.status" ng-value="1" name="options" id="option-filter-test-{{node.id}}-progress" ng-change="onStatusChange(this)">
           <label class="btn" for="option-filter-test-{{node.id}}-progress" tooltips tooltip-size="small" title="Warning">
-            <i class="fa fa-circle-o base-color-status-progress"></i>
+            <i class="fa fa fa-thumbs-up base-color-status-progress"></i>
           </label>
         </li>
         <li>
           <input type="radio" ng-model="node.status" ng-value="3" name="options" id="option-filter-test-{{node.id}}-ko" ng-change="onStatusChange(this)">
           <label class="btn" for="option-filter-test-{{node.id}}-ko" tooltips tooltip-size="small" title="Ko">
-            <i class="fa fa-circle-o base-color-status-ko"></i>
+            <i class="fa fa-thumbs-down base-color-status-ko"></i>
           </label>
         </li>
       </ul>

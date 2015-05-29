@@ -7,6 +7,9 @@
       case 'color':
         return ActStatusConfig.color[imput];
         break;
+      case 'icon':
+        return ActStatusConfig.icon[imput];
+        break;
       default:
         // do something
         return ActStatusConfig.status[imput];
@@ -34,4 +37,17 @@
       };
     }]);
 
+  angular.module('actApp')
+    .filter('statusToIcon', ['ActStatusConfig', function (ActStatusConfig) {
+      return function (input) {
+        return status(ActStatusConfig, 'icon', input);
+      };
+    }]);
+
+  angular.module('actApp')
+    .filter('statusToIconColor', ['ActStatusConfig', function (ActStatusConfig) {
+      return function (input) {
+        return status(ActStatusConfig, 'icon', input) +" "+ status(ActStatusConfig, 'color', input);
+      };
+    }]);
 })();
