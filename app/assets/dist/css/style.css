@@ -569,7 +569,7 @@ ol {
   margin-left: -85px;
   z-index: 200;
   background-color: #f8d053;
-  color: #4a3e19;
+  color: white;
   font-size: 13px;
   text-align: center;
   padding: 5px 10px;
@@ -590,6 +590,18 @@ ol {
   -moz-background-clip: padding-box;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+}
+.view-center .campaign-header .mode-edit:hover {
+  background-color: #f9d564;
+}
+.view-center .campaign-header .mode-edit:active {
+  background-color: #e9c44e;
+}
+.view-center .campaign-header .mode-edit:hover {
+  background-color: #f9d564;
+}
+.view-center .campaign-header .mode-edit:active {
+  background-color: #e9c44e;
 }
 .view-center .campaign-body {
   position: absolute;
@@ -839,7 +851,7 @@ ol {
   position: relative;
 }
 #page-header .header-search .search-global {
-  border-bottom: 1px solid #383d49;
+  border-bottom: 1px solid white;
 }
 #page-header .header-search .search-global .form-control {
   background: transparent;
@@ -858,7 +870,7 @@ ol {
   right: 8px;
   top: 40%;
   margin-top: -8px;
-  color: #383d49;
+  color: white;
 }
 /* ** End Header ** */
 .filter-header {
