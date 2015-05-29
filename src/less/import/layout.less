@@ -93,7 +93,7 @@
     > .page-container-left {
       position: absolute;
       left: @base-width-sidebar-left;
-      right: @base-width-sidebar-right;
+      right: 0;
       top: 0;
       bottom: 0;
 
@@ -103,6 +103,10 @@
       .globalHide-view-left&{
         // hide view left
         left: 5px;
+      }
+
+      .globalEdit&{
+        right: @base-width-sidebar-right;
       }
 
       .campaign-sub-header {
@@ -120,7 +124,15 @@
       background: #FFFFFF;
       width: @base-width-sidebar-right;
 
+      .transition(@base-transition-delay, @base-transition-timing-function);
+      .translate((@base-width-sidebar-right), 0);
+
+
       .separator(left);
+
+      .globalEdit&{
+        .translate(0, 0);
+      }
 
       .tab {
         height: 100%;

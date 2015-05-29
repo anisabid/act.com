@@ -410,7 +410,7 @@ ol {
 #page-container > .page-container-right > .page-container-left {
   position: absolute;
   left: 285px;
-  right: 300px;
+  right: 0;
   top: 0;
   bottom: 0;
   -webkit-transition: all 0.2s linear;
@@ -422,6 +422,9 @@ ol {
 .globalHide-view-left#page-container > .page-container-right > .page-container-left {
   left: 5px;
 }
+.globalEdit#page-container > .page-container-right > .page-container-left {
+  right: 300px;
+}
 #page-container > .page-container-right > .view-right {
   position: absolute;
   top: 0;
@@ -430,6 +433,15 @@ ol {
   overflow: hidden;
   background: #FFFFFF;
   width: 300px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transform: translate(300px, 0);
+  -moz-transform: translate(300px, 0);
+  -o-transform: translate(300px, 0);
+  -ms-transform: translate(300px, 0);
+  transform: translate(300px, 0);
 }
 #page-container > .page-container-right > .view-right .layout_sep.h {
   position: absolute;
@@ -459,6 +471,13 @@ ol {
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+.globalEdit#page-container > .page-container-right > .view-right {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 #page-container > .page-container-right > .view-right .tab {
   height: 100%;
@@ -751,7 +770,7 @@ ol {
   float: left;
   line-height: 36px;
   padding: 0 0 0 10px;
-  font-weight: 400;
+  font-weight: 900;
 }
 #page-header .header-left .title span {
   color: #009fe3;
@@ -1433,16 +1452,16 @@ ol {
   width: 15px;
   display: block;
 }
-.view-center .tree .angular-ui-tree-handle:hover .navigation .options {
+.globalEdit .view-center .tree .angular-ui-tree-handle:hover .navigation .options {
   display: block;
 }
-.view-center .tree .angular-ui-tree-handle:hover .update .navigation .options {
+.globalEdit .view-center .tree .angular-ui-tree-handle:hover .update .navigation .options {
   display: none;
 }
-.view-center .tree .angular-ui-tree-handle:hover .update .title {
+.globalEdit .view-center .tree .angular-ui-tree-handle:hover .update .title {
   display: none;
 }
-.view-center .tree .angular-ui-tree-handle:hover .update .title-update {
+.globalEdit .view-center .tree .angular-ui-tree-handle:hover .update .title-update {
   display: block;
 }
 .view-center .tree .angular-ui-tree-handle {
@@ -1776,16 +1795,16 @@ ol {
   width: 15px;
   display: block;
 }
-.view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .navigation .options {
+.globalEdit .view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .navigation .options {
   display: block;
 }
-.view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .navigation .options {
+.globalEdit .view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .navigation .options {
   display: none;
 }
-.view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .title {
+.globalEdit .view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .title {
   display: none;
 }
-.view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .title-update {
+.globalEdit .view-center .angular-ui-tree-nodes.angular-ui-tree-drag:hover .update .title-update {
   display: block;
 }
 .view-center .angular-ui-tree-nodes.angular-ui-tree-drag {
