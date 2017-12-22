@@ -12,7 +12,7 @@
 
             var params = {
               method: ActRest.campaign.list.method,
-              url: ActRest.baseUrl + ActRest.campaign.list.url
+              url: ActRest.campaign.list.url
             };
 
             $http(params)

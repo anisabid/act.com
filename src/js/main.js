@@ -22,6 +22,7 @@
             templateUrl: FormatUrlProvider.getTemplatePath('main') + 'main.html',
             controller: 'MainController'
           })
+
           .state('main.dashboard', {
             url: '/dashboard',
             templateUrl: FormatUrlProvider.getTemplatePath('campaign') + 'list.html',
